@@ -26,22 +26,29 @@ typedef struct AFont AFont;
 // <android/font_matcher.h> is broken without the following typedef in C
 typedef struct AFontMatcher AFontMatcher;
 #include <android/font_matcher.h>
+// #include <android/hardware_buffer_aidl.h>
 #include <android/hardware_buffer.h>
 #include <android/hardware_buffer_jni.h>
 #include <android/hdr_metadata.h>
 #include <android/imagedecoder.h>
 #include <android/input.h>
 #include <android/keycodes.h>
+// #include <android/legacy_stdlib_inlines.h>
+// #include <android/legacy_termios_inlines.h>
+// #include <android/legacy_threads_inlines.h>
+// #include <android/legacy_unistd_inlines.h>
 #include <android/log.h>
 #include <android/looper.h>
 #include <android/multinetwork.h>
 #include <android/native_activity.h>
+// #include <android/native_window_aidl.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
 #include <android/ndk-version.h>
 #include <android/NeuralNetworks.h>
 #include <android/NeuralNetworksTypes.h>
 #include <android/obb.h>
+#include <android/performance_hint.h>
 #include <android/permission_manager.h>
 #include <android/rect.h>
 #include <android/sensor.h>

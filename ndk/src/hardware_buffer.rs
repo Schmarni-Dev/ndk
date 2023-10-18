@@ -60,6 +60,10 @@ impl HardwareBufferUsage {
     pub const GPU_MIPMAP_COMPLETE: Self =
         Self(ffi::AHardwareBuffer_UsageFlags::AHARDWAREBUFFER_USAGE_GPU_MIPMAP_COMPLETE);
 
+    #[cfg(feature = "api-level-35")]
+    pub const FRONT_BUFFER: Self =
+        Self(ffi::AHardwareBuffer_UsageFlags::AHARDWAREBUFFER_USAGE_FRONT_BUFFER);
+
     pub const VENDOR_0: Self =
         Self(ffi::AHardwareBuffer_UsageFlags::AHARDWAREBUFFER_USAGE_VENDOR_0);
     pub const VENDOR_1: Self =
