@@ -2,6 +2,7 @@
 
 - Move `MediaFormat` from `media::media_codec` to its own `media::media_format` module. (#442)
 - media_format: Expose `MediaFormat::copy()` and `MediaFormat::clear()` from API level 29. (#449)
+- **Breaking:** media_format: Mark all `fn set_*()` and `fn str()` as taking `self` by `&mut`. (#452)
 
 # 0.8.0 (2023-10-15)
 
