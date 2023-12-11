@@ -44,10 +44,10 @@ pub enum ImageFormat {
     DEPTH_JPEG = ffi::AIMAGE_FORMATS::AIMAGE_FORMAT_DEPTH_JPEG.0,
 }
 
-pub type ImageListener = Box<dyn FnMut(&ImageReader)>;
+pub type ImageListener = Box<dyn FnMut(&ImageReader) + Send>;
 
 #[cfg(feature = "api-level-26")]
-pub type BufferRemovedListener = Box<dyn FnMut(&ImageReader, &HardwareBuffer)>;
+pub type BufferRemovedListener = Box<dyn FnMut(&ImageReader, &HardwareBuffer) + Send>;
 
 /// A native [`AImageReader *`]
 ///

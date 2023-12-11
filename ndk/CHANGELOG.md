@@ -2,6 +2,15 @@
 
 - Move `MediaFormat` from `media::media_codec` to its own `media::media_format` module. (#442)
 - media_format: Expose `MediaFormat::copy()` and `MediaFormat::clear()` from API level 29. (#449)
+- **Breaking**: Require all `dyn Fn*` types to implement `Send` when the FFI implementation invokes them on a separate thread: (#455)
+  - `audio::AudioStreamDataCallback`;
+  - `audio::AudioStreamErrorCallback`;
+  - `media::image_reader::BufferRemovedListener`;
+  - `media::image_reader::ImageListener`;
+  - `media::media_codec::ErrorCallback`;
+  - `media::media_codec::FormatChangedCallback`;
+  - `media::media_codec::InputAvailableCallback`;
+  - `media::media_codec::OutputAvailableCallback`.
 
 # 0.8.0 (2023-10-15)
 

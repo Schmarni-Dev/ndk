@@ -500,9 +500,9 @@ impl fmt::Debug for AudioStreamBuilder {
 
 #[doc(alias = "AAudioStream_dataCallback")]
 pub type AudioStreamDataCallback =
-    Box<dyn FnMut(&AudioStream, *mut c_void, i32) -> AudioCallbackResult>;
+    Box<dyn FnMut(&AudioStream, *mut c_void, i32) -> AudioCallbackResult + Send>;
 #[doc(alias = "AAudioStream_errorCallback")]
-pub type AudioStreamErrorCallback = Box<dyn FnMut(&AudioStream, AudioError)>;
+pub type AudioStreamErrorCallback = Box<dyn FnMut(&AudioStream, AudioError) + Send>;
 
 impl AudioStreamBuilder {
     fn from_ptr(inner: NonNull<ffi::AAudioStreamBuilder>) -> Self {
