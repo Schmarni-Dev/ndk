@@ -271,6 +271,12 @@ impl fmt::Debug for DataSpace {
     }
 }
 
+impl From<DataSpace> for ffi::ADataSpace {
+    fn from(value: DataSpace) -> Self {
+        Self(value as u32)
+    }
+}
+
 impl DataSpace {
     /// Construct a [`DataSpace`] from individual `standard`, `transfer` and `range` components.
     ///
