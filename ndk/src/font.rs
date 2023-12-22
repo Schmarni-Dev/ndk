@@ -13,6 +13,8 @@ use std::os::unix::prelude::OsStrExt;
 use std::path::Path;
 use std::ptr::NonNull;
 
+use num_enum::IntoPrimitive;
+
 /// An integer holding a valid font weight value between 1 and 1000.
 ///
 /// See the following definitions for more details:
@@ -392,16 +394,17 @@ impl Drop for Font {
 ///
 /// [`AFAMILY_VARIANT_*`]: https://developer.android.com/ndk/reference/group/font#group___font_1gga96a58e29e8dbf2b5bdeb775cba46556ea662aafc7016e35d6758da93416fc0833
 #[repr(u32)]
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, IntoPrimitive)]
+#[non_exhaustive]
 pub enum FamilyVariant {
     /// A family variant value for the compact font family variant.
     /// The compact font family has Latin-based vertical metrics.
-    Compact = ffi::AFAMILY_VARIANT_COMPACT as _,
+    Compact = ffi::AFAMILY_VARIANT_COMPACT,
     /// A family variant value for the system default variant.
-    Default = ffi::AFAMILY_VARIANT_DEFAULT as _,
+    Default = ffi::AFAMILY_VARIANT_DEFAULT,
     /// A family variant value for the elegant font family variant.
     /// The elegant font family may have larger vertical metrics than Latin font.
-    Elegant = ffi::AFAMILY_VARIANT_ELEGANT as _,
+    Elegant = ffi::AFAMILY_VARIANT_ELEGANT,
 }
 
 /// A native [`AFontMatcher *`]
@@ -476,7 +479,7 @@ impl FontMatcher {
     ///
     /// If this function is not called, the match is performed with [`FamilyVariant::Default`].
     pub fn set_family_variant(&mut self, family_variant: FamilyVariant) {
-        unsafe { ffi::AFontMatcher_setFamilyVariant(self.ptr.as_ptr(), family_variant as u32) }
+        unsafe { ffi::AFontMatcher_setFamilyVariant(self.ptr.as_ptr(), family_variant.into()) }
     }
 
     /// Sets the locale of the font to be matched.
