@@ -11927,6 +11927,273 @@ extern "C" {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct ASurfaceControl {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASurfaceControl_createFromWindow(
+        parent: *mut ANativeWindow,
+        debug_name: *const ::std::os::raw::c_char,
+    ) -> *mut ASurfaceControl;
+}
+extern "C" {
+    pub fn ASurfaceControl_create(
+        parent: *mut ASurfaceControl,
+        debug_name: *const ::std::os::raw::c_char,
+    ) -> *mut ASurfaceControl;
+}
+extern "C" {
+    pub fn ASurfaceControl_acquire(surface_control: *mut ASurfaceControl);
+}
+extern "C" {
+    pub fn ASurfaceControl_release(surface_control: *mut ASurfaceControl);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceTransaction {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASurfaceTransaction_create() -> *mut ASurfaceTransaction;
+}
+extern "C" {
+    pub fn ASurfaceTransaction_delete(transaction: *mut ASurfaceTransaction);
+}
+extern "C" {
+    pub fn ASurfaceTransaction_apply(transaction: *mut ASurfaceTransaction);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceTransactionStats {
+    _unused: [u8; 0],
+}
+pub type ASurfaceTransaction_OnComplete = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ::std::os::raw::c_void,
+        stats: *mut ASurfaceTransactionStats,
+    ),
+>;
+pub type ASurfaceTransaction_OnCommit = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ::std::os::raw::c_void,
+        stats: *mut ASurfaceTransactionStats,
+    ),
+>;
+extern "C" {
+    pub fn ASurfaceTransactionStats_getLatchTime(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+    ) -> i64;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getPresentFenceFd(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getASurfaceControls(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        outASurfaceControls: *mut *mut *mut ASurfaceControl,
+        outASurfaceControlsSize: *mut usize,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_releaseASurfaceControls(
+        surface_controls: *mut *mut ASurfaceControl,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getAcquireTime(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        surface_control: *mut ASurfaceControl,
+    ) -> i64;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getPreviousReleaseFenceFd(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        surface_control: *mut ASurfaceControl,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setOnComplete(
+        transaction: *mut ASurfaceTransaction,
+        context: *mut ::std::os::raw::c_void,
+        func: ASurfaceTransaction_OnComplete,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setOnCommit(
+        transaction: *mut ASurfaceTransaction,
+        context: *mut ::std::os::raw::c_void,
+        func: ASurfaceTransaction_OnCommit,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_reparent(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        new_parent: *mut ASurfaceControl,
+    );
+}
+pub const ASURFACE_TRANSACTION_VISIBILITY_HIDE: _bindgen_ty_47 = 0;
+pub const ASURFACE_TRANSACTION_VISIBILITY_SHOW: _bindgen_ty_47 = 1;
+pub type _bindgen_ty_47 = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn ASurfaceTransaction_setVisibility(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        visibility: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setZOrder(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        z_order: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBuffer(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        buffer: *mut AHardwareBuffer,
+        acquire_fence_fd: ::std::os::raw::c_int,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setColor(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        r: f32,
+        g: f32,
+        b: f32,
+        alpha: f32,
+        dataspace: ADataSpace,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setGeometry(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        source: *const ARect,
+        destination: *const ARect,
+        transform: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setCrop(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        crop: *const ARect,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setPosition(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        x: i32,
+        y: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferTransform(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        transform: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setScale(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        xScale: f32,
+        yScale: f32,
+    );
+}
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSPARENT: _bindgen_ty_48 = 0;
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSLUCENT: _bindgen_ty_48 = 1;
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_OPAQUE: _bindgen_ty_48 = 2;
+pub type _bindgen_ty_48 = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferTransparency(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        transparency: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setDamageRegion(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        rects: *const ARect,
+        count: u32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setDesiredPresentTime(
+        transaction: *mut ASurfaceTransaction,
+        desiredPresentTime: i64,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferAlpha(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        alpha: f32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferDataSpace(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        data_space: ADataSpace,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setHdrMetadata_smpte2086(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        metadata: *mut AHdrMetadata_smpte2086,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setHdrMetadata_cta861_3(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        metadata: *mut AHdrMetadata_cta861_3,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameRate(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        frameRate: f32,
+        compatibility: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameRateWithChangeStrategy(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        frameRate: f32,
+        compatibility: i8,
+        changeFrameRateStrategy: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setEnableBackPressure(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        enableBackPressure: bool,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameTimeline(
+        transaction: *mut ASurfaceTransaction,
+        vsyncId: AVsyncId,
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct ASurfaceTexture {
     _unused: [u8; 0],
 }
@@ -12234,30 +12501,30 @@ extern "C" {
 extern "C" {
     pub fn ATrace_setCounter(counterName: *const ::std::os::raw::c_char, counterValue: i64);
 }
-pub const AWINDOW_FLAG_ALLOW_LOCK_WHILE_SCREEN_ON: _bindgen_ty_47 = 1;
-pub const AWINDOW_FLAG_DIM_BEHIND: _bindgen_ty_47 = 2;
-pub const AWINDOW_FLAG_BLUR_BEHIND: _bindgen_ty_47 = 4;
-pub const AWINDOW_FLAG_NOT_FOCUSABLE: _bindgen_ty_47 = 8;
-pub const AWINDOW_FLAG_NOT_TOUCHABLE: _bindgen_ty_47 = 16;
-pub const AWINDOW_FLAG_NOT_TOUCH_MODAL: _bindgen_ty_47 = 32;
-pub const AWINDOW_FLAG_TOUCHABLE_WHEN_WAKING: _bindgen_ty_47 = 64;
-pub const AWINDOW_FLAG_KEEP_SCREEN_ON: _bindgen_ty_47 = 128;
-pub const AWINDOW_FLAG_LAYOUT_IN_SCREEN: _bindgen_ty_47 = 256;
-pub const AWINDOW_FLAG_LAYOUT_NO_LIMITS: _bindgen_ty_47 = 512;
-pub const AWINDOW_FLAG_FULLSCREEN: _bindgen_ty_47 = 1024;
-pub const AWINDOW_FLAG_FORCE_NOT_FULLSCREEN: _bindgen_ty_47 = 2048;
-pub const AWINDOW_FLAG_DITHER: _bindgen_ty_47 = 4096;
-pub const AWINDOW_FLAG_SECURE: _bindgen_ty_47 = 8192;
-pub const AWINDOW_FLAG_SCALED: _bindgen_ty_47 = 16384;
-pub const AWINDOW_FLAG_IGNORE_CHEEK_PRESSES: _bindgen_ty_47 = 32768;
-pub const AWINDOW_FLAG_LAYOUT_INSET_DECOR: _bindgen_ty_47 = 65536;
-pub const AWINDOW_FLAG_ALT_FOCUSABLE_IM: _bindgen_ty_47 = 131072;
-pub const AWINDOW_FLAG_WATCH_OUTSIDE_TOUCH: _bindgen_ty_47 = 262144;
-pub const AWINDOW_FLAG_SHOW_WHEN_LOCKED: _bindgen_ty_47 = 524288;
-pub const AWINDOW_FLAG_SHOW_WALLPAPER: _bindgen_ty_47 = 1048576;
-pub const AWINDOW_FLAG_TURN_SCREEN_ON: _bindgen_ty_47 = 2097152;
-pub const AWINDOW_FLAG_DISMISS_KEYGUARD: _bindgen_ty_47 = 4194304;
-pub type _bindgen_ty_47 = ::std::os::raw::c_uint;
+pub const AWINDOW_FLAG_ALLOW_LOCK_WHILE_SCREEN_ON: _bindgen_ty_49 = 1;
+pub const AWINDOW_FLAG_DIM_BEHIND: _bindgen_ty_49 = 2;
+pub const AWINDOW_FLAG_BLUR_BEHIND: _bindgen_ty_49 = 4;
+pub const AWINDOW_FLAG_NOT_FOCUSABLE: _bindgen_ty_49 = 8;
+pub const AWINDOW_FLAG_NOT_TOUCHABLE: _bindgen_ty_49 = 16;
+pub const AWINDOW_FLAG_NOT_TOUCH_MODAL: _bindgen_ty_49 = 32;
+pub const AWINDOW_FLAG_TOUCHABLE_WHEN_WAKING: _bindgen_ty_49 = 64;
+pub const AWINDOW_FLAG_KEEP_SCREEN_ON: _bindgen_ty_49 = 128;
+pub const AWINDOW_FLAG_LAYOUT_IN_SCREEN: _bindgen_ty_49 = 256;
+pub const AWINDOW_FLAG_LAYOUT_NO_LIMITS: _bindgen_ty_49 = 512;
+pub const AWINDOW_FLAG_FULLSCREEN: _bindgen_ty_49 = 1024;
+pub const AWINDOW_FLAG_FORCE_NOT_FULLSCREEN: _bindgen_ty_49 = 2048;
+pub const AWINDOW_FLAG_DITHER: _bindgen_ty_49 = 4096;
+pub const AWINDOW_FLAG_SECURE: _bindgen_ty_49 = 8192;
+pub const AWINDOW_FLAG_SCALED: _bindgen_ty_49 = 16384;
+pub const AWINDOW_FLAG_IGNORE_CHEEK_PRESSES: _bindgen_ty_49 = 32768;
+pub const AWINDOW_FLAG_LAYOUT_INSET_DECOR: _bindgen_ty_49 = 65536;
+pub const AWINDOW_FLAG_ALT_FOCUSABLE_IM: _bindgen_ty_49 = 131072;
+pub const AWINDOW_FLAG_WATCH_OUTSIDE_TOUCH: _bindgen_ty_49 = 262144;
+pub const AWINDOW_FLAG_SHOW_WHEN_LOCKED: _bindgen_ty_49 = 524288;
+pub const AWINDOW_FLAG_SHOW_WALLPAPER: _bindgen_ty_49 = 1048576;
+pub const AWINDOW_FLAG_TURN_SCREEN_ON: _bindgen_ty_49 = 2097152;
+pub const AWINDOW_FLAG_DISMISS_KEYGUARD: _bindgen_ty_49 = 4194304;
+pub type _bindgen_ty_49 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct timespec {
@@ -16489,27 +16756,27 @@ fn bindgen_test_layout_user() {
         )
     );
 }
-pub const REG_GS: _bindgen_ty_48 = 0;
-pub const REG_FS: _bindgen_ty_48 = 1;
-pub const REG_ES: _bindgen_ty_48 = 2;
-pub const REG_DS: _bindgen_ty_48 = 3;
-pub const REG_EDI: _bindgen_ty_48 = 4;
-pub const REG_ESI: _bindgen_ty_48 = 5;
-pub const REG_EBP: _bindgen_ty_48 = 6;
-pub const REG_ESP: _bindgen_ty_48 = 7;
-pub const REG_EBX: _bindgen_ty_48 = 8;
-pub const REG_EDX: _bindgen_ty_48 = 9;
-pub const REG_ECX: _bindgen_ty_48 = 10;
-pub const REG_EAX: _bindgen_ty_48 = 11;
-pub const REG_TRAPNO: _bindgen_ty_48 = 12;
-pub const REG_ERR: _bindgen_ty_48 = 13;
-pub const REG_EIP: _bindgen_ty_48 = 14;
-pub const REG_CS: _bindgen_ty_48 = 15;
-pub const REG_EFL: _bindgen_ty_48 = 16;
-pub const REG_UESP: _bindgen_ty_48 = 17;
-pub const REG_SS: _bindgen_ty_48 = 18;
-pub const NGREG: _bindgen_ty_48 = 19;
-pub type _bindgen_ty_48 = ::std::os::raw::c_uint;
+pub const REG_GS: _bindgen_ty_50 = 0;
+pub const REG_FS: _bindgen_ty_50 = 1;
+pub const REG_ES: _bindgen_ty_50 = 2;
+pub const REG_DS: _bindgen_ty_50 = 3;
+pub const REG_EDI: _bindgen_ty_50 = 4;
+pub const REG_ESI: _bindgen_ty_50 = 5;
+pub const REG_EBP: _bindgen_ty_50 = 6;
+pub const REG_ESP: _bindgen_ty_50 = 7;
+pub const REG_EBX: _bindgen_ty_50 = 8;
+pub const REG_EDX: _bindgen_ty_50 = 9;
+pub const REG_ECX: _bindgen_ty_50 = 10;
+pub const REG_EAX: _bindgen_ty_50 = 11;
+pub const REG_TRAPNO: _bindgen_ty_50 = 12;
+pub const REG_ERR: _bindgen_ty_50 = 13;
+pub const REG_EIP: _bindgen_ty_50 = 14;
+pub const REG_CS: _bindgen_ty_50 = 15;
+pub const REG_EFL: _bindgen_ty_50 = 16;
+pub const REG_UESP: _bindgen_ty_50 = 17;
+pub const REG_SS: _bindgen_ty_50 = 18;
+pub const NGREG: _bindgen_ty_50 = 19;
+pub type _bindgen_ty_50 = ::std::os::raw::c_uint;
 pub type greg_t = ::std::os::raw::c_int;
 pub type gregset_t = [greg_t; 19usize];
 #[repr(C)]
@@ -17498,161 +17765,161 @@ extern "C" {
         __base: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
-pub const AAUDIO_DIRECTION_OUTPUT: _bindgen_ty_49 = 0;
-pub const AAUDIO_DIRECTION_INPUT: _bindgen_ty_49 = 1;
-pub type _bindgen_ty_49 = ::std::os::raw::c_uint;
+pub const AAUDIO_DIRECTION_OUTPUT: _bindgen_ty_51 = 0;
+pub const AAUDIO_DIRECTION_INPUT: _bindgen_ty_51 = 1;
+pub type _bindgen_ty_51 = ::std::os::raw::c_uint;
 pub type aaudio_direction_t = i32;
-pub const AAUDIO_FORMAT_INVALID: _bindgen_ty_50 = -1;
-pub const AAUDIO_FORMAT_UNSPECIFIED: _bindgen_ty_50 = 0;
-pub const AAUDIO_FORMAT_PCM_I16: _bindgen_ty_50 = 1;
-pub const AAUDIO_FORMAT_PCM_FLOAT: _bindgen_ty_50 = 2;
-pub const AAUDIO_FORMAT_PCM_I24_PACKED: _bindgen_ty_50 = 3;
-pub const AAUDIO_FORMAT_PCM_I32: _bindgen_ty_50 = 4;
-pub type _bindgen_ty_50 = ::std::os::raw::c_int;
+pub const AAUDIO_FORMAT_INVALID: _bindgen_ty_52 = -1;
+pub const AAUDIO_FORMAT_UNSPECIFIED: _bindgen_ty_52 = 0;
+pub const AAUDIO_FORMAT_PCM_I16: _bindgen_ty_52 = 1;
+pub const AAUDIO_FORMAT_PCM_FLOAT: _bindgen_ty_52 = 2;
+pub const AAUDIO_FORMAT_PCM_I24_PACKED: _bindgen_ty_52 = 3;
+pub const AAUDIO_FORMAT_PCM_I32: _bindgen_ty_52 = 4;
+pub type _bindgen_ty_52 = ::std::os::raw::c_int;
 pub type aaudio_format_t = i32;
-pub const AAUDIO_OK: _bindgen_ty_51 = 0;
-pub const AAUDIO_ERROR_BASE: _bindgen_ty_51 = -900;
-pub const AAUDIO_ERROR_DISCONNECTED: _bindgen_ty_51 = -899;
-pub const AAUDIO_ERROR_ILLEGAL_ARGUMENT: _bindgen_ty_51 = -898;
-pub const AAUDIO_ERROR_INTERNAL: _bindgen_ty_51 = -896;
-pub const AAUDIO_ERROR_INVALID_STATE: _bindgen_ty_51 = -895;
-pub const AAUDIO_ERROR_INVALID_HANDLE: _bindgen_ty_51 = -892;
-pub const AAUDIO_ERROR_UNIMPLEMENTED: _bindgen_ty_51 = -890;
-pub const AAUDIO_ERROR_UNAVAILABLE: _bindgen_ty_51 = -889;
-pub const AAUDIO_ERROR_NO_FREE_HANDLES: _bindgen_ty_51 = -888;
-pub const AAUDIO_ERROR_NO_MEMORY: _bindgen_ty_51 = -887;
-pub const AAUDIO_ERROR_NULL: _bindgen_ty_51 = -886;
-pub const AAUDIO_ERROR_TIMEOUT: _bindgen_ty_51 = -885;
-pub const AAUDIO_ERROR_WOULD_BLOCK: _bindgen_ty_51 = -884;
-pub const AAUDIO_ERROR_INVALID_FORMAT: _bindgen_ty_51 = -883;
-pub const AAUDIO_ERROR_OUT_OF_RANGE: _bindgen_ty_51 = -882;
-pub const AAUDIO_ERROR_NO_SERVICE: _bindgen_ty_51 = -881;
-pub const AAUDIO_ERROR_INVALID_RATE: _bindgen_ty_51 = -880;
-pub type _bindgen_ty_51 = ::std::os::raw::c_int;
+pub const AAUDIO_OK: _bindgen_ty_53 = 0;
+pub const AAUDIO_ERROR_BASE: _bindgen_ty_53 = -900;
+pub const AAUDIO_ERROR_DISCONNECTED: _bindgen_ty_53 = -899;
+pub const AAUDIO_ERROR_ILLEGAL_ARGUMENT: _bindgen_ty_53 = -898;
+pub const AAUDIO_ERROR_INTERNAL: _bindgen_ty_53 = -896;
+pub const AAUDIO_ERROR_INVALID_STATE: _bindgen_ty_53 = -895;
+pub const AAUDIO_ERROR_INVALID_HANDLE: _bindgen_ty_53 = -892;
+pub const AAUDIO_ERROR_UNIMPLEMENTED: _bindgen_ty_53 = -890;
+pub const AAUDIO_ERROR_UNAVAILABLE: _bindgen_ty_53 = -889;
+pub const AAUDIO_ERROR_NO_FREE_HANDLES: _bindgen_ty_53 = -888;
+pub const AAUDIO_ERROR_NO_MEMORY: _bindgen_ty_53 = -887;
+pub const AAUDIO_ERROR_NULL: _bindgen_ty_53 = -886;
+pub const AAUDIO_ERROR_TIMEOUT: _bindgen_ty_53 = -885;
+pub const AAUDIO_ERROR_WOULD_BLOCK: _bindgen_ty_53 = -884;
+pub const AAUDIO_ERROR_INVALID_FORMAT: _bindgen_ty_53 = -883;
+pub const AAUDIO_ERROR_OUT_OF_RANGE: _bindgen_ty_53 = -882;
+pub const AAUDIO_ERROR_NO_SERVICE: _bindgen_ty_53 = -881;
+pub const AAUDIO_ERROR_INVALID_RATE: _bindgen_ty_53 = -880;
+pub type _bindgen_ty_53 = ::std::os::raw::c_int;
 pub type aaudio_result_t = i32;
-pub const AAUDIO_STREAM_STATE_UNINITIALIZED: _bindgen_ty_52 = 0;
-pub const AAUDIO_STREAM_STATE_UNKNOWN: _bindgen_ty_52 = 1;
-pub const AAUDIO_STREAM_STATE_OPEN: _bindgen_ty_52 = 2;
-pub const AAUDIO_STREAM_STATE_STARTING: _bindgen_ty_52 = 3;
-pub const AAUDIO_STREAM_STATE_STARTED: _bindgen_ty_52 = 4;
-pub const AAUDIO_STREAM_STATE_PAUSING: _bindgen_ty_52 = 5;
-pub const AAUDIO_STREAM_STATE_PAUSED: _bindgen_ty_52 = 6;
-pub const AAUDIO_STREAM_STATE_FLUSHING: _bindgen_ty_52 = 7;
-pub const AAUDIO_STREAM_STATE_FLUSHED: _bindgen_ty_52 = 8;
-pub const AAUDIO_STREAM_STATE_STOPPING: _bindgen_ty_52 = 9;
-pub const AAUDIO_STREAM_STATE_STOPPED: _bindgen_ty_52 = 10;
-pub const AAUDIO_STREAM_STATE_CLOSING: _bindgen_ty_52 = 11;
-pub const AAUDIO_STREAM_STATE_CLOSED: _bindgen_ty_52 = 12;
-pub const AAUDIO_STREAM_STATE_DISCONNECTED: _bindgen_ty_52 = 13;
-pub type _bindgen_ty_52 = ::std::os::raw::c_uint;
-pub type aaudio_stream_state_t = i32;
-pub const AAUDIO_SHARING_MODE_EXCLUSIVE: _bindgen_ty_53 = 0;
-pub const AAUDIO_SHARING_MODE_SHARED: _bindgen_ty_53 = 1;
-pub type _bindgen_ty_53 = ::std::os::raw::c_uint;
-pub type aaudio_sharing_mode_t = i32;
-pub const AAUDIO_PERFORMANCE_MODE_NONE: _bindgen_ty_54 = 10;
-pub const AAUDIO_PERFORMANCE_MODE_POWER_SAVING: _bindgen_ty_54 = 11;
-pub const AAUDIO_PERFORMANCE_MODE_LOW_LATENCY: _bindgen_ty_54 = 12;
+pub const AAUDIO_STREAM_STATE_UNINITIALIZED: _bindgen_ty_54 = 0;
+pub const AAUDIO_STREAM_STATE_UNKNOWN: _bindgen_ty_54 = 1;
+pub const AAUDIO_STREAM_STATE_OPEN: _bindgen_ty_54 = 2;
+pub const AAUDIO_STREAM_STATE_STARTING: _bindgen_ty_54 = 3;
+pub const AAUDIO_STREAM_STATE_STARTED: _bindgen_ty_54 = 4;
+pub const AAUDIO_STREAM_STATE_PAUSING: _bindgen_ty_54 = 5;
+pub const AAUDIO_STREAM_STATE_PAUSED: _bindgen_ty_54 = 6;
+pub const AAUDIO_STREAM_STATE_FLUSHING: _bindgen_ty_54 = 7;
+pub const AAUDIO_STREAM_STATE_FLUSHED: _bindgen_ty_54 = 8;
+pub const AAUDIO_STREAM_STATE_STOPPING: _bindgen_ty_54 = 9;
+pub const AAUDIO_STREAM_STATE_STOPPED: _bindgen_ty_54 = 10;
+pub const AAUDIO_STREAM_STATE_CLOSING: _bindgen_ty_54 = 11;
+pub const AAUDIO_STREAM_STATE_CLOSED: _bindgen_ty_54 = 12;
+pub const AAUDIO_STREAM_STATE_DISCONNECTED: _bindgen_ty_54 = 13;
 pub type _bindgen_ty_54 = ::std::os::raw::c_uint;
-pub type aaudio_performance_mode_t = i32;
-pub const AAUDIO_USAGE_MEDIA: _bindgen_ty_55 = 1;
-pub const AAUDIO_USAGE_VOICE_COMMUNICATION: _bindgen_ty_55 = 2;
-pub const AAUDIO_USAGE_VOICE_COMMUNICATION_SIGNALLING: _bindgen_ty_55 = 3;
-pub const AAUDIO_USAGE_ALARM: _bindgen_ty_55 = 4;
-pub const AAUDIO_USAGE_NOTIFICATION: _bindgen_ty_55 = 5;
-pub const AAUDIO_USAGE_NOTIFICATION_RINGTONE: _bindgen_ty_55 = 6;
-pub const AAUDIO_USAGE_NOTIFICATION_EVENT: _bindgen_ty_55 = 10;
-pub const AAUDIO_USAGE_ASSISTANCE_ACCESSIBILITY: _bindgen_ty_55 = 11;
-pub const AAUDIO_USAGE_ASSISTANCE_NAVIGATION_GUIDANCE: _bindgen_ty_55 = 12;
-pub const AAUDIO_USAGE_ASSISTANCE_SONIFICATION: _bindgen_ty_55 = 13;
-pub const AAUDIO_USAGE_GAME: _bindgen_ty_55 = 14;
-pub const AAUDIO_USAGE_ASSISTANT: _bindgen_ty_55 = 16;
-pub const AAUDIO_SYSTEM_USAGE_EMERGENCY: _bindgen_ty_55 = 1000;
-pub const AAUDIO_SYSTEM_USAGE_SAFETY: _bindgen_ty_55 = 1001;
-pub const AAUDIO_SYSTEM_USAGE_VEHICLE_STATUS: _bindgen_ty_55 = 1002;
-pub const AAUDIO_SYSTEM_USAGE_ANNOUNCEMENT: _bindgen_ty_55 = 1003;
+pub type aaudio_stream_state_t = i32;
+pub const AAUDIO_SHARING_MODE_EXCLUSIVE: _bindgen_ty_55 = 0;
+pub const AAUDIO_SHARING_MODE_SHARED: _bindgen_ty_55 = 1;
 pub type _bindgen_ty_55 = ::std::os::raw::c_uint;
-pub type aaudio_usage_t = i32;
-pub const AAUDIO_CONTENT_TYPE_SPEECH: _bindgen_ty_56 = 1;
-pub const AAUDIO_CONTENT_TYPE_MUSIC: _bindgen_ty_56 = 2;
-pub const AAUDIO_CONTENT_TYPE_MOVIE: _bindgen_ty_56 = 3;
-pub const AAUDIO_CONTENT_TYPE_SONIFICATION: _bindgen_ty_56 = 4;
+pub type aaudio_sharing_mode_t = i32;
+pub const AAUDIO_PERFORMANCE_MODE_NONE: _bindgen_ty_56 = 10;
+pub const AAUDIO_PERFORMANCE_MODE_POWER_SAVING: _bindgen_ty_56 = 11;
+pub const AAUDIO_PERFORMANCE_MODE_LOW_LATENCY: _bindgen_ty_56 = 12;
 pub type _bindgen_ty_56 = ::std::os::raw::c_uint;
-pub type aaudio_content_type_t = i32;
-pub const AAUDIO_SPATIALIZATION_BEHAVIOR_AUTO: _bindgen_ty_57 = 1;
-pub const AAUDIO_SPATIALIZATION_BEHAVIOR_NEVER: _bindgen_ty_57 = 2;
+pub type aaudio_performance_mode_t = i32;
+pub const AAUDIO_USAGE_MEDIA: _bindgen_ty_57 = 1;
+pub const AAUDIO_USAGE_VOICE_COMMUNICATION: _bindgen_ty_57 = 2;
+pub const AAUDIO_USAGE_VOICE_COMMUNICATION_SIGNALLING: _bindgen_ty_57 = 3;
+pub const AAUDIO_USAGE_ALARM: _bindgen_ty_57 = 4;
+pub const AAUDIO_USAGE_NOTIFICATION: _bindgen_ty_57 = 5;
+pub const AAUDIO_USAGE_NOTIFICATION_RINGTONE: _bindgen_ty_57 = 6;
+pub const AAUDIO_USAGE_NOTIFICATION_EVENT: _bindgen_ty_57 = 10;
+pub const AAUDIO_USAGE_ASSISTANCE_ACCESSIBILITY: _bindgen_ty_57 = 11;
+pub const AAUDIO_USAGE_ASSISTANCE_NAVIGATION_GUIDANCE: _bindgen_ty_57 = 12;
+pub const AAUDIO_USAGE_ASSISTANCE_SONIFICATION: _bindgen_ty_57 = 13;
+pub const AAUDIO_USAGE_GAME: _bindgen_ty_57 = 14;
+pub const AAUDIO_USAGE_ASSISTANT: _bindgen_ty_57 = 16;
+pub const AAUDIO_SYSTEM_USAGE_EMERGENCY: _bindgen_ty_57 = 1000;
+pub const AAUDIO_SYSTEM_USAGE_SAFETY: _bindgen_ty_57 = 1001;
+pub const AAUDIO_SYSTEM_USAGE_VEHICLE_STATUS: _bindgen_ty_57 = 1002;
+pub const AAUDIO_SYSTEM_USAGE_ANNOUNCEMENT: _bindgen_ty_57 = 1003;
 pub type _bindgen_ty_57 = ::std::os::raw::c_uint;
-pub type aaudio_spatialization_behavior_t = i32;
-pub const AAUDIO_INPUT_PRESET_GENERIC: _bindgen_ty_58 = 1;
-pub const AAUDIO_INPUT_PRESET_CAMCORDER: _bindgen_ty_58 = 5;
-pub const AAUDIO_INPUT_PRESET_VOICE_RECOGNITION: _bindgen_ty_58 = 6;
-pub const AAUDIO_INPUT_PRESET_VOICE_COMMUNICATION: _bindgen_ty_58 = 7;
-pub const AAUDIO_INPUT_PRESET_UNPROCESSED: _bindgen_ty_58 = 9;
-pub const AAUDIO_INPUT_PRESET_VOICE_PERFORMANCE: _bindgen_ty_58 = 10;
+pub type aaudio_usage_t = i32;
+pub const AAUDIO_CONTENT_TYPE_SPEECH: _bindgen_ty_58 = 1;
+pub const AAUDIO_CONTENT_TYPE_MUSIC: _bindgen_ty_58 = 2;
+pub const AAUDIO_CONTENT_TYPE_MOVIE: _bindgen_ty_58 = 3;
+pub const AAUDIO_CONTENT_TYPE_SONIFICATION: _bindgen_ty_58 = 4;
 pub type _bindgen_ty_58 = ::std::os::raw::c_uint;
-pub type aaudio_input_preset_t = i32;
-pub const AAUDIO_ALLOW_CAPTURE_BY_ALL: _bindgen_ty_59 = 1;
-pub const AAUDIO_ALLOW_CAPTURE_BY_SYSTEM: _bindgen_ty_59 = 2;
-pub const AAUDIO_ALLOW_CAPTURE_BY_NONE: _bindgen_ty_59 = 3;
+pub type aaudio_content_type_t = i32;
+pub const AAUDIO_SPATIALIZATION_BEHAVIOR_AUTO: _bindgen_ty_59 = 1;
+pub const AAUDIO_SPATIALIZATION_BEHAVIOR_NEVER: _bindgen_ty_59 = 2;
 pub type _bindgen_ty_59 = ::std::os::raw::c_uint;
+pub type aaudio_spatialization_behavior_t = i32;
+pub const AAUDIO_INPUT_PRESET_GENERIC: _bindgen_ty_60 = 1;
+pub const AAUDIO_INPUT_PRESET_CAMCORDER: _bindgen_ty_60 = 5;
+pub const AAUDIO_INPUT_PRESET_VOICE_RECOGNITION: _bindgen_ty_60 = 6;
+pub const AAUDIO_INPUT_PRESET_VOICE_COMMUNICATION: _bindgen_ty_60 = 7;
+pub const AAUDIO_INPUT_PRESET_UNPROCESSED: _bindgen_ty_60 = 9;
+pub const AAUDIO_INPUT_PRESET_VOICE_PERFORMANCE: _bindgen_ty_60 = 10;
+pub type _bindgen_ty_60 = ::std::os::raw::c_uint;
+pub type aaudio_input_preset_t = i32;
+pub const AAUDIO_ALLOW_CAPTURE_BY_ALL: _bindgen_ty_61 = 1;
+pub const AAUDIO_ALLOW_CAPTURE_BY_SYSTEM: _bindgen_ty_61 = 2;
+pub const AAUDIO_ALLOW_CAPTURE_BY_NONE: _bindgen_ty_61 = 3;
+pub type _bindgen_ty_61 = ::std::os::raw::c_uint;
 pub type aaudio_allowed_capture_policy_t = i32;
-pub const AAUDIO_SESSION_ID_NONE: _bindgen_ty_60 = -1;
-pub const AAUDIO_SESSION_ID_ALLOCATE: _bindgen_ty_60 = 0;
-pub type _bindgen_ty_60 = ::std::os::raw::c_int;
+pub const AAUDIO_SESSION_ID_NONE: _bindgen_ty_62 = -1;
+pub const AAUDIO_SESSION_ID_ALLOCATE: _bindgen_ty_62 = 0;
+pub type _bindgen_ty_62 = ::std::os::raw::c_int;
 pub type aaudio_session_id_t = i32;
-pub const AAUDIO_CHANNEL_INVALID: _bindgen_ty_61 = -1;
-pub const AAUDIO_CHANNEL_FRONT_LEFT: _bindgen_ty_61 = 1;
-pub const AAUDIO_CHANNEL_FRONT_RIGHT: _bindgen_ty_61 = 2;
-pub const AAUDIO_CHANNEL_FRONT_CENTER: _bindgen_ty_61 = 4;
-pub const AAUDIO_CHANNEL_LOW_FREQUENCY: _bindgen_ty_61 = 8;
-pub const AAUDIO_CHANNEL_BACK_LEFT: _bindgen_ty_61 = 16;
-pub const AAUDIO_CHANNEL_BACK_RIGHT: _bindgen_ty_61 = 32;
-pub const AAUDIO_CHANNEL_FRONT_LEFT_OF_CENTER: _bindgen_ty_61 = 64;
-pub const AAUDIO_CHANNEL_FRONT_RIGHT_OF_CENTER: _bindgen_ty_61 = 128;
-pub const AAUDIO_CHANNEL_BACK_CENTER: _bindgen_ty_61 = 256;
-pub const AAUDIO_CHANNEL_SIDE_LEFT: _bindgen_ty_61 = 512;
-pub const AAUDIO_CHANNEL_SIDE_RIGHT: _bindgen_ty_61 = 1024;
-pub const AAUDIO_CHANNEL_TOP_CENTER: _bindgen_ty_61 = 2048;
-pub const AAUDIO_CHANNEL_TOP_FRONT_LEFT: _bindgen_ty_61 = 4096;
-pub const AAUDIO_CHANNEL_TOP_FRONT_CENTER: _bindgen_ty_61 = 8192;
-pub const AAUDIO_CHANNEL_TOP_FRONT_RIGHT: _bindgen_ty_61 = 16384;
-pub const AAUDIO_CHANNEL_TOP_BACK_LEFT: _bindgen_ty_61 = 32768;
-pub const AAUDIO_CHANNEL_TOP_BACK_CENTER: _bindgen_ty_61 = 65536;
-pub const AAUDIO_CHANNEL_TOP_BACK_RIGHT: _bindgen_ty_61 = 131072;
-pub const AAUDIO_CHANNEL_TOP_SIDE_LEFT: _bindgen_ty_61 = 262144;
-pub const AAUDIO_CHANNEL_TOP_SIDE_RIGHT: _bindgen_ty_61 = 524288;
-pub const AAUDIO_CHANNEL_BOTTOM_FRONT_LEFT: _bindgen_ty_61 = 1048576;
-pub const AAUDIO_CHANNEL_BOTTOM_FRONT_CENTER: _bindgen_ty_61 = 2097152;
-pub const AAUDIO_CHANNEL_BOTTOM_FRONT_RIGHT: _bindgen_ty_61 = 4194304;
-pub const AAUDIO_CHANNEL_LOW_FREQUENCY_2: _bindgen_ty_61 = 8388608;
-pub const AAUDIO_CHANNEL_FRONT_WIDE_LEFT: _bindgen_ty_61 = 16777216;
-pub const AAUDIO_CHANNEL_FRONT_WIDE_RIGHT: _bindgen_ty_61 = 33554432;
-pub const AAUDIO_CHANNEL_MONO: _bindgen_ty_61 = 1;
-pub const AAUDIO_CHANNEL_STEREO: _bindgen_ty_61 = 3;
-pub const AAUDIO_CHANNEL_2POINT1: _bindgen_ty_61 = 11;
-pub const AAUDIO_CHANNEL_TRI: _bindgen_ty_61 = 7;
-pub const AAUDIO_CHANNEL_TRI_BACK: _bindgen_ty_61 = 259;
-pub const AAUDIO_CHANNEL_3POINT1: _bindgen_ty_61 = 15;
-pub const AAUDIO_CHANNEL_2POINT0POINT2: _bindgen_ty_61 = 786435;
-pub const AAUDIO_CHANNEL_2POINT1POINT2: _bindgen_ty_61 = 786443;
-pub const AAUDIO_CHANNEL_3POINT0POINT2: _bindgen_ty_61 = 786439;
-pub const AAUDIO_CHANNEL_3POINT1POINT2: _bindgen_ty_61 = 786447;
-pub const AAUDIO_CHANNEL_QUAD: _bindgen_ty_61 = 51;
-pub const AAUDIO_CHANNEL_QUAD_SIDE: _bindgen_ty_61 = 1539;
-pub const AAUDIO_CHANNEL_SURROUND: _bindgen_ty_61 = 263;
-pub const AAUDIO_CHANNEL_PENTA: _bindgen_ty_61 = 55;
-pub const AAUDIO_CHANNEL_5POINT1: _bindgen_ty_61 = 63;
-pub const AAUDIO_CHANNEL_5POINT1_SIDE: _bindgen_ty_61 = 1551;
-pub const AAUDIO_CHANNEL_6POINT1: _bindgen_ty_61 = 319;
-pub const AAUDIO_CHANNEL_7POINT1: _bindgen_ty_61 = 1599;
-pub const AAUDIO_CHANNEL_5POINT1POINT2: _bindgen_ty_61 = 786495;
-pub const AAUDIO_CHANNEL_5POINT1POINT4: _bindgen_ty_61 = 184383;
-pub const AAUDIO_CHANNEL_7POINT1POINT2: _bindgen_ty_61 = 788031;
-pub const AAUDIO_CHANNEL_7POINT1POINT4: _bindgen_ty_61 = 185919;
-pub const AAUDIO_CHANNEL_9POINT1POINT4: _bindgen_ty_61 = 50517567;
-pub const AAUDIO_CHANNEL_9POINT1POINT6: _bindgen_ty_61 = 51303999;
-pub const AAUDIO_CHANNEL_FRONT_BACK: _bindgen_ty_61 = 260;
-pub type _bindgen_ty_61 = ::std::os::raw::c_int;
+pub const AAUDIO_CHANNEL_INVALID: _bindgen_ty_63 = -1;
+pub const AAUDIO_CHANNEL_FRONT_LEFT: _bindgen_ty_63 = 1;
+pub const AAUDIO_CHANNEL_FRONT_RIGHT: _bindgen_ty_63 = 2;
+pub const AAUDIO_CHANNEL_FRONT_CENTER: _bindgen_ty_63 = 4;
+pub const AAUDIO_CHANNEL_LOW_FREQUENCY: _bindgen_ty_63 = 8;
+pub const AAUDIO_CHANNEL_BACK_LEFT: _bindgen_ty_63 = 16;
+pub const AAUDIO_CHANNEL_BACK_RIGHT: _bindgen_ty_63 = 32;
+pub const AAUDIO_CHANNEL_FRONT_LEFT_OF_CENTER: _bindgen_ty_63 = 64;
+pub const AAUDIO_CHANNEL_FRONT_RIGHT_OF_CENTER: _bindgen_ty_63 = 128;
+pub const AAUDIO_CHANNEL_BACK_CENTER: _bindgen_ty_63 = 256;
+pub const AAUDIO_CHANNEL_SIDE_LEFT: _bindgen_ty_63 = 512;
+pub const AAUDIO_CHANNEL_SIDE_RIGHT: _bindgen_ty_63 = 1024;
+pub const AAUDIO_CHANNEL_TOP_CENTER: _bindgen_ty_63 = 2048;
+pub const AAUDIO_CHANNEL_TOP_FRONT_LEFT: _bindgen_ty_63 = 4096;
+pub const AAUDIO_CHANNEL_TOP_FRONT_CENTER: _bindgen_ty_63 = 8192;
+pub const AAUDIO_CHANNEL_TOP_FRONT_RIGHT: _bindgen_ty_63 = 16384;
+pub const AAUDIO_CHANNEL_TOP_BACK_LEFT: _bindgen_ty_63 = 32768;
+pub const AAUDIO_CHANNEL_TOP_BACK_CENTER: _bindgen_ty_63 = 65536;
+pub const AAUDIO_CHANNEL_TOP_BACK_RIGHT: _bindgen_ty_63 = 131072;
+pub const AAUDIO_CHANNEL_TOP_SIDE_LEFT: _bindgen_ty_63 = 262144;
+pub const AAUDIO_CHANNEL_TOP_SIDE_RIGHT: _bindgen_ty_63 = 524288;
+pub const AAUDIO_CHANNEL_BOTTOM_FRONT_LEFT: _bindgen_ty_63 = 1048576;
+pub const AAUDIO_CHANNEL_BOTTOM_FRONT_CENTER: _bindgen_ty_63 = 2097152;
+pub const AAUDIO_CHANNEL_BOTTOM_FRONT_RIGHT: _bindgen_ty_63 = 4194304;
+pub const AAUDIO_CHANNEL_LOW_FREQUENCY_2: _bindgen_ty_63 = 8388608;
+pub const AAUDIO_CHANNEL_FRONT_WIDE_LEFT: _bindgen_ty_63 = 16777216;
+pub const AAUDIO_CHANNEL_FRONT_WIDE_RIGHT: _bindgen_ty_63 = 33554432;
+pub const AAUDIO_CHANNEL_MONO: _bindgen_ty_63 = 1;
+pub const AAUDIO_CHANNEL_STEREO: _bindgen_ty_63 = 3;
+pub const AAUDIO_CHANNEL_2POINT1: _bindgen_ty_63 = 11;
+pub const AAUDIO_CHANNEL_TRI: _bindgen_ty_63 = 7;
+pub const AAUDIO_CHANNEL_TRI_BACK: _bindgen_ty_63 = 259;
+pub const AAUDIO_CHANNEL_3POINT1: _bindgen_ty_63 = 15;
+pub const AAUDIO_CHANNEL_2POINT0POINT2: _bindgen_ty_63 = 786435;
+pub const AAUDIO_CHANNEL_2POINT1POINT2: _bindgen_ty_63 = 786443;
+pub const AAUDIO_CHANNEL_3POINT0POINT2: _bindgen_ty_63 = 786439;
+pub const AAUDIO_CHANNEL_3POINT1POINT2: _bindgen_ty_63 = 786447;
+pub const AAUDIO_CHANNEL_QUAD: _bindgen_ty_63 = 51;
+pub const AAUDIO_CHANNEL_QUAD_SIDE: _bindgen_ty_63 = 1539;
+pub const AAUDIO_CHANNEL_SURROUND: _bindgen_ty_63 = 263;
+pub const AAUDIO_CHANNEL_PENTA: _bindgen_ty_63 = 55;
+pub const AAUDIO_CHANNEL_5POINT1: _bindgen_ty_63 = 63;
+pub const AAUDIO_CHANNEL_5POINT1_SIDE: _bindgen_ty_63 = 1551;
+pub const AAUDIO_CHANNEL_6POINT1: _bindgen_ty_63 = 319;
+pub const AAUDIO_CHANNEL_7POINT1: _bindgen_ty_63 = 1599;
+pub const AAUDIO_CHANNEL_5POINT1POINT2: _bindgen_ty_63 = 786495;
+pub const AAUDIO_CHANNEL_5POINT1POINT4: _bindgen_ty_63 = 184383;
+pub const AAUDIO_CHANNEL_7POINT1POINT2: _bindgen_ty_63 = 788031;
+pub const AAUDIO_CHANNEL_7POINT1POINT4: _bindgen_ty_63 = 185919;
+pub const AAUDIO_CHANNEL_9POINT1POINT4: _bindgen_ty_63 = 50517567;
+pub const AAUDIO_CHANNEL_9POINT1POINT6: _bindgen_ty_63 = 51303999;
+pub const AAUDIO_CHANNEL_FRONT_BACK: _bindgen_ty_63 = 260;
+pub type _bindgen_ty_63 = ::std::os::raw::c_int;
 pub type aaudio_channel_mask_t = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -17783,9 +18050,9 @@ extern "C" {
         privacySensitive: bool,
     );
 }
-pub const AAUDIO_CALLBACK_RESULT_CONTINUE: _bindgen_ty_62 = 0;
-pub const AAUDIO_CALLBACK_RESULT_STOP: _bindgen_ty_62 = 1;
-pub type _bindgen_ty_62 = ::std::os::raw::c_uint;
+pub const AAUDIO_CALLBACK_RESULT_CONTINUE: _bindgen_ty_64 = 0;
+pub const AAUDIO_CALLBACK_RESULT_STOP: _bindgen_ty_64 = 1;
+pub type _bindgen_ty_64 = ::std::os::raw::c_uint;
 pub type aaudio_data_callback_result_t = i32;
 pub type AAudioStream_dataCallback = ::std::option::Option<
     unsafe extern "C" fn(
@@ -18077,13 +18344,13 @@ pub struct AMidiInputPort {
 pub struct AMidiOutputPort {
     _unused: [u8; 0],
 }
-pub const AMIDI_OPCODE_DATA: _bindgen_ty_63 = 1;
-pub const AMIDI_OPCODE_FLUSH: _bindgen_ty_63 = 2;
-pub type _bindgen_ty_63 = ::std::os::raw::c_uint;
-pub const AMIDI_DEVICE_TYPE_USB: _bindgen_ty_64 = 1;
-pub const AMIDI_DEVICE_TYPE_VIRTUAL: _bindgen_ty_64 = 2;
-pub const AMIDI_DEVICE_TYPE_BLUETOOTH: _bindgen_ty_64 = 3;
-pub type _bindgen_ty_64 = ::std::os::raw::c_uint;
+pub const AMIDI_OPCODE_DATA: _bindgen_ty_65 = 1;
+pub const AMIDI_OPCODE_FLUSH: _bindgen_ty_65 = 2;
+pub type _bindgen_ty_65 = ::std::os::raw::c_uint;
+pub const AMIDI_DEVICE_TYPE_USB: _bindgen_ty_66 = 1;
+pub const AMIDI_DEVICE_TYPE_VIRTUAL: _bindgen_ty_66 = 2;
+pub const AMIDI_DEVICE_TYPE_BLUETOOTH: _bindgen_ty_66 = 3;
+pub type _bindgen_ty_66 = ::std::os::raw::c_uint;
 impl AMidiDevice_Protocol {
     pub const AMIDI_DEVICE_PROTOCOL_UMP_USE_MIDI_CI: AMidiDevice_Protocol = AMidiDevice_Protocol(0);
 }
@@ -21264,14 +21531,14 @@ pub use self::acamera_metadata_enum_acamera_automotive_lens_facing as acamera_me
 pub struct ACameraMetadata {
     _unused: [u8; 0],
 }
-pub const ACAMERA_TYPE_BYTE: _bindgen_ty_65 = 0;
-pub const ACAMERA_TYPE_INT32: _bindgen_ty_65 = 1;
-pub const ACAMERA_TYPE_FLOAT: _bindgen_ty_65 = 2;
-pub const ACAMERA_TYPE_INT64: _bindgen_ty_65 = 3;
-pub const ACAMERA_TYPE_DOUBLE: _bindgen_ty_65 = 4;
-pub const ACAMERA_TYPE_RATIONAL: _bindgen_ty_65 = 5;
-pub const ACAMERA_NUM_TYPES: _bindgen_ty_65 = 6;
-pub type _bindgen_ty_65 = ::std::os::raw::c_uint;
+pub const ACAMERA_TYPE_BYTE: _bindgen_ty_67 = 0;
+pub const ACAMERA_TYPE_INT32: _bindgen_ty_67 = 1;
+pub const ACAMERA_TYPE_FLOAT: _bindgen_ty_67 = 2;
+pub const ACAMERA_TYPE_INT64: _bindgen_ty_67 = 3;
+pub const ACAMERA_TYPE_DOUBLE: _bindgen_ty_67 = 4;
+pub const ACAMERA_TYPE_RATIONAL: _bindgen_ty_67 = 5;
+pub const ACAMERA_NUM_TYPES: _bindgen_ty_67 = 6;
+pub type _bindgen_ty_67 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ACameraMetadata_rational {
@@ -21913,9 +22180,9 @@ fn bindgen_test_layout_ACameraCaptureSession_stateCallbacks() {
         )
     );
 }
-pub const CAPTURE_FAILURE_REASON_FLUSHED: _bindgen_ty_66 = 0;
-pub const CAPTURE_FAILURE_REASON_ERROR: _bindgen_ty_66 = 1;
-pub type _bindgen_ty_66 = ::std::os::raw::c_uint;
+pub const CAPTURE_FAILURE_REASON_FLUSHED: _bindgen_ty_68 = 0;
+pub const CAPTURE_FAILURE_REASON_ERROR: _bindgen_ty_68 = 1;
+pub type _bindgen_ty_68 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ACameraCaptureFailure {
@@ -22142,8 +22409,8 @@ fn bindgen_test_layout_ACameraCaptureSession_captureCallbacks() {
         )
     );
 }
-pub const CAPTURE_SEQUENCE_ID_NONE: _bindgen_ty_67 = -1;
-pub type _bindgen_ty_67 = ::std::os::raw::c_int;
+pub const CAPTURE_SEQUENCE_ID_NONE: _bindgen_ty_69 = -1;
+pub type _bindgen_ty_69 = ::std::os::raw::c_int;
 extern "C" {
     pub fn ACameraCaptureSession_close(session: *mut ACameraCaptureSession);
 }
@@ -22712,12 +22979,12 @@ fn bindgen_test_layout_ACameraIdList() {
         )
     );
 }
-pub const ERROR_CAMERA_IN_USE: _bindgen_ty_68 = 1;
-pub const ERROR_MAX_CAMERAS_IN_USE: _bindgen_ty_68 = 2;
-pub const ERROR_CAMERA_DISABLED: _bindgen_ty_68 = 3;
-pub const ERROR_CAMERA_DEVICE: _bindgen_ty_68 = 4;
-pub const ERROR_CAMERA_SERVICE: _bindgen_ty_68 = 5;
-pub type _bindgen_ty_68 = ::std::os::raw::c_uint;
+pub const ERROR_CAMERA_IN_USE: _bindgen_ty_70 = 1;
+pub const ERROR_MAX_CAMERAS_IN_USE: _bindgen_ty_70 = 2;
+pub const ERROR_CAMERA_DISABLED: _bindgen_ty_70 = 3;
+pub const ERROR_CAMERA_DEVICE: _bindgen_ty_70 = 4;
+pub const ERROR_CAMERA_SERVICE: _bindgen_ty_70 = 5;
+pub type _bindgen_ty_70 = ::std::os::raw::c_uint;
 pub type ACameraDevice_StateCallback = ::std::option::Option<
     unsafe extern "C" fn(context: *mut ::std::os::raw::c_void, device: *mut ACameraDevice),
 >;
@@ -24160,14 +24427,14 @@ fn bindgen_test_layout_AMediaCodecBufferInfo() {
 pub struct AMediaCodecCryptoInfo {
     _unused: [u8; 0],
 }
-pub const AMEDIACODEC_BUFFER_FLAG_CODEC_CONFIG: _bindgen_ty_69 = 2;
-pub const AMEDIACODEC_BUFFER_FLAG_END_OF_STREAM: _bindgen_ty_69 = 4;
-pub const AMEDIACODEC_BUFFER_FLAG_PARTIAL_FRAME: _bindgen_ty_69 = 8;
-pub const AMEDIACODEC_CONFIGURE_FLAG_ENCODE: _bindgen_ty_69 = 1;
-pub const AMEDIACODEC_INFO_OUTPUT_BUFFERS_CHANGED: _bindgen_ty_69 = -3;
-pub const AMEDIACODEC_INFO_OUTPUT_FORMAT_CHANGED: _bindgen_ty_69 = -2;
-pub const AMEDIACODEC_INFO_TRY_AGAIN_LATER: _bindgen_ty_69 = -1;
-pub type _bindgen_ty_69 = ::std::os::raw::c_int;
+pub const AMEDIACODEC_BUFFER_FLAG_CODEC_CONFIG: _bindgen_ty_71 = 2;
+pub const AMEDIACODEC_BUFFER_FLAG_END_OF_STREAM: _bindgen_ty_71 = 4;
+pub const AMEDIACODEC_BUFFER_FLAG_PARTIAL_FRAME: _bindgen_ty_71 = 8;
+pub const AMEDIACODEC_CONFIGURE_FLAG_ENCODE: _bindgen_ty_71 = 1;
+pub const AMEDIACODEC_INFO_OUTPUT_BUFFERS_CHANGED: _bindgen_ty_71 = -3;
+pub const AMEDIACODEC_INFO_OUTPUT_FORMAT_CHANGED: _bindgen_ty_71 = -2;
+pub const AMEDIACODEC_INFO_TRY_AGAIN_LATER: _bindgen_ty_71 = -1;
+pub type _bindgen_ty_71 = ::std::os::raw::c_int;
 pub type AMediaCodecOnAsyncInputAvailable = ::std::option::Option<
     unsafe extern "C" fn(
         codec: *mut AMediaCodec,
@@ -25258,9 +25525,9 @@ extern "C" {
         arg1: *mut AMediaExtractor,
     ) -> *mut AMediaCodecCryptoInfo;
 }
-pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_SYNC: _bindgen_ty_70 = 1;
-pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_ENCRYPTED: _bindgen_ty_70 = 2;
-pub type _bindgen_ty_70 = ::std::os::raw::c_uint;
+pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_SYNC: _bindgen_ty_72 = 1;
+pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_ENCRYPTED: _bindgen_ty_72 = 2;
+pub type _bindgen_ty_72 = ::std::os::raw::c_uint;
 extern "C" {
     pub fn AMediaExtractor_getFileFormat(arg1: *mut AMediaExtractor) -> *mut AMediaFormat;
 }
