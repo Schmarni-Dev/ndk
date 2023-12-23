@@ -2,6 +2,7 @@
 
 - Move `MediaFormat` from `media::media_codec` to its own `media::media_format` module. (#442)
 - media_format: Expose `MediaFormat::copy()` and `MediaFormat::clear()` from API level 29. (#449)
+- **Breaking:** native_window: Remove redundant `TRANSFORM_` prefix from `NativeWindowTransform` variants. (#460)
 
 # 0.8.0 (2023-10-15)
 
