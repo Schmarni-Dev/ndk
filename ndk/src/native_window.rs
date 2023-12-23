@@ -141,9 +141,8 @@ impl NativeWindow {
     /// Set a transform that will be applied to future buffers posted to the window.
     #[cfg(feature = "api-level-26")]
     pub fn set_buffers_transform(&self, transform: NativeWindowTransform) -> io::Result<()> {
-        let status = unsafe {
-            ffi::ANativeWindow_setBuffersTransform(self.ptr.as_ptr(), transform.bits() as i32)
-        };
+        let status =
+            unsafe { ffi::ANativeWindow_setBuffersTransform(self.ptr.as_ptr(), transform.bits()) };
         status_to_io_result(status)
     }
 
@@ -409,7 +408,7 @@ bitflags::bitflags! {
     /// of those basic transforms.
     #[derive(Clone, Copy, Debug, Hash, PartialEq, Eq)]
     #[doc(alias = "ANativeWindowTransform")]
-    pub struct NativeWindowTransform : u32 {
+    pub struct NativeWindowTransform : i32 {
         #[doc(alias = "ANATIVEWINDOW_TRANSFORM_IDENTITY")]
         const IDENTITY = ffi::ANativeWindowTransform::ANATIVEWINDOW_TRANSFORM_IDENTITY.0;
         #[doc(alias = "ANATIVEWINDOW_TRANSFORM_MIRROR_HORIZONTAL")]
