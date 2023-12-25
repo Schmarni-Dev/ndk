@@ -47,12 +47,20 @@ pub enum Source {
     Any = ffi::AINPUT_SOURCE_ANY,
 }
 
+impl Source {
+    pub fn class(self) -> SourceClass {
+        let class = u32::from(self) & ffi::AINPUT_SOURCE_CLASS_MASK;
+        // TODO: Don't use None
+        class.try_into().unwrap_or(SourceClass::None)
+    }
+}
+
 /// An enum representing the class of an [`InputEvent`] source.
 ///
 /// See [the NDK docs](https://developer.android.com/ndk/reference/group/input#anonymous-enum-35)
 #[derive(Debug, Clone, Copy, PartialEq, Eq, TryFromPrimitive, IntoPrimitive)]
 #[repr(u32)]
-enum Class {
+pub enum SourceClass {
     None = ffi::AINPUT_SOURCE_CLASS_NONE,
     Button = ffi::AINPUT_SOURCE_CLASS_BUTTON,
     Pointer = ffi::AINPUT_SOURCE_CLASS_POINTER,
