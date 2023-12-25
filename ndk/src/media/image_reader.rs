@@ -109,7 +109,7 @@ impl ImageReader {
                 width,
                 height,
                 format as i32,
-                usage.0 .0,
+                usage.bits(),
                 max_images,
                 res,
             )

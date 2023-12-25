@@ -2,6 +2,7 @@
 
 - Move `MediaFormat` from `media::media_codec` to its own `media::media_format` module. (#442)
 - media_format: Expose `MediaFormat::copy()` and `MediaFormat::clear()` from API level 29. (#449)
+- **Breaking:** hardware_buffer: Convert `HardwareBufferUsage` to `bitflags`. (#461)
 
 # 0.8.0 (2023-10-15)
 
