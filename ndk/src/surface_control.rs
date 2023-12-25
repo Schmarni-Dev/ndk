@@ -15,6 +15,8 @@ use std::{
     ptr::NonNull,
 };
 
+#[cfg(feature = "api-level-34")]
+use jni_sys::{jobject, JNIEnv};
 use num_enum::{IntoPrimitive, TryFromPrimitive};
 
 #[cfg(doc)]
@@ -83,6 +85,20 @@ impl SurfaceControl {
         let s = NonNull::new(ptr)?;
         Some(unsafe { Self::from_ptr(s) })
     }
+
+    /// Return the [`SurfaceControl`] wrapped by a [Java `SurfaceControl`] object.
+    ///
+    /// The caller takes ownership of the returned ASurfaceControl returned and must
+    /// release it * using ASurfaceControl_release.
+    ///
+    /// surfaceControlObj must be a non-null instance of android.view.SurfaceControl
+    /// and isValid() must be true.
+    #[cfg(feature = "api-level-34")]
+    #[doc(alias = "ASurfaceControl_fromJava")]
+    pub unsafe fn from_java(env: *mut JNIEnv, surface_control_obj: jobject) -> Self {
+        let inner = unsafe { ffi::ASurfaceControl_fromJava(env, surface_control_obj) };
+        unsafe { Self::from_ptr(NonNull::new(inner).expect("C bindings have _Nonnull annotation")) }
+    }
 }
 
 impl Drop for SurfaceControl {
@@ -112,6 +128,14 @@ pub struct SurfaceTransaction {
 }
 
 impl SurfaceTransaction {
+    /// Assumes ownership of `ptr`
+    ///
+    /// # Safety
+    /// `ptr` must be a valid pointer to an Android [`ffi::ASurfaceControl`].
+    pub unsafe fn from_ptr(ptr: NonNull<ffi::ASurfaceTransaction>) -> Self {
+        Self { ptr }
+    }
+
     pub fn ptr(&self) -> NonNull<ffi::ASurfaceTransaction> {
         self.ptr
     }
@@ -119,6 +143,21 @@ impl SurfaceTransaction {
     #[doc(alias = "ASurfaceTransaction_create")]
     pub fn new() -> Option<Self> {
         NonNull::new(unsafe { ffi::ASurfaceTransaction_create() }).map(|ptr| Self { ptr })
+    }
+
+    /// Return the [`SurfaceTransaction`] wrapped by a [Java Transaction object].
+    ///
+    /// The returned ASurfaceTransaction is still owned by the [Java `Transaction` object] is only
+    /// valid while the Java Transaction object is alive. In particular, the returned transaction
+    /// must NOT be deleted with ASurfaceTransaction_delete.
+    ///
+    /// transactionObj must be a non-null instance of
+    /// android.view.SurfaceControl.Transaction and close() must not already be called.
+    #[cfg(feature = "api-level-34")]
+    #[doc(alias = "ASurfaceTransaction_fromJava")]
+    pub unsafe fn from_java(env: *mut JNIEnv, transaction_obj: jobject) -> Self {
+        let inner = unsafe { ffi::ASurfaceTransaction_fromJava(env, transaction_obj) };
+        unsafe { Self::from_ptr(NonNull::new(inner).expect("C bindings have _Nonnull annotation")) }
     }
 
     /// Applies the updates accumulated in this transaction.
