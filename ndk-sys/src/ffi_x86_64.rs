@@ -33,12 +33,6 @@ impl<T> ::std::fmt::Debug for __IncompleteArrayField<T> {
 pub const __BIONIC__: u32 = 1;
 pub const __WORDSIZE: u32 = 64;
 pub const __bos_level: u32 = 0;
-pub const __ANDROID_NDK__: u32 = 1;
-pub const __NDK_MAJOR__: u32 = 26;
-pub const __NDK_MINOR__: u32 = 1;
-pub const __NDK_BETA__: u32 = 0;
-pub const __NDK_BUILD__: u32 = 10909125;
-pub const __NDK_CANARY__: u32 = 0;
 pub const __ANDROID_API_FUTURE__: u32 = 10000;
 pub const __ANDROID_API__: u32 = 10000;
 pub const __ANDROID_API_G__: u32 = 9;
@@ -331,7 +325,6 @@ pub const O_SYNC: u32 = 1052672;
 pub const O_PATH: u32 = 2097152;
 pub const __O_TMPFILE: u32 = 4194304;
 pub const O_TMPFILE: u32 = 4259840;
-pub const O_TMPFILE_MASK: u32 = 4259904;
 pub const O_NDELAY: u32 = 2048;
 pub const F_DUPFD: u32 = 0;
 pub const F_GETFD: u32 = 1;
@@ -456,6 +449,8 @@ pub const SO_BUF_LOCK: u32 = 72;
 pub const SO_RESERVE_MEM: u32 = 73;
 pub const SO_TXREHASH: u32 = 74;
 pub const SO_RCVMARK: u32 = 75;
+pub const SO_PASSPIDFD: u32 = 76;
+pub const SO_PEERPIDFD: u32 = 77;
 pub const SO_TIMESTAMP: u32 = 29;
 pub const SO_TIMESTAMPNS: u32 = 35;
 pub const SO_TIMESTAMPING: u32 = 37;
@@ -788,10 +783,33 @@ pub const M_CACHE_SIZE_MAX: i32 = -201;
 pub const M_TSDS_COUNT_MAX: i32 = -202;
 pub const M_BIONIC_ZERO_INIT: i32 = -203;
 pub const M_BIONIC_SET_HEAP_TAGGING_LEVEL: i32 = -204;
+pub const M_LOG_STATS: i32 = -205;
 pub const EXIT_FAILURE: u32 = 1;
 pub const EXIT_SUCCESS: u32 = 0;
 pub const RAND_MAX: u32 = 2147483647;
 pub const __NNAPI_FL5_MIN_ANDROID_API__: u32 = 31;
+pub const ITIMER_REAL: u32 = 0;
+pub const ITIMER_VIRTUAL: u32 = 1;
+pub const ITIMER_PROF: u32 = 2;
+pub const CLOCK_REALTIME: u32 = 0;
+pub const CLOCK_MONOTONIC: u32 = 1;
+pub const CLOCK_PROCESS_CPUTIME_ID: u32 = 2;
+pub const CLOCK_THREAD_CPUTIME_ID: u32 = 3;
+pub const CLOCK_MONOTONIC_RAW: u32 = 4;
+pub const CLOCK_REALTIME_COARSE: u32 = 5;
+pub const CLOCK_MONOTONIC_COARSE: u32 = 6;
+pub const CLOCK_BOOTTIME: u32 = 7;
+pub const CLOCK_REALTIME_ALARM: u32 = 8;
+pub const CLOCK_BOOTTIME_ALARM: u32 = 9;
+pub const CLOCK_SGI_CYCLE: u32 = 10;
+pub const CLOCK_TAI: u32 = 11;
+pub const MAX_CLOCKS: u32 = 16;
+pub const CLOCKS_MASK: u32 = 1;
+pub const CLOCKS_MONO: u32 = 1;
+pub const TIMER_ABSTIME: u32 = 1;
+pub const FP_XSTATE_MAGIC1: u32 = 1179670611;
+pub const FP_XSTATE_MAGIC2: u32 = 1179670597;
+pub const X86_FXSR_MAGIC: u32 = 0;
 pub const NR_OPEN: u32 = 1024;
 pub const NGROUPS_MAX: u32 = 65536;
 pub const ARG_MAX: u32 = 131072;
@@ -963,78 +981,6 @@ pub const LOGIN_NAME_MAX: u32 = 256;
 pub const TTY_NAME_MAX: u32 = 32;
 pub const PTHREAD_DESTRUCTOR_ITERATIONS: u32 = 4;
 pub const PTHREAD_KEYS_MAX: u32 = 128;
-pub const FP_INFINITE: u32 = 1;
-pub const FP_NAN: u32 = 2;
-pub const FP_NORMAL: u32 = 4;
-pub const FP_SUBNORMAL: u32 = 8;
-pub const FP_ZERO: u32 = 16;
-pub const FP_ILOGB0: i32 = -2147483647;
-pub const FP_ILOGBNAN: u32 = 2147483647;
-pub const MATH_ERRNO: u32 = 1;
-pub const MATH_ERREXCEPT: u32 = 2;
-pub const math_errhandling: u32 = 2;
-pub const M_E: f64 = 2.718281828459045;
-pub const M_LOG2E: f64 = 1.4426950408889634;
-pub const M_LOG10E: f64 = 0.4342944819032518;
-pub const M_LN2: f64 = 0.6931471805599453;
-pub const M_LN10: f64 = 2.302585092994046;
-pub const M_PI: f64 = 3.141592653589793;
-pub const M_PI_2: f64 = 1.5707963267948966;
-pub const M_PI_4: f64 = 0.7853981633974483;
-pub const M_1_PI: f64 = 0.3183098861837907;
-pub const M_2_PI: f64 = 0.6366197723675814;
-pub const M_2_SQRTPI: f64 = 1.1283791670955126;
-pub const M_SQRT2: f64 = 1.4142135623730951;
-pub const M_SQRT1_2: f64 = 0.7071067811865476;
-pub const ASENSOR_FIFO_COUNT_INVALID: i32 = -1;
-pub const ASENSOR_DELAY_INVALID: i32 = -2147483648;
-pub const ASENSOR_INVALID: i32 = -1;
-pub const ASENSOR_STANDARD_GRAVITY: f64 = 9.80665;
-pub const ASENSOR_MAGNETIC_FIELD_EARTH_MAX: f64 = 60.0;
-pub const ASENSOR_MAGNETIC_FIELD_EARTH_MIN: f64 = 30.0;
-pub const _IOC_NRBITS: u32 = 8;
-pub const _IOC_TYPEBITS: u32 = 8;
-pub const _IOC_SIZEBITS: u32 = 14;
-pub const _IOC_DIRBITS: u32 = 2;
-pub const _IOC_NRMASK: u32 = 255;
-pub const _IOC_TYPEMASK: u32 = 255;
-pub const _IOC_SIZEMASK: u32 = 16383;
-pub const _IOC_DIRMASK: u32 = 3;
-pub const _IOC_NRSHIFT: u32 = 0;
-pub const _IOC_TYPESHIFT: u32 = 8;
-pub const _IOC_SIZESHIFT: u32 = 16;
-pub const _IOC_DIRSHIFT: u32 = 30;
-pub const _IOC_NONE: u32 = 0;
-pub const _IOC_WRITE: u32 = 1;
-pub const _IOC_READ: u32 = 2;
-pub const IOC_IN: u32 = 1073741824;
-pub const IOC_OUT: u32 = 2147483648;
-pub const IOC_INOUT: u32 = 3221225472;
-pub const IOCSIZE_MASK: u32 = 1073676288;
-pub const IOCSIZE_SHIFT: u32 = 16;
-pub const SYNC_IOC_MAGIC: u8 = 62u8;
-pub const ITIMER_REAL: u32 = 0;
-pub const ITIMER_VIRTUAL: u32 = 1;
-pub const ITIMER_PROF: u32 = 2;
-pub const CLOCK_REALTIME: u32 = 0;
-pub const CLOCK_MONOTONIC: u32 = 1;
-pub const CLOCK_PROCESS_CPUTIME_ID: u32 = 2;
-pub const CLOCK_THREAD_CPUTIME_ID: u32 = 3;
-pub const CLOCK_MONOTONIC_RAW: u32 = 4;
-pub const CLOCK_REALTIME_COARSE: u32 = 5;
-pub const CLOCK_MONOTONIC_COARSE: u32 = 6;
-pub const CLOCK_BOOTTIME: u32 = 7;
-pub const CLOCK_REALTIME_ALARM: u32 = 8;
-pub const CLOCK_BOOTTIME_ALARM: u32 = 9;
-pub const CLOCK_SGI_CYCLE: u32 = 10;
-pub const CLOCK_TAI: u32 = 11;
-pub const MAX_CLOCKS: u32 = 16;
-pub const CLOCKS_MASK: u32 = 1;
-pub const CLOCKS_MONO: u32 = 1;
-pub const TIMER_ABSTIME: u32 = 1;
-pub const FP_XSTATE_MAGIC1: u32 = 1179670611;
-pub const FP_XSTATE_MAGIC2: u32 = 1179670597;
-pub const X86_FXSR_MAGIC: u32 = 0;
 pub const _KERNEL_NSIG: u32 = 32;
 pub const SIGHUP: u32 = 1;
 pub const SIGINT: u32 = 2;
@@ -1136,7 +1082,8 @@ pub const SEGV_ADIDERR: u32 = 6;
 pub const SEGV_ADIPERR: u32 = 7;
 pub const SEGV_MTEAERR: u32 = 8;
 pub const SEGV_MTESERR: u32 = 9;
-pub const NSIGSEGV: u32 = 9;
+pub const SEGV_CPERR: u32 = 10;
+pub const NSIGSEGV: u32 = 10;
 pub const BUS_ADRALN: u32 = 1;
 pub const BUS_ADRERR: u32 = 2;
 pub const BUS_OBJERR: u32 = 3;
@@ -1185,6 +1132,236 @@ pub const NSIG: u32 = 65;
 pub const PAGE_SIZE: u32 = 4096;
 pub const PAGE_MASK: i32 = -4096;
 pub const FD_SETSIZE: u32 = 1024;
+pub const F_ULOCK: u32 = 0;
+pub const F_LOCK: u32 = 1;
+pub const F_TLOCK: u32 = 2;
+pub const F_TEST: u32 = 3;
+pub const _SC_ARG_MAX: u32 = 0;
+pub const _SC_BC_BASE_MAX: u32 = 1;
+pub const _SC_BC_DIM_MAX: u32 = 2;
+pub const _SC_BC_SCALE_MAX: u32 = 3;
+pub const _SC_BC_STRING_MAX: u32 = 4;
+pub const _SC_CHILD_MAX: u32 = 5;
+pub const _SC_CLK_TCK: u32 = 6;
+pub const _SC_COLL_WEIGHTS_MAX: u32 = 7;
+pub const _SC_EXPR_NEST_MAX: u32 = 8;
+pub const _SC_LINE_MAX: u32 = 9;
+pub const _SC_NGROUPS_MAX: u32 = 10;
+pub const _SC_OPEN_MAX: u32 = 11;
+pub const _SC_PASS_MAX: u32 = 12;
+pub const _SC_2_C_BIND: u32 = 13;
+pub const _SC_2_C_DEV: u32 = 14;
+pub const _SC_2_C_VERSION: u32 = 15;
+pub const _SC_2_CHAR_TERM: u32 = 16;
+pub const _SC_2_FORT_DEV: u32 = 17;
+pub const _SC_2_FORT_RUN: u32 = 18;
+pub const _SC_2_LOCALEDEF: u32 = 19;
+pub const _SC_2_SW_DEV: u32 = 20;
+pub const _SC_2_UPE: u32 = 21;
+pub const _SC_2_VERSION: u32 = 22;
+pub const _SC_JOB_CONTROL: u32 = 23;
+pub const _SC_SAVED_IDS: u32 = 24;
+pub const _SC_VERSION: u32 = 25;
+pub const _SC_RE_DUP_MAX: u32 = 26;
+pub const _SC_STREAM_MAX: u32 = 27;
+pub const _SC_TZNAME_MAX: u32 = 28;
+pub const _SC_XOPEN_CRYPT: u32 = 29;
+pub const _SC_XOPEN_ENH_I18N: u32 = 30;
+pub const _SC_XOPEN_SHM: u32 = 31;
+pub const _SC_XOPEN_VERSION: u32 = 32;
+pub const _SC_XOPEN_XCU_VERSION: u32 = 33;
+pub const _SC_XOPEN_REALTIME: u32 = 34;
+pub const _SC_XOPEN_REALTIME_THREADS: u32 = 35;
+pub const _SC_XOPEN_LEGACY: u32 = 36;
+pub const _SC_ATEXIT_MAX: u32 = 37;
+pub const _SC_IOV_MAX: u32 = 38;
+pub const _SC_UIO_MAXIOV: u32 = 38;
+pub const _SC_PAGESIZE: u32 = 39;
+pub const _SC_PAGE_SIZE: u32 = 40;
+pub const _SC_XOPEN_UNIX: u32 = 41;
+pub const _SC_XBS5_ILP32_OFF32: u32 = 42;
+pub const _SC_XBS5_ILP32_OFFBIG: u32 = 43;
+pub const _SC_XBS5_LP64_OFF64: u32 = 44;
+pub const _SC_XBS5_LPBIG_OFFBIG: u32 = 45;
+pub const _SC_AIO_LISTIO_MAX: u32 = 46;
+pub const _SC_AIO_MAX: u32 = 47;
+pub const _SC_AIO_PRIO_DELTA_MAX: u32 = 48;
+pub const _SC_DELAYTIMER_MAX: u32 = 49;
+pub const _SC_MQ_OPEN_MAX: u32 = 50;
+pub const _SC_MQ_PRIO_MAX: u32 = 51;
+pub const _SC_RTSIG_MAX: u32 = 52;
+pub const _SC_SEM_NSEMS_MAX: u32 = 53;
+pub const _SC_SEM_VALUE_MAX: u32 = 54;
+pub const _SC_SIGQUEUE_MAX: u32 = 55;
+pub const _SC_TIMER_MAX: u32 = 56;
+pub const _SC_ASYNCHRONOUS_IO: u32 = 57;
+pub const _SC_FSYNC: u32 = 58;
+pub const _SC_MAPPED_FILES: u32 = 59;
+pub const _SC_MEMLOCK: u32 = 60;
+pub const _SC_MEMLOCK_RANGE: u32 = 61;
+pub const _SC_MEMORY_PROTECTION: u32 = 62;
+pub const _SC_MESSAGE_PASSING: u32 = 63;
+pub const _SC_PRIORITIZED_IO: u32 = 64;
+pub const _SC_PRIORITY_SCHEDULING: u32 = 65;
+pub const _SC_REALTIME_SIGNALS: u32 = 66;
+pub const _SC_SEMAPHORES: u32 = 67;
+pub const _SC_SHARED_MEMORY_OBJECTS: u32 = 68;
+pub const _SC_SYNCHRONIZED_IO: u32 = 69;
+pub const _SC_TIMERS: u32 = 70;
+pub const _SC_GETGR_R_SIZE_MAX: u32 = 71;
+pub const _SC_GETPW_R_SIZE_MAX: u32 = 72;
+pub const _SC_LOGIN_NAME_MAX: u32 = 73;
+pub const _SC_THREAD_DESTRUCTOR_ITERATIONS: u32 = 74;
+pub const _SC_THREAD_KEYS_MAX: u32 = 75;
+pub const _SC_THREAD_STACK_MIN: u32 = 76;
+pub const _SC_THREAD_THREADS_MAX: u32 = 77;
+pub const _SC_TTY_NAME_MAX: u32 = 78;
+pub const _SC_THREADS: u32 = 79;
+pub const _SC_THREAD_ATTR_STACKADDR: u32 = 80;
+pub const _SC_THREAD_ATTR_STACKSIZE: u32 = 81;
+pub const _SC_THREAD_PRIORITY_SCHEDULING: u32 = 82;
+pub const _SC_THREAD_PRIO_INHERIT: u32 = 83;
+pub const _SC_THREAD_PRIO_PROTECT: u32 = 84;
+pub const _SC_THREAD_SAFE_FUNCTIONS: u32 = 85;
+pub const _SC_NPROCESSORS_CONF: u32 = 96;
+pub const _SC_NPROCESSORS_ONLN: u32 = 97;
+pub const _SC_PHYS_PAGES: u32 = 98;
+pub const _SC_AVPHYS_PAGES: u32 = 99;
+pub const _SC_MONOTONIC_CLOCK: u32 = 100;
+pub const _SC_2_PBS: u32 = 101;
+pub const _SC_2_PBS_ACCOUNTING: u32 = 102;
+pub const _SC_2_PBS_CHECKPOINT: u32 = 103;
+pub const _SC_2_PBS_LOCATE: u32 = 104;
+pub const _SC_2_PBS_MESSAGE: u32 = 105;
+pub const _SC_2_PBS_TRACK: u32 = 106;
+pub const _SC_ADVISORY_INFO: u32 = 107;
+pub const _SC_BARRIERS: u32 = 108;
+pub const _SC_CLOCK_SELECTION: u32 = 109;
+pub const _SC_CPUTIME: u32 = 110;
+pub const _SC_HOST_NAME_MAX: u32 = 111;
+pub const _SC_IPV6: u32 = 112;
+pub const _SC_RAW_SOCKETS: u32 = 113;
+pub const _SC_READER_WRITER_LOCKS: u32 = 114;
+pub const _SC_REGEXP: u32 = 115;
+pub const _SC_SHELL: u32 = 116;
+pub const _SC_SPAWN: u32 = 117;
+pub const _SC_SPIN_LOCKS: u32 = 118;
+pub const _SC_SPORADIC_SERVER: u32 = 119;
+pub const _SC_SS_REPL_MAX: u32 = 120;
+pub const _SC_SYMLOOP_MAX: u32 = 121;
+pub const _SC_THREAD_CPUTIME: u32 = 122;
+pub const _SC_THREAD_PROCESS_SHARED: u32 = 123;
+pub const _SC_THREAD_ROBUST_PRIO_INHERIT: u32 = 124;
+pub const _SC_THREAD_ROBUST_PRIO_PROTECT: u32 = 125;
+pub const _SC_THREAD_SPORADIC_SERVER: u32 = 126;
+pub const _SC_TIMEOUTS: u32 = 127;
+pub const _SC_TRACE: u32 = 128;
+pub const _SC_TRACE_EVENT_FILTER: u32 = 129;
+pub const _SC_TRACE_EVENT_NAME_MAX: u32 = 130;
+pub const _SC_TRACE_INHERIT: u32 = 131;
+pub const _SC_TRACE_LOG: u32 = 132;
+pub const _SC_TRACE_NAME_MAX: u32 = 133;
+pub const _SC_TRACE_SYS_MAX: u32 = 134;
+pub const _SC_TRACE_USER_EVENT_MAX: u32 = 135;
+pub const _SC_TYPED_MEMORY_OBJECTS: u32 = 136;
+pub const _SC_V7_ILP32_OFF32: u32 = 137;
+pub const _SC_V7_ILP32_OFFBIG: u32 = 138;
+pub const _SC_V7_LP64_OFF64: u32 = 139;
+pub const _SC_V7_LPBIG_OFFBIG: u32 = 140;
+pub const _SC_XOPEN_STREAMS: u32 = 141;
+pub const _SC_XOPEN_UUCP: u32 = 142;
+pub const _SC_LEVEL1_ICACHE_SIZE: u32 = 143;
+pub const _SC_LEVEL1_ICACHE_ASSOC: u32 = 144;
+pub const _SC_LEVEL1_ICACHE_LINESIZE: u32 = 145;
+pub const _SC_LEVEL1_DCACHE_SIZE: u32 = 146;
+pub const _SC_LEVEL1_DCACHE_ASSOC: u32 = 147;
+pub const _SC_LEVEL1_DCACHE_LINESIZE: u32 = 148;
+pub const _SC_LEVEL2_CACHE_SIZE: u32 = 149;
+pub const _SC_LEVEL2_CACHE_ASSOC: u32 = 150;
+pub const _SC_LEVEL2_CACHE_LINESIZE: u32 = 151;
+pub const _SC_LEVEL3_CACHE_SIZE: u32 = 152;
+pub const _SC_LEVEL3_CACHE_ASSOC: u32 = 153;
+pub const _SC_LEVEL3_CACHE_LINESIZE: u32 = 154;
+pub const _SC_LEVEL4_CACHE_SIZE: u32 = 155;
+pub const _SC_LEVEL4_CACHE_ASSOC: u32 = 156;
+pub const _SC_LEVEL4_CACHE_LINESIZE: u32 = 157;
+pub const STDIN_FILENO: u32 = 0;
+pub const STDOUT_FILENO: u32 = 1;
+pub const STDERR_FILENO: u32 = 2;
+pub const F_OK: u32 = 0;
+pub const X_OK: u32 = 1;
+pub const W_OK: u32 = 2;
+pub const R_OK: u32 = 4;
+pub const _PC_FILESIZEBITS: u32 = 0;
+pub const _PC_LINK_MAX: u32 = 1;
+pub const _PC_MAX_CANON: u32 = 2;
+pub const _PC_MAX_INPUT: u32 = 3;
+pub const _PC_NAME_MAX: u32 = 4;
+pub const _PC_PATH_MAX: u32 = 5;
+pub const _PC_PIPE_BUF: u32 = 6;
+pub const _PC_2_SYMLINKS: u32 = 7;
+pub const _PC_ALLOC_SIZE_MIN: u32 = 8;
+pub const _PC_REC_INCR_XFER_SIZE: u32 = 9;
+pub const _PC_REC_MAX_XFER_SIZE: u32 = 10;
+pub const _PC_REC_MIN_XFER_SIZE: u32 = 11;
+pub const _PC_REC_XFER_ALIGN: u32 = 12;
+pub const _PC_SYMLINK_MAX: u32 = 13;
+pub const _PC_CHOWN_RESTRICTED: u32 = 14;
+pub const _PC_NO_TRUNC: u32 = 15;
+pub const _PC_VDISABLE: u32 = 16;
+pub const _PC_ASYNC_IO: u32 = 17;
+pub const _PC_PRIO_IO: u32 = 18;
+pub const _PC_SYNC_IO: u32 = 19;
+pub const FP_INFINITE: u32 = 1;
+pub const FP_NAN: u32 = 2;
+pub const FP_NORMAL: u32 = 4;
+pub const FP_SUBNORMAL: u32 = 8;
+pub const FP_ZERO: u32 = 16;
+pub const FP_ILOGB0: i32 = -2147483647;
+pub const FP_ILOGBNAN: u32 = 2147483647;
+pub const MATH_ERRNO: u32 = 1;
+pub const MATH_ERREXCEPT: u32 = 2;
+pub const math_errhandling: u32 = 2;
+pub const M_E: f64 = 2.718281828459045;
+pub const M_LOG2E: f64 = 1.4426950408889634;
+pub const M_LOG10E: f64 = 0.4342944819032518;
+pub const M_LN2: f64 = 0.6931471805599453;
+pub const M_LN10: f64 = 2.302585092994046;
+pub const M_PI: f64 = 3.141592653589793;
+pub const M_PI_2: f64 = 1.5707963267948966;
+pub const M_PI_4: f64 = 0.7853981633974483;
+pub const M_1_PI: f64 = 0.3183098861837907;
+pub const M_2_PI: f64 = 0.6366197723675814;
+pub const M_2_SQRTPI: f64 = 1.1283791670955126;
+pub const M_SQRT2: f64 = 1.4142135623730951;
+pub const M_SQRT1_2: f64 = 0.7071067811865476;
+pub const ASENSOR_FIFO_COUNT_INVALID: i32 = -1;
+pub const ASENSOR_DELAY_INVALID: i32 = -2147483648;
+pub const ASENSOR_INVALID: i32 = -1;
+pub const ASENSOR_STANDARD_GRAVITY: f64 = 9.80665;
+pub const ASENSOR_MAGNETIC_FIELD_EARTH_MAX: f64 = 60.0;
+pub const ASENSOR_MAGNETIC_FIELD_EARTH_MIN: f64 = 30.0;
+pub const _IOC_NRBITS: u32 = 8;
+pub const _IOC_TYPEBITS: u32 = 8;
+pub const _IOC_SIZEBITS: u32 = 14;
+pub const _IOC_DIRBITS: u32 = 2;
+pub const _IOC_NRMASK: u32 = 255;
+pub const _IOC_TYPEMASK: u32 = 255;
+pub const _IOC_SIZEMASK: u32 = 16383;
+pub const _IOC_DIRMASK: u32 = 3;
+pub const _IOC_NRSHIFT: u32 = 0;
+pub const _IOC_TYPESHIFT: u32 = 8;
+pub const _IOC_SIZESHIFT: u32 = 16;
+pub const _IOC_DIRSHIFT: u32 = 30;
+pub const _IOC_NONE: u32 = 0;
+pub const _IOC_WRITE: u32 = 1;
+pub const _IOC_READ: u32 = 2;
+pub const IOC_IN: u32 = 1073741824;
+pub const IOC_OUT: u32 = 2147483648;
+pub const IOC_INOUT: u32 = 3221225472;
+pub const IOCSIZE_MASK: u32 = 1073676288;
+pub const IOCSIZE_SHIFT: u32 = 16;
+pub const SYNC_IOC_MAGIC: u8 = 62u8;
 pub const CLOCKS_PER_SEC: u32 = 1000000;
 pub const TIME_UTC: u32 = 1;
 pub const TIME_MONOTONIC: u32 = 2;
@@ -1376,6 +1553,8 @@ pub type __kernel_clockid_t = ::std::os::raw::c_int;
 pub type __kernel_caddr_t = *mut ::std::os::raw::c_char;
 pub type __kernel_uid16_t = ::std::os::raw::c_ushort;
 pub type __kernel_gid16_t = ::std::os::raw::c_ushort;
+pub type __s128 = i128;
+pub type __u128 = u128;
 pub type __le16 = __u16;
 pub type __be16 = __u16;
 pub type __le32 = __u32;
@@ -2325,7 +2504,12 @@ pub const ACONFIGURATION_SMALLEST_SCREEN_SIZE: _bindgen_ty_5 = 8192;
 pub const ACONFIGURATION_LAYOUTDIR: _bindgen_ty_5 = 16384;
 pub const ACONFIGURATION_SCREEN_ROUND: _bindgen_ty_5 = 32768;
 pub const ACONFIGURATION_COLOR_MODE: _bindgen_ty_5 = 65536;
+pub const ACONFIGURATION_GRAMMATICAL_GENDER: _bindgen_ty_5 = 131072;
 pub const ACONFIGURATION_MNC_ZERO: _bindgen_ty_5 = 65535;
+pub const ACONFIGURATION_GRAMMATICAL_GENDER_ANY: _bindgen_ty_5 = 0;
+pub const ACONFIGURATION_GRAMMATICAL_GENDER_NEUTER: _bindgen_ty_5 = 1;
+pub const ACONFIGURATION_GRAMMATICAL_GENDER_FEMININE: _bindgen_ty_5 = 2;
+pub const ACONFIGURATION_GRAMMATICAL_GENDER_MASCULINE: _bindgen_ty_5 = 3;
 pub type _bindgen_ty_5 = ::std::os::raw::c_uint;
 extern "C" {
     pub fn AConfiguration_new() -> *mut AConfiguration;
@@ -2476,6 +2660,12 @@ extern "C" {
 }
 extern "C" {
     pub fn AConfiguration_setLayoutDirection(config: *mut AConfiguration, value: i32);
+}
+extern "C" {
+    pub fn AConfiguration_getGrammaticalGender(config: *mut AConfiguration) -> i32;
+}
+extern "C" {
+    pub fn AConfiguration_setGrammaticalGender(config: *mut AConfiguration, value: i32);
 }
 extern "C" {
     pub fn AConfiguration_diff(config1: *mut AConfiguration, config2: *mut AConfiguration) -> i32;
@@ -2701,10 +2891,10 @@ impl ADataSpace {
     pub const ADATASPACE_BT2020_ITU_HLG: ADataSpace = ADataSpace(302383104);
 }
 impl ADataSpace {
-    pub const DEPTH: ADataSpace = ADataSpace(4096);
+    pub const ADATASPACE_DEPTH: ADataSpace = ADataSpace(4096);
 }
 impl ADataSpace {
-    pub const DYNAMIC_DEPTH: ADataSpace = ADataSpace(4098);
+    pub const ADATASPACE_DYNAMIC_DEPTH: ADataSpace = ADataSpace(4098);
 }
 #[repr(transparent)]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -2962,11 +3152,6 @@ extern "C" {
         fd: ::std::os::raw::c_int,
     );
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AFont {
-    _unused: [u8; 0],
-}
 pub const AFONT_WEIGHT_MIN: _bindgen_ty_7 = 0;
 pub const AFONT_WEIGHT_THIN: _bindgen_ty_7 = 100;
 pub const AFONT_WEIGHT_EXTRA_LIGHT: _bindgen_ty_7 = 200;
@@ -2979,6 +3164,11 @@ pub const AFONT_WEIGHT_EXTRA_BOLD: _bindgen_ty_7 = 800;
 pub const AFONT_WEIGHT_BLACK: _bindgen_ty_7 = 900;
 pub const AFONT_WEIGHT_MAX: _bindgen_ty_7 = 1000;
 pub type _bindgen_ty_7 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AFont {
+    _unused: [u8; 0],
+}
 extern "C" {
     pub fn AFont_close(font: *mut AFont);
 }
@@ -3006,15 +3196,15 @@ extern "C" {
 extern "C" {
     pub fn AFont_getAxisValue(font: *const AFont, axisIndex: u32) -> f32;
 }
+pub const AFAMILY_VARIANT_DEFAULT: _bindgen_ty_8 = 0;
+pub const AFAMILY_VARIANT_COMPACT: _bindgen_ty_8 = 1;
+pub const AFAMILY_VARIANT_ELEGANT: _bindgen_ty_8 = 2;
+pub type _bindgen_ty_8 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AFontMatcher {
     _unused: [u8; 0],
 }
-pub const AFAMILY_VARIANT_DEFAULT: _bindgen_ty_8 = 0;
-pub const AFAMILY_VARIANT_COMPACT: _bindgen_ty_8 = 1;
-pub const AFAMILY_VARIANT_ELEGANT: _bindgen_ty_8 = 2;
-pub type _bindgen_ty_8 = ::std::os::raw::c_uint;
 extern "C" {
     pub fn AFontMatcher_create() -> *mut AFontMatcher;
 }
@@ -4297,6 +4487,18 @@ pub const AKEYCODE_DEMO_APP_1: _bindgen_ty_13 = 301;
 pub const AKEYCODE_DEMO_APP_2: _bindgen_ty_13 = 302;
 pub const AKEYCODE_DEMO_APP_3: _bindgen_ty_13 = 303;
 pub const AKEYCODE_DEMO_APP_4: _bindgen_ty_13 = 304;
+pub const AKEYCODE_KEYBOARD_BACKLIGHT_DOWN: _bindgen_ty_13 = 305;
+pub const AKEYCODE_KEYBOARD_BACKLIGHT_UP: _bindgen_ty_13 = 306;
+pub const AKEYCODE_KEYBOARD_BACKLIGHT_TOGGLE: _bindgen_ty_13 = 307;
+pub const AKEYCODE_STYLUS_BUTTON_PRIMARY: _bindgen_ty_13 = 308;
+pub const AKEYCODE_STYLUS_BUTTON_SECONDARY: _bindgen_ty_13 = 309;
+pub const AKEYCODE_STYLUS_BUTTON_TERTIARY: _bindgen_ty_13 = 310;
+pub const AKEYCODE_STYLUS_BUTTON_TAIL: _bindgen_ty_13 = 311;
+pub const AKEYCODE_RECENT_APPS: _bindgen_ty_13 = 312;
+pub const AKEYCODE_MACRO_1: _bindgen_ty_13 = 313;
+pub const AKEYCODE_MACRO_2: _bindgen_ty_13 = 314;
+pub const AKEYCODE_MACRO_3: _bindgen_ty_13 = 315;
+pub const AKEYCODE_MACRO_4: _bindgen_ty_13 = 316;
 pub type _bindgen_ty_13 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -4491,6 +4693,13 @@ pub const AMOTION_EVENT_AXIS_GENERIC_13: _bindgen_ty_25 = 44;
 pub const AMOTION_EVENT_AXIS_GENERIC_14: _bindgen_ty_25 = 45;
 pub const AMOTION_EVENT_AXIS_GENERIC_15: _bindgen_ty_25 = 46;
 pub const AMOTION_EVENT_AXIS_GENERIC_16: _bindgen_ty_25 = 47;
+pub const AMOTION_EVENT_AXIS_GESTURE_X_OFFSET: _bindgen_ty_25 = 48;
+pub const AMOTION_EVENT_AXIS_GESTURE_Y_OFFSET: _bindgen_ty_25 = 49;
+pub const AMOTION_EVENT_AXIS_GESTURE_SCROLL_X_DISTANCE: _bindgen_ty_25 = 50;
+pub const AMOTION_EVENT_AXIS_GESTURE_SCROLL_Y_DISTANCE: _bindgen_ty_25 = 51;
+pub const AMOTION_EVENT_AXIS_GESTURE_PINCH_SCALE_FACTOR: _bindgen_ty_25 = 52;
+pub const AMOTION_EVENT_AXIS_GESTURE_SWIPE_FINGER_COUNT: _bindgen_ty_25 = 53;
+pub const AMOTION_EVENT_MAXIMUM_VALID_AXIS_VALUE: _bindgen_ty_25 = 53;
 pub type _bindgen_ty_25 = ::std::os::raw::c_uint;
 pub const AMOTION_EVENT_BUTTON_PRIMARY: _bindgen_ty_26 = 1;
 pub const AMOTION_EVENT_BUTTON_SECONDARY: _bindgen_ty_26 = 2;
@@ -4517,6 +4726,17 @@ impl AMotionClassification {
 impl AMotionClassification {
     pub const AMOTION_EVENT_CLASSIFICATION_DEEP_PRESS: AMotionClassification =
         AMotionClassification(2);
+}
+impl AMotionClassification {
+    pub const AMOTION_EVENT_CLASSIFICATION_TWO_FINGER_SWIPE: AMotionClassification =
+        AMotionClassification(3);
+}
+impl AMotionClassification {
+    pub const AMOTION_EVENT_CLASSIFICATION_MULTI_FINGER_SWIPE: AMotionClassification =
+        AMotionClassification(4);
+}
+impl AMotionClassification {
+    pub const AMOTION_EVENT_CLASSIFICATION_PINCH: AMotionClassification = AMotionClassification(5);
 }
 #[repr(transparent)]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -5325,51 +5545,6 @@ fn bindgen_test_layout_iovec() {
     );
 }
 pub type sa_family_t = ::std::os::raw::c_ushort;
-pub const SHUT_RD: _bindgen_ty_32 = 0;
-pub const SHUT_WR: _bindgen_ty_32 = 1;
-pub const SHUT_RDWR: _bindgen_ty_32 = 2;
-pub type _bindgen_ty_32 = ::std::os::raw::c_uint;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sockaddr {
-    pub sa_family: sa_family_t,
-    pub sa_data: [::std::os::raw::c_char; 14usize],
-}
-#[test]
-fn bindgen_test_layout_sockaddr() {
-    const UNINIT: ::std::mem::MaybeUninit<sockaddr> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<sockaddr>(),
-        16usize,
-        concat!("Size of: ", stringify!(sockaddr))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<sockaddr>(),
-        2usize,
-        concat!("Alignment of ", stringify!(sockaddr))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sockaddr),
-            "::",
-            stringify!(sa_family)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
-        2usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sockaddr),
-            "::",
-            stringify!(sa_data)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct sockaddr_storage {
@@ -5466,6 +5641,51 @@ fn bindgen_test_layout_sockaddr_storage() {
         ::std::mem::align_of::<sockaddr_storage>(),
         8usize,
         concat!("Alignment of ", stringify!(sockaddr_storage))
+    );
+}
+pub const SHUT_RD: _bindgen_ty_32 = 0;
+pub const SHUT_WR: _bindgen_ty_32 = 1;
+pub const SHUT_RDWR: _bindgen_ty_32 = 2;
+pub type _bindgen_ty_32 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sockaddr {
+    pub sa_family: sa_family_t,
+    pub sa_data: [::std::os::raw::c_char; 14usize],
+}
+#[test]
+fn bindgen_test_layout_sockaddr() {
+    const UNINIT: ::std::mem::MaybeUninit<sockaddr> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<sockaddr>(),
+        16usize,
+        concat!("Size of: ", stringify!(sockaddr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sockaddr>(),
+        2usize,
+        concat!("Alignment of ", stringify!(sockaddr))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr),
+            "::",
+            stringify!(sa_family)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr),
+            "::",
+            stringify!(sa_data)
+        )
     );
 }
 #[repr(C)]
@@ -7950,6 +8170,9 @@ extern "C" {
 extern "C" {
     pub fn ANativeWindow_getBuffersDataSpace(window: *mut ANativeWindow) -> i32;
 }
+extern "C" {
+    pub fn ANativeWindow_getBuffersDefaultDataSpace(window: *mut ANativeWindow) -> i32;
+}
 impl ANativeWindow_FrameRateCompatibility {
     pub const ANATIVEWINDOW_FRAME_RATE_COMPATIBILITY_DEFAULT: ANativeWindow_FrameRateCompatibility =
         ANativeWindow_FrameRateCompatibility(0);
@@ -9533,3228 +9756,6 @@ extern "C" {
 extern "C" {
     pub fn AObbInfo_getFlags(obbInfo: *mut AObbInfo) -> i32;
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct APerformanceHintManager {
-    _unused: [u8; 0],
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct APerformanceHintSession {
-    _unused: [u8; 0],
-}
-extern "C" {
-    pub fn APerformanceHint_getManager() -> *mut APerformanceHintManager;
-}
-extern "C" {
-    pub fn APerformanceHint_createSession(
-        manager: *mut APerformanceHintManager,
-        threadIds: *const i32,
-        size: usize,
-        initialTargetWorkDurationNanos: i64,
-    ) -> *mut APerformanceHintSession;
-}
-extern "C" {
-    pub fn APerformanceHint_getPreferredUpdateRateNanos(
-        manager: *mut APerformanceHintManager,
-    ) -> i64;
-}
-extern "C" {
-    pub fn APerformanceHint_updateTargetWorkDuration(
-        session: *mut APerformanceHintSession,
-        targetDurationNanos: i64,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn APerformanceHint_reportActualWorkDuration(
-        session: *mut APerformanceHintSession,
-        actualDurationNanos: i64,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn APerformanceHint_closeSession(session: *mut APerformanceHintSession);
-}
-pub const PERMISSION_MANAGER_PERMISSION_GRANTED: _bindgen_ty_38 = 0;
-pub const PERMISSION_MANAGER_PERMISSION_DENIED: _bindgen_ty_38 = -1;
-pub type _bindgen_ty_38 = ::std::os::raw::c_int;
-pub const PERMISSION_MANAGER_STATUS_OK: _bindgen_ty_39 = 0;
-pub const PERMISSION_MANAGER_STATUS_ERROR_UNKNOWN: _bindgen_ty_39 = -1;
-pub const PERMISSION_MANAGER_STATUS_SERVICE_UNAVAILABLE: _bindgen_ty_39 = -2;
-pub type _bindgen_ty_39 = ::std::os::raw::c_int;
-extern "C" {
-    pub fn APermissionManager_checkPermission(
-        permission: *const ::std::os::raw::c_char,
-        pid: pid_t,
-        uid: uid_t,
-        outResult: *mut i32,
-    ) -> i32;
-}
-pub type __double_t = f64;
-pub type double_t = __double_t;
-pub type __float_t = f32;
-pub type float_t = __float_t;
-extern "C" {
-    pub fn acos(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn acosf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn acosl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn asin(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn asinf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn asinl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn atan(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn atanf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn atanl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn atan2(__y: f64, __x: f64) -> f64;
-}
-extern "C" {
-    pub fn atan2f(__y: f32, __x: f32) -> f32;
-}
-extern "C" {
-    pub fn atan2l(__y: u128, __x: u128) -> u128;
-}
-extern "C" {
-    pub fn cos(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn cosf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn cosl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn sin(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn sinf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn sinl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn tan(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn tanf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn tanl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn acosh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn acoshf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn acoshl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn asinh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn asinhf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn asinhl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn atanh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn atanhf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn atanhl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn cosh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn coshf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn coshl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn sinh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn sinhf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn sinhl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn tanh(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn tanhf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn tanhl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn exp(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn expf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn expl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn exp2(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn exp2f(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn exp2l(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn expm1(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn expm1f(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn expm1l(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn frexp(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
-}
-extern "C" {
-    pub fn frexpf(__x: f32, __exponent: *mut ::std::os::raw::c_int) -> f32;
-}
-extern "C" {
-    pub fn frexpl(__x: u128, __exponent: *mut ::std::os::raw::c_int) -> u128;
-}
-extern "C" {
-    pub fn ilogb(__x: f64) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ilogbf(__x: f32) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ilogbl(__x: u128) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ldexp(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
-}
-extern "C" {
-    pub fn ldexpf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
-}
-extern "C" {
-    pub fn ldexpl(__x: u128, __exponent: ::std::os::raw::c_int) -> u128;
-}
-extern "C" {
-    pub fn log(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn logf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn logl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn log10(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn log10f(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn log10l(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn log1p(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn log1pf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn log1pl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn log2(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn log2f(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn log2l(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn logb(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn logbf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn logbl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn modf(__x: f64, __integral_part: *mut f64) -> f64;
-}
-extern "C" {
-    pub fn modff(__x: f32, __integral_part: *mut f32) -> f32;
-}
-extern "C" {
-    pub fn modfl(__x: u128, __integral_part: *mut u128) -> u128;
-}
-extern "C" {
-    pub fn scalbn(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
-}
-extern "C" {
-    pub fn scalbnf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
-}
-extern "C" {
-    pub fn scalbnl(__x: u128, __exponent: ::std::os::raw::c_int) -> u128;
-}
-extern "C" {
-    pub fn scalbln(__x: f64, __exponent: ::std::os::raw::c_long) -> f64;
-}
-extern "C" {
-    pub fn scalblnf(__x: f32, __exponent: ::std::os::raw::c_long) -> f32;
-}
-extern "C" {
-    pub fn scalblnl(__x: u128, __exponent: ::std::os::raw::c_long) -> u128;
-}
-extern "C" {
-    pub fn cbrt(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn cbrtf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn cbrtl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn fabs(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn fabsf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn fabsl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn hypot(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn hypotf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn hypotl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn pow(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn powf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn powl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn sqrt(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn sqrtf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn sqrtl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn erf(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn erff(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn erfl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn erfc(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn erfcf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn erfcl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn lgamma(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn lgammaf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn lgammal(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn tgamma(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn tgammaf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn tgammal(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn ceil(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn ceilf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn ceill(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn floor(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn floorf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn floorl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn nearbyint(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn nearbyintf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn nearbyintl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn rint(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn rintf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn rintl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn lrint(__x: f64) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn lrintf(__x: f32) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn lrintl(__x: u128) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn llrint(__x: f64) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn llrintf(__x: f32) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn llrintl(__x: u128) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn round(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn roundf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn roundl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn lround(__x: f64) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn lroundf(__x: f32) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn lroundl(__x: u128) -> ::std::os::raw::c_long;
-}
-extern "C" {
-    pub fn llround(__x: f64) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn llroundf(__x: f32) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn llroundl(__x: u128) -> ::std::os::raw::c_longlong;
-}
-extern "C" {
-    pub fn trunc(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn truncf(__x: f32) -> f32;
-}
-extern "C" {
-    pub fn truncl(__x: u128) -> u128;
-}
-extern "C" {
-    pub fn fmod(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn fmodf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn fmodl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn remainder(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn remainderf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn remainderl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn remquo(__x: f64, __y: f64, __quotient_bits: *mut ::std::os::raw::c_int) -> f64;
-}
-extern "C" {
-    pub fn remquof(__x: f32, __y: f32, __quotient_bits: *mut ::std::os::raw::c_int) -> f32;
-}
-extern "C" {
-    pub fn remquol(__x: u128, __y: u128, __quotient_bits: *mut ::std::os::raw::c_int) -> u128;
-}
-extern "C" {
-    pub fn copysign(__value: f64, __sign: f64) -> f64;
-}
-extern "C" {
-    pub fn copysignf(__value: f32, __sign: f32) -> f32;
-}
-extern "C" {
-    pub fn copysignl(__value: u128, __sign: u128) -> u128;
-}
-extern "C" {
-    pub fn nan(__kind: *const ::std::os::raw::c_char) -> f64;
-}
-extern "C" {
-    pub fn nanf(__kind: *const ::std::os::raw::c_char) -> f32;
-}
-extern "C" {
-    pub fn nanl(__kind: *const ::std::os::raw::c_char) -> u128;
-}
-extern "C" {
-    pub fn nextafter(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn nextafterf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn nextafterl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn nexttoward(__x: f64, __y: u128) -> f64;
-}
-extern "C" {
-    pub fn nexttowardf(__x: f32, __y: u128) -> f32;
-}
-extern "C" {
-    pub fn nexttowardl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn fdim(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn fdimf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn fdiml(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn fmax(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn fmaxf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn fmaxl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn fmin(__x: f64, __y: f64) -> f64;
-}
-extern "C" {
-    pub fn fminf(__x: f32, __y: f32) -> f32;
-}
-extern "C" {
-    pub fn fminl(__x: u128, __y: u128) -> u128;
-}
-extern "C" {
-    pub fn fma(__x: f64, __y: f64, __z: f64) -> f64;
-}
-extern "C" {
-    pub fn fmaf(__x: f32, __y: f32, __z: f32) -> f32;
-}
-extern "C" {
-    pub fn fmal(__x: u128, __y: u128, __z: u128) -> u128;
-}
-extern "C" {
-    pub fn isinf(__x: f64) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn isnan(__x: f64) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub static mut signgam: ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn y0(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn y1(__x: f64) -> f64;
-}
-extern "C" {
-    pub fn yn(__n: ::std::os::raw::c_int, __x: f64) -> f64;
-}
-pub const ASENSOR_TYPE_INVALID: _bindgen_ty_40 = -1;
-pub const ASENSOR_TYPE_ACCELEROMETER: _bindgen_ty_40 = 1;
-pub const ASENSOR_TYPE_MAGNETIC_FIELD: _bindgen_ty_40 = 2;
-pub const ASENSOR_TYPE_GYROSCOPE: _bindgen_ty_40 = 4;
-pub const ASENSOR_TYPE_LIGHT: _bindgen_ty_40 = 5;
-pub const ASENSOR_TYPE_PRESSURE: _bindgen_ty_40 = 6;
-pub const ASENSOR_TYPE_PROXIMITY: _bindgen_ty_40 = 8;
-pub const ASENSOR_TYPE_GRAVITY: _bindgen_ty_40 = 9;
-pub const ASENSOR_TYPE_LINEAR_ACCELERATION: _bindgen_ty_40 = 10;
-pub const ASENSOR_TYPE_ROTATION_VECTOR: _bindgen_ty_40 = 11;
-pub const ASENSOR_TYPE_RELATIVE_HUMIDITY: _bindgen_ty_40 = 12;
-pub const ASENSOR_TYPE_AMBIENT_TEMPERATURE: _bindgen_ty_40 = 13;
-pub const ASENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED: _bindgen_ty_40 = 14;
-pub const ASENSOR_TYPE_GAME_ROTATION_VECTOR: _bindgen_ty_40 = 15;
-pub const ASENSOR_TYPE_GYROSCOPE_UNCALIBRATED: _bindgen_ty_40 = 16;
-pub const ASENSOR_TYPE_SIGNIFICANT_MOTION: _bindgen_ty_40 = 17;
-pub const ASENSOR_TYPE_STEP_DETECTOR: _bindgen_ty_40 = 18;
-pub const ASENSOR_TYPE_STEP_COUNTER: _bindgen_ty_40 = 19;
-pub const ASENSOR_TYPE_GEOMAGNETIC_ROTATION_VECTOR: _bindgen_ty_40 = 20;
-pub const ASENSOR_TYPE_HEART_RATE: _bindgen_ty_40 = 21;
-pub const ASENSOR_TYPE_POSE_6DOF: _bindgen_ty_40 = 28;
-pub const ASENSOR_TYPE_STATIONARY_DETECT: _bindgen_ty_40 = 29;
-pub const ASENSOR_TYPE_MOTION_DETECT: _bindgen_ty_40 = 30;
-pub const ASENSOR_TYPE_HEART_BEAT: _bindgen_ty_40 = 31;
-pub const ASENSOR_TYPE_DYNAMIC_SENSOR_META: _bindgen_ty_40 = 32;
-pub const ASENSOR_TYPE_ADDITIONAL_INFO: _bindgen_ty_40 = 33;
-pub const ASENSOR_TYPE_LOW_LATENCY_OFFBODY_DETECT: _bindgen_ty_40 = 34;
-pub const ASENSOR_TYPE_ACCELEROMETER_UNCALIBRATED: _bindgen_ty_40 = 35;
-pub const ASENSOR_TYPE_HINGE_ANGLE: _bindgen_ty_40 = 36;
-pub const ASENSOR_TYPE_HEAD_TRACKER: _bindgen_ty_40 = 37;
-pub const ASENSOR_TYPE_ACCELEROMETER_LIMITED_AXES: _bindgen_ty_40 = 38;
-pub const ASENSOR_TYPE_GYROSCOPE_LIMITED_AXES: _bindgen_ty_40 = 39;
-pub const ASENSOR_TYPE_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED: _bindgen_ty_40 = 40;
-pub const ASENSOR_TYPE_GYROSCOPE_LIMITED_AXES_UNCALIBRATED: _bindgen_ty_40 = 41;
-pub const ASENSOR_TYPE_HEADING: _bindgen_ty_40 = 42;
-pub type _bindgen_ty_40 = ::std::os::raw::c_int;
-pub const ASENSOR_STATUS_NO_CONTACT: _bindgen_ty_41 = -1;
-pub const ASENSOR_STATUS_UNRELIABLE: _bindgen_ty_41 = 0;
-pub const ASENSOR_STATUS_ACCURACY_LOW: _bindgen_ty_41 = 1;
-pub const ASENSOR_STATUS_ACCURACY_MEDIUM: _bindgen_ty_41 = 2;
-pub const ASENSOR_STATUS_ACCURACY_HIGH: _bindgen_ty_41 = 3;
-pub type _bindgen_ty_41 = ::std::os::raw::c_int;
-pub const AREPORTING_MODE_INVALID: _bindgen_ty_42 = -1;
-pub const AREPORTING_MODE_CONTINUOUS: _bindgen_ty_42 = 0;
-pub const AREPORTING_MODE_ON_CHANGE: _bindgen_ty_42 = 1;
-pub const AREPORTING_MODE_ONE_SHOT: _bindgen_ty_42 = 2;
-pub const AREPORTING_MODE_SPECIAL_TRIGGER: _bindgen_ty_42 = 3;
-pub type _bindgen_ty_42 = ::std::os::raw::c_int;
-pub const ASENSOR_DIRECT_RATE_STOP: _bindgen_ty_43 = 0;
-pub const ASENSOR_DIRECT_RATE_NORMAL: _bindgen_ty_43 = 1;
-pub const ASENSOR_DIRECT_RATE_FAST: _bindgen_ty_43 = 2;
-pub const ASENSOR_DIRECT_RATE_VERY_FAST: _bindgen_ty_43 = 3;
-pub type _bindgen_ty_43 = ::std::os::raw::c_uint;
-pub const ASENSOR_DIRECT_CHANNEL_TYPE_SHARED_MEMORY: _bindgen_ty_44 = 1;
-pub const ASENSOR_DIRECT_CHANNEL_TYPE_HARDWARE_BUFFER: _bindgen_ty_44 = 2;
-pub type _bindgen_ty_44 = ::std::os::raw::c_uint;
-pub const ASENSOR_ADDITIONAL_INFO_BEGIN: _bindgen_ty_45 = 0;
-pub const ASENSOR_ADDITIONAL_INFO_END: _bindgen_ty_45 = 1;
-pub const ASENSOR_ADDITIONAL_INFO_UNTRACKED_DELAY: _bindgen_ty_45 = 65536;
-pub const ASENSOR_ADDITIONAL_INFO_INTERNAL_TEMPERATURE: _bindgen_ty_45 = 65537;
-pub const ASENSOR_ADDITIONAL_INFO_VEC3_CALIBRATION: _bindgen_ty_45 = 65538;
-pub const ASENSOR_ADDITIONAL_INFO_SENSOR_PLACEMENT: _bindgen_ty_45 = 65539;
-pub const ASENSOR_ADDITIONAL_INFO_SAMPLING: _bindgen_ty_45 = 65540;
-pub type _bindgen_ty_45 = ::std::os::raw::c_uint;
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct ASensorVector {
-    pub __bindgen_anon_1: ASensorVector__bindgen_ty_1,
-    pub status: i8,
-    pub reserved: [u8; 3usize],
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ASensorVector__bindgen_ty_1 {
-    pub v: [f32; 3usize],
-    pub __bindgen_anon_1: ASensorVector__bindgen_ty_1__bindgen_ty_1,
-    pub __bindgen_anon_2: ASensorVector__bindgen_ty_1__bindgen_ty_2,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASensorVector__bindgen_ty_1__bindgen_ty_1 {
-    pub x: f32,
-    pub y: f32,
-    pub z: f32,
-}
-#[test]
-fn bindgen_test_layout_ASensorVector__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorVector__bindgen_ty_1__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorVector__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(x)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(y)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(z)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASensorVector__bindgen_ty_1__bindgen_ty_2 {
-    pub azimuth: f32,
-    pub pitch: f32,
-    pub roll: f32,
-}
-#[test]
-fn bindgen_test_layout_ASensorVector__bindgen_ty_1__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorVector__bindgen_ty_1__bindgen_ty_2>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorVector__bindgen_ty_1__bindgen_ty_2>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).azimuth) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
-            "::",
-            stringify!(azimuth)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pitch) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
-            "::",
-            stringify!(pitch)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).roll) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
-            "::",
-            stringify!(roll)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ASensorVector__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorVector__bindgen_ty_1>(),
-        12usize,
-        concat!("Size of: ", stringify!(ASensorVector__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorVector__bindgen_ty_1>(),
-        4usize,
-        concat!("Alignment of ", stringify!(ASensorVector__bindgen_ty_1))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).v) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector__bindgen_ty_1),
-            "::",
-            stringify!(v)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ASensorVector() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorVector> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorVector>(),
-        16usize,
-        concat!("Size of: ", stringify!(ASensorVector))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorVector>(),
-        4usize,
-        concat!("Alignment of ", stringify!(ASensorVector))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector),
-            "::",
-            stringify!(status)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reserved) as usize - ptr as usize },
-        13usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorVector),
-            "::",
-            stringify!(reserved)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AMetaDataEvent {
-    pub what: i32,
-    pub sensor: i32,
-}
-#[test]
-fn bindgen_test_layout_AMetaDataEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<AMetaDataEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AMetaDataEvent>(),
-        8usize,
-        concat!("Size of: ", stringify!(AMetaDataEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AMetaDataEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AMetaDataEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).what) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AMetaDataEvent),
-            "::",
-            stringify!(what)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sensor) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AMetaDataEvent),
-            "::",
-            stringify!(sensor)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct AUncalibratedEvent {
-    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_1,
-    pub __bindgen_anon_2: AUncalibratedEvent__bindgen_ty_2,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union AUncalibratedEvent__bindgen_ty_1 {
-    pub uncalib: [f32; 3usize],
-    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1 {
-    pub x_uncalib: f32,
-    pub y_uncalib: f32,
-    pub z_uncalib: f32,
-}
-#[test]
-fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_uncalib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(x_uncalib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_uncalib) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(y_uncalib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_uncalib) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(z_uncalib)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_1>(),
-        12usize,
-        concat!("Size of: ", stringify!(AUncalibratedEvent__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).uncalib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_1),
-            "::",
-            stringify!(uncalib)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union AUncalibratedEvent__bindgen_ty_2 {
-    pub bias: [f32; 3usize],
-    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1 {
-    pub x_bias: f32,
-    pub y_bias: f32,
-    pub z_bias: f32,
-}
-#[test]
-fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_bias) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(x_bias)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_bias) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(y_bias)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_bias) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(z_bias)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_2>(),
-        12usize,
-        concat!("Size of: ", stringify!(AUncalibratedEvent__bindgen_ty_2))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_2>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bias) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AUncalibratedEvent__bindgen_ty_2),
-            "::",
-            stringify!(bias)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_AUncalibratedEvent() {
-    assert_eq!(
-        ::std::mem::size_of::<AUncalibratedEvent>(),
-        24usize,
-        concat!("Size of: ", stringify!(AUncalibratedEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AUncalibratedEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AUncalibratedEvent))
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AHeartRateEvent {
-    pub bpm: f32,
-    pub status: i8,
-}
-#[test]
-fn bindgen_test_layout_AHeartRateEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<AHeartRateEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AHeartRateEvent>(),
-        8usize,
-        concat!("Size of: ", stringify!(AHeartRateEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AHeartRateEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AHeartRateEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bpm) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeartRateEvent),
-            "::",
-            stringify!(bpm)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeartRateEvent),
-            "::",
-            stringify!(status)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ADynamicSensorEvent {
-    pub connected: i32,
-    pub handle: i32,
-}
-#[test]
-fn bindgen_test_layout_ADynamicSensorEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<ADynamicSensorEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ADynamicSensorEvent>(),
-        8usize,
-        concat!("Size of: ", stringify!(ADynamicSensorEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ADynamicSensorEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(ADynamicSensorEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).connected) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ADynamicSensorEvent),
-            "::",
-            stringify!(connected)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).handle) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ADynamicSensorEvent),
-            "::",
-            stringify!(handle)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct AAdditionalInfoEvent {
-    pub type_: i32,
-    pub serial: i32,
-    pub __bindgen_anon_1: AAdditionalInfoEvent__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union AAdditionalInfoEvent__bindgen_ty_1 {
-    pub data_int32: [i32; 14usize],
-    pub data_float: [f32; 14usize],
-}
-#[test]
-fn bindgen_test_layout_AAdditionalInfoEvent__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<AAdditionalInfoEvent__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AAdditionalInfoEvent__bindgen_ty_1>(),
-        56usize,
-        concat!("Size of: ", stringify!(AAdditionalInfoEvent__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AAdditionalInfoEvent__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(AAdditionalInfoEvent__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data_int32) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AAdditionalInfoEvent__bindgen_ty_1),
-            "::",
-            stringify!(data_int32)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data_float) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AAdditionalInfoEvent__bindgen_ty_1),
-            "::",
-            stringify!(data_float)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_AAdditionalInfoEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<AAdditionalInfoEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AAdditionalInfoEvent>(),
-        64usize,
-        concat!("Size of: ", stringify!(AAdditionalInfoEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AAdditionalInfoEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AAdditionalInfoEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AAdditionalInfoEvent),
-            "::",
-            stringify!(type_)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).serial) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AAdditionalInfoEvent),
-            "::",
-            stringify!(serial)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AHeadTrackerEvent {
-    pub rx: f32,
-    pub ry: f32,
-    pub rz: f32,
-    pub vx: f32,
-    pub vy: f32,
-    pub vz: f32,
-    pub discontinuity_count: i32,
-}
-#[test]
-fn bindgen_test_layout_AHeadTrackerEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<AHeadTrackerEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AHeadTrackerEvent>(),
-        28usize,
-        concat!("Size of: ", stringify!(AHeadTrackerEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AHeadTrackerEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AHeadTrackerEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rx) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(rx)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ry) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(ry)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rz) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(rz)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).vx) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(vx)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).vy) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(vy)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).vz) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(vz)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).discontinuity_count) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadTrackerEvent),
-            "::",
-            stringify!(discontinuity_count)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct ALimitedAxesImuEvent {
-    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_1,
-    pub __bindgen_anon_2: ALimitedAxesImuEvent__bindgen_ty_2,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ALimitedAxesImuEvent__bindgen_ty_1 {
-    pub calib: [f32; 3usize],
-    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1 {
-    pub x: f32,
-    pub y: f32,
-    pub z: f32,
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(x)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(y)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(z)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_1>(),
-        12usize,
-        concat!("Size of: ", stringify!(ALimitedAxesImuEvent__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).calib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_1),
-            "::",
-            stringify!(calib)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ALimitedAxesImuEvent__bindgen_ty_2 {
-    pub supported: [f32; 3usize],
-    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1 {
-    pub x_supported: f32,
-    pub y_supported: f32,
-    pub z_supported: f32,
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_supported) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(x_supported)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_supported) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(y_supported)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_supported) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(z_supported)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_2>(),
-        12usize,
-        concat!("Size of: ", stringify!(ALimitedAxesImuEvent__bindgen_ty_2))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_2>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).supported) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuEvent__bindgen_ty_2),
-            "::",
-            stringify!(supported)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuEvent() {
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuEvent>(),
-        24usize,
-        concat!("Size of: ", stringify!(ALimitedAxesImuEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(ALimitedAxesImuEvent))
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct ALimitedAxesImuUncalibratedEvent {
-    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_1,
-    pub __bindgen_anon_2: ALimitedAxesImuUncalibratedEvent__bindgen_ty_2,
-    pub __bindgen_anon_3: ALimitedAxesImuUncalibratedEvent__bindgen_ty_3,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_1 {
-    pub uncalib: [f32; 3usize],
-    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1 {
-    pub x_uncalib: f32,
-    pub y_uncalib: f32,
-    pub z_uncalib: f32,
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<
-        ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
-    > = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_uncalib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(x_uncalib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_uncalib) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(y_uncalib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_uncalib) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(z_uncalib)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).uncalib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1),
-            "::",
-            stringify!(uncalib)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_2 {
-    pub bias: [f32; 3usize],
-    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1 {
-    pub x_bias: f32,
-    pub y_bias: f32,
-    pub z_bias: f32,
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<
-        ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
-    > = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_bias) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(x_bias)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_bias) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(y_bias)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_bias) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(z_bias)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bias) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2),
-            "::",
-            stringify!(bias)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_3 {
-    pub supported: [f32; 3usize],
-    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1 {
-    pub x_supported: f32,
-    pub y_supported: f32,
-    pub z_supported: f32,
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<
-        ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1,
-    > = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x_supported) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
-            "::",
-            stringify!(x_supported)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y_supported) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
-            "::",
-            stringify!(y_supported)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).z_supported) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
-            "::",
-            stringify!(z_supported)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_3() {
-    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3>(),
-        12usize,
-        concat!(
-            "Size of: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).supported) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3),
-            "::",
-            stringify!(supported)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent() {
-    assert_eq!(
-        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent>(),
-        36usize,
-        concat!("Size of: ", stringify!(ALimitedAxesImuUncalibratedEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ALimitedAxesImuUncalibratedEvent)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AHeadingEvent {
-    pub heading: f32,
-    pub accuracy: f32,
-}
-#[test]
-fn bindgen_test_layout_AHeadingEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<AHeadingEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<AHeadingEvent>(),
-        8usize,
-        concat!("Size of: ", stringify!(AHeadingEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<AHeadingEvent>(),
-        4usize,
-        concat!("Alignment of ", stringify!(AHeadingEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).heading) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadingEvent),
-            "::",
-            stringify!(heading)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).accuracy) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AHeadingEvent),
-            "::",
-            stringify!(accuracy)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct ASensorEvent {
-    pub version: i32,
-    pub sensor: i32,
-    pub type_: i32,
-    pub reserved0: i32,
-    pub timestamp: i64,
-    pub __bindgen_anon_1: ASensorEvent__bindgen_ty_1,
-    pub flags: u32,
-    pub reserved1: [i32; 3usize],
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ASensorEvent__bindgen_ty_1 {
-    pub __bindgen_anon_1: ASensorEvent__bindgen_ty_1__bindgen_ty_1,
-    pub u64_: ASensorEvent__bindgen_ty_1__bindgen_ty_2,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ASensorEvent__bindgen_ty_1__bindgen_ty_1 {
-    pub data: [f32; 16usize],
-    pub vector: ASensorVector,
-    pub acceleration: ASensorVector,
-    pub gyro: ASensorVector,
-    pub magnetic: ASensorVector,
-    pub temperature: f32,
-    pub distance: f32,
-    pub light: f32,
-    pub pressure: f32,
-    pub relative_humidity: f32,
-    pub uncalibrated_acceleration: AUncalibratedEvent,
-    pub uncalibrated_gyro: AUncalibratedEvent,
-    pub uncalibrated_magnetic: AUncalibratedEvent,
-    pub meta_data: AMetaDataEvent,
-    pub heart_rate: AHeartRateEvent,
-    pub dynamic_sensor_meta: ADynamicSensorEvent,
-    pub additional_info: AAdditionalInfoEvent,
-    pub head_tracker: AHeadTrackerEvent,
-    pub limited_axes_imu: ALimitedAxesImuEvent,
-    pub limited_axes_imu_uncalibrated: ALimitedAxesImuUncalibratedEvent,
-    pub heading: AHeadingEvent,
-}
-#[test]
-fn bindgen_test_layout_ASensorEvent__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_1>(),
-        64usize,
-        concat!(
-            "Size of: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(data)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).vector) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(vector)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).acceleration) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(acceleration)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gyro) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(gyro)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).magnetic) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(magnetic)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).temperature) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(temperature)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).distance) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(distance)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).light) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(light)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pressure) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(pressure)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).relative_humidity) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(relative_humidity)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_acceleration) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(uncalibrated_acceleration)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_gyro) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(uncalibrated_gyro)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_magnetic) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(uncalibrated_magnetic)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).meta_data) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(meta_data)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).heart_rate) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(heart_rate)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).dynamic_sensor_meta) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(dynamic_sensor_meta)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).additional_info) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(additional_info)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).head_tracker) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(head_tracker)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).limited_axes_imu) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(limited_axes_imu)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            ::std::ptr::addr_of!((*ptr).limited_axes_imu_uncalibrated) as usize - ptr as usize
-        },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(limited_axes_imu_uncalibrated)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).heading) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(heading)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union ASensorEvent__bindgen_ty_1__bindgen_ty_2 {
-    pub data: [u64; 8usize],
-    pub step_counter: u64,
-}
-#[test]
-fn bindgen_test_layout_ASensorEvent__bindgen_ty_1__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_2>(),
-        64usize,
-        concat!(
-            "Size of: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_2>(),
-        8usize,
-        concat!(
-            "Alignment of ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2),
-            "::",
-            stringify!(data)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).step_counter) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2),
-            "::",
-            stringify!(step_counter)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ASensorEvent__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1>(),
-        64usize,
-        concat!("Size of: ", stringify!(ASensorEvent__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1>(),
-        8usize,
-        concat!("Alignment of ", stringify!(ASensorEvent__bindgen_ty_1))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).u64_) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent__bindgen_ty_1),
-            "::",
-            stringify!(u64_)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout_ASensorEvent() {
-    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<ASensorEvent>(),
-        104usize,
-        concat!("Size of: ", stringify!(ASensorEvent))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<ASensorEvent>(),
-        8usize,
-        concat!("Alignment of ", stringify!(ASensorEvent))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).version) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(version)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sensor) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(sensor)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(type_)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reserved0) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(reserved0)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).timestamp) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(timestamp)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
-        88usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reserved1) as usize - ptr as usize },
-        92usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ASensorEvent),
-            "::",
-            stringify!(reserved1)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASensorManager {
-    _unused: [u8; 0],
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASensorEventQueue {
-    _unused: [u8; 0],
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASensor {
-    _unused: [u8; 0],
-}
-pub type ASensorRef = *const ASensor;
-pub type ASensorList = *const ASensorRef;
-extern "C" {
-    pub fn ASensorManager_getInstance() -> *mut ASensorManager;
-}
-extern "C" {
-    pub fn ASensorManager_getInstanceForPackage(
-        packageName: *const ::std::os::raw::c_char,
-    ) -> *mut ASensorManager;
-}
-extern "C" {
-    pub fn ASensorManager_getSensorList(
-        manager: *mut ASensorManager,
-        list: *mut ASensorList,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorManager_getDynamicSensorList(
-        manager: *mut ASensorManager,
-        list: *mut ASensorList,
-    ) -> isize;
-}
-extern "C" {
-    pub fn ASensorManager_getDefaultSensor(
-        manager: *mut ASensorManager,
-        type_: ::std::os::raw::c_int,
-    ) -> *const ASensor;
-}
-extern "C" {
-    pub fn ASensorManager_getDefaultSensorEx(
-        manager: *mut ASensorManager,
-        type_: ::std::os::raw::c_int,
-        wakeUp: bool,
-    ) -> *const ASensor;
-}
-extern "C" {
-    pub fn ASensorManager_createEventQueue(
-        manager: *mut ASensorManager,
-        looper: *mut ALooper,
-        ident: ::std::os::raw::c_int,
-        callback: ALooper_callbackFunc,
-        data: *mut ::std::os::raw::c_void,
-    ) -> *mut ASensorEventQueue;
-}
-extern "C" {
-    pub fn ASensorManager_destroyEventQueue(
-        manager: *mut ASensorManager,
-        queue: *mut ASensorEventQueue,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorManager_createSharedMemoryDirectChannel(
-        manager: *mut ASensorManager,
-        fd: ::std::os::raw::c_int,
-        size: usize,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorManager_createHardwareBufferDirectChannel(
-        manager: *mut ASensorManager,
-        buffer: *const AHardwareBuffer,
-        size: usize,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorManager_destroyDirectChannel(
-        manager: *mut ASensorManager,
-        channelId: ::std::os::raw::c_int,
-    );
-}
-extern "C" {
-    pub fn ASensorManager_configureDirectReport(
-        manager: *mut ASensorManager,
-        sensor: *const ASensor,
-        channelId: ::std::os::raw::c_int,
-        rate: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_registerSensor(
-        queue: *mut ASensorEventQueue,
-        sensor: *const ASensor,
-        samplingPeriodUs: i32,
-        maxBatchReportLatencyUs: i64,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_enableSensor(
-        queue: *mut ASensorEventQueue,
-        sensor: *const ASensor,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_disableSensor(
-        queue: *mut ASensorEventQueue,
-        sensor: *const ASensor,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_setEventRate(
-        queue: *mut ASensorEventQueue,
-        sensor: *const ASensor,
-        usec: i32,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_hasEvents(queue: *mut ASensorEventQueue) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensorEventQueue_getEvents(
-        queue: *mut ASensorEventQueue,
-        events: *mut ASensorEvent,
-        count: usize,
-    ) -> isize;
-}
-extern "C" {
-    pub fn ASensorEventQueue_requestAdditionalInfoEvents(
-        queue: *mut ASensorEventQueue,
-        enable: bool,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getName(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
-}
-extern "C" {
-    pub fn ASensor_getVendor(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
-}
-extern "C" {
-    pub fn ASensor_getType(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getResolution(sensor: *const ASensor) -> f32;
-}
-extern "C" {
-    pub fn ASensor_getMinDelay(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getFifoMaxEventCount(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getFifoReservedEventCount(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getStringType(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
-}
-extern "C" {
-    pub fn ASensor_getReportingMode(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_isWakeUpSensor(sensor: *const ASensor) -> bool;
-}
-extern "C" {
-    pub fn ASensor_isDirectChannelTypeSupported(
-        sensor: *const ASensor,
-        channelType: ::std::os::raw::c_int,
-    ) -> bool;
-}
-extern "C" {
-    pub fn ASensor_getHighestDirectReportRateLevel(sensor: *const ASensor)
-        -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASensor_getHandle(sensor: *const ASensor) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn android_set_abort_message(__msg: *const ::std::os::raw::c_char);
-}
-extern "C" {
-    pub fn ASharedMemory_create(
-        name: *const ::std::os::raw::c_char,
-        size: usize,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASharedMemory_getSize(fd: ::std::os::raw::c_int) -> usize;
-}
-extern "C" {
-    pub fn ASharedMemory_setProt(
-        fd: ::std::os::raw::c_int,
-        prot: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASharedMemory_dupFromJava(
-        env: *mut JNIEnv,
-        sharedMemory: jobject,
-    ) -> ::std::os::raw::c_int;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct AStorageManager {
-    _unused: [u8; 0],
-}
-pub const AOBB_STATE_MOUNTED: _bindgen_ty_46 = 1;
-pub const AOBB_STATE_UNMOUNTED: _bindgen_ty_46 = 2;
-pub const AOBB_STATE_ERROR_INTERNAL: _bindgen_ty_46 = 20;
-pub const AOBB_STATE_ERROR_COULD_NOT_MOUNT: _bindgen_ty_46 = 21;
-pub const AOBB_STATE_ERROR_COULD_NOT_UNMOUNT: _bindgen_ty_46 = 22;
-pub const AOBB_STATE_ERROR_NOT_MOUNTED: _bindgen_ty_46 = 23;
-pub const AOBB_STATE_ERROR_ALREADY_MOUNTED: _bindgen_ty_46 = 24;
-pub const AOBB_STATE_ERROR_PERMISSION_DENIED: _bindgen_ty_46 = 25;
-pub type _bindgen_ty_46 = ::std::os::raw::c_uint;
-extern "C" {
-    pub fn AStorageManager_new() -> *mut AStorageManager;
-}
-extern "C" {
-    pub fn AStorageManager_delete(mgr: *mut AStorageManager);
-}
-pub type AStorageManager_obbCallbackFunc = ::std::option::Option<
-    unsafe extern "C" fn(
-        filename: *const ::std::os::raw::c_char,
-        state: i32,
-        data: *mut ::std::os::raw::c_void,
-    ),
->;
-extern "C" {
-    pub fn AStorageManager_mountObb(
-        mgr: *mut AStorageManager,
-        filename: *const ::std::os::raw::c_char,
-        key: *const ::std::os::raw::c_char,
-        cb: AStorageManager_obbCallbackFunc,
-        data: *mut ::std::os::raw::c_void,
-    );
-}
-extern "C" {
-    pub fn AStorageManager_unmountObb(
-        mgr: *mut AStorageManager,
-        filename: *const ::std::os::raw::c_char,
-        force: ::std::os::raw::c_int,
-        cb: AStorageManager_obbCallbackFunc,
-        data: *mut ::std::os::raw::c_void,
-    );
-}
-extern "C" {
-    pub fn AStorageManager_isObbMounted(
-        mgr: *mut AStorageManager,
-        filename: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn AStorageManager_getMountedObbPath(
-        mgr: *mut AStorageManager,
-        filename: *const ::std::os::raw::c_char,
-    ) -> *const ::std::os::raw::c_char;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASurfaceControl {
-    _unused: [u8; 0],
-}
-extern "C" {
-    pub fn ASurfaceControl_createFromWindow(
-        parent: *mut ANativeWindow,
-        debug_name: *const ::std::os::raw::c_char,
-    ) -> *mut ASurfaceControl;
-}
-extern "C" {
-    pub fn ASurfaceControl_create(
-        parent: *mut ASurfaceControl,
-        debug_name: *const ::std::os::raw::c_char,
-    ) -> *mut ASurfaceControl;
-}
-extern "C" {
-    pub fn ASurfaceControl_acquire(surface_control: *mut ASurfaceControl);
-}
-extern "C" {
-    pub fn ASurfaceControl_release(surface_control: *mut ASurfaceControl);
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASurfaceTransaction {
-    _unused: [u8; 0],
-}
-extern "C" {
-    pub fn ASurfaceTransaction_create() -> *mut ASurfaceTransaction;
-}
-extern "C" {
-    pub fn ASurfaceTransaction_delete(transaction: *mut ASurfaceTransaction);
-}
-extern "C" {
-    pub fn ASurfaceTransaction_apply(transaction: *mut ASurfaceTransaction);
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASurfaceTransactionStats {
-    _unused: [u8; 0],
-}
-pub type ASurfaceTransaction_OnComplete = ::std::option::Option<
-    unsafe extern "C" fn(
-        context: *mut ::std::os::raw::c_void,
-        stats: *mut ASurfaceTransactionStats,
-    ),
->;
-pub type ASurfaceTransaction_OnCommit = ::std::option::Option<
-    unsafe extern "C" fn(
-        context: *mut ::std::os::raw::c_void,
-        stats: *mut ASurfaceTransactionStats,
-    ),
->;
-extern "C" {
-    pub fn ASurfaceTransactionStats_getLatchTime(
-        surface_transaction_stats: *mut ASurfaceTransactionStats,
-    ) -> i64;
-}
-extern "C" {
-    pub fn ASurfaceTransactionStats_getPresentFenceFd(
-        surface_transaction_stats: *mut ASurfaceTransactionStats,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASurfaceTransactionStats_getASurfaceControls(
-        surface_transaction_stats: *mut ASurfaceTransactionStats,
-        outASurfaceControls: *mut *mut *mut ASurfaceControl,
-        outASurfaceControlsSize: *mut usize,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransactionStats_releaseASurfaceControls(
-        surface_controls: *mut *mut ASurfaceControl,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransactionStats_getAcquireTime(
-        surface_transaction_stats: *mut ASurfaceTransactionStats,
-        surface_control: *mut ASurfaceControl,
-    ) -> i64;
-}
-extern "C" {
-    pub fn ASurfaceTransactionStats_getPreviousReleaseFenceFd(
-        surface_transaction_stats: *mut ASurfaceTransactionStats,
-        surface_control: *mut ASurfaceControl,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setOnComplete(
-        transaction: *mut ASurfaceTransaction,
-        context: *mut ::std::os::raw::c_void,
-        func: ASurfaceTransaction_OnComplete,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setOnCommit(
-        transaction: *mut ASurfaceTransaction,
-        context: *mut ::std::os::raw::c_void,
-        func: ASurfaceTransaction_OnCommit,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_reparent(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        new_parent: *mut ASurfaceControl,
-    );
-}
-pub const ASURFACE_TRANSACTION_VISIBILITY_HIDE: _bindgen_ty_47 = 0;
-pub const ASURFACE_TRANSACTION_VISIBILITY_SHOW: _bindgen_ty_47 = 1;
-pub type _bindgen_ty_47 = ::std::os::raw::c_uint;
-extern "C" {
-    pub fn ASurfaceTransaction_setVisibility(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        visibility: i8,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setZOrder(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        z_order: i32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setBuffer(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        buffer: *mut AHardwareBuffer,
-        acquire_fence_fd: ::std::os::raw::c_int,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setColor(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        r: f32,
-        g: f32,
-        b: f32,
-        alpha: f32,
-        dataspace: ADataSpace,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setGeometry(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        source: *const ARect,
-        destination: *const ARect,
-        transform: i32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setCrop(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        crop: *const ARect,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setPosition(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        x: i32,
-        y: i32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setBufferTransform(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        transform: i32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setScale(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        xScale: f32,
-        yScale: f32,
-    );
-}
-pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSPARENT: _bindgen_ty_48 = 0;
-pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSLUCENT: _bindgen_ty_48 = 1;
-pub const ASURFACE_TRANSACTION_TRANSPARENCY_OPAQUE: _bindgen_ty_48 = 2;
-pub type _bindgen_ty_48 = ::std::os::raw::c_uint;
-extern "C" {
-    pub fn ASurfaceTransaction_setBufferTransparency(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        transparency: i8,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setDamageRegion(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        rects: *const ARect,
-        count: u32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setDesiredPresentTime(
-        transaction: *mut ASurfaceTransaction,
-        desiredPresentTime: i64,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setBufferAlpha(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        alpha: f32,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setBufferDataSpace(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        data_space: ADataSpace,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setHdrMetadata_smpte2086(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        metadata: *mut AHdrMetadata_smpte2086,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setHdrMetadata_cta861_3(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        metadata: *mut AHdrMetadata_cta861_3,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setFrameRate(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        frameRate: f32,
-        compatibility: i8,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setFrameRateWithChangeStrategy(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        frameRate: f32,
-        compatibility: i8,
-        changeFrameRateStrategy: i8,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setEnableBackPressure(
-        transaction: *mut ASurfaceTransaction,
-        surface_control: *mut ASurfaceControl,
-        enableBackPressure: bool,
-    );
-}
-extern "C" {
-    pub fn ASurfaceTransaction_setFrameTimeline(
-        transaction: *mut ASurfaceTransaction,
-        vsyncId: AVsyncId,
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASurfaceTexture {
-    _unused: [u8; 0],
-}
-extern "C" {
-    pub fn ASurfaceTexture_release(st: *mut ASurfaceTexture);
-}
-extern "C" {
-    pub fn ASurfaceTexture_acquireANativeWindow(st: *mut ASurfaceTexture) -> *mut ANativeWindow;
-}
-extern "C" {
-    pub fn ASurfaceTexture_attachToGLContext(
-        st: *mut ASurfaceTexture,
-        texName: u32,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASurfaceTexture_detachFromGLContext(st: *mut ASurfaceTexture) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASurfaceTexture_updateTexImage(st: *mut ASurfaceTexture) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn ASurfaceTexture_getTransformMatrix(st: *mut ASurfaceTexture, mtx: *mut f32);
-}
-extern "C" {
-    pub fn ASurfaceTexture_getTimestamp(st: *mut ASurfaceTexture) -> i64;
-}
-extern "C" {
-    pub fn ASurfaceTexture_fromSurfaceTexture(
-        env: *mut JNIEnv,
-        surfacetexture: jobject,
-    ) -> *mut ASurfaceTexture;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sync_merge_data {
-    pub name: [::std::os::raw::c_char; 32usize],
-    pub fd2: __s32,
-    pub fence: __s32,
-    pub flags: __u32,
-    pub pad: __u32,
-}
-#[test]
-fn bindgen_test_layout_sync_merge_data() {
-    const UNINIT: ::std::mem::MaybeUninit<sync_merge_data> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<sync_merge_data>(),
-        48usize,
-        concat!("Size of: ", stringify!(sync_merge_data))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<sync_merge_data>(),
-        4usize,
-        concat!("Alignment of ", stringify!(sync_merge_data))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_merge_data),
-            "::",
-            stringify!(name)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fd2) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_merge_data),
-            "::",
-            stringify!(fd2)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fence) as usize - ptr as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_merge_data),
-            "::",
-            stringify!(fence)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_merge_data),
-            "::",
-            stringify!(flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
-        44usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_merge_data),
-            "::",
-            stringify!(pad)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sync_fence_info {
-    pub obj_name: [::std::os::raw::c_char; 32usize],
-    pub driver_name: [::std::os::raw::c_char; 32usize],
-    pub status: __s32,
-    pub flags: __u32,
-    pub timestamp_ns: __u64,
-}
-#[test]
-fn bindgen_test_layout_sync_fence_info() {
-    const UNINIT: ::std::mem::MaybeUninit<sync_fence_info> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<sync_fence_info>(),
-        80usize,
-        concat!("Size of: ", stringify!(sync_fence_info))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<sync_fence_info>(),
-        8usize,
-        concat!("Alignment of ", stringify!(sync_fence_info))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).obj_name) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_fence_info),
-            "::",
-            stringify!(obj_name)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).driver_name) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_fence_info),
-            "::",
-            stringify!(driver_name)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
-        64usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_fence_info),
-            "::",
-            stringify!(status)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
-        68usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_fence_info),
-            "::",
-            stringify!(flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).timestamp_ns) as usize - ptr as usize },
-        72usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_fence_info),
-            "::",
-            stringify!(timestamp_ns)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sync_file_info {
-    pub name: [::std::os::raw::c_char; 32usize],
-    pub status: __s32,
-    pub flags: __u32,
-    pub num_fences: __u32,
-    pub pad: __u32,
-    pub sync_fence_info: __u64,
-}
-#[test]
-fn bindgen_test_layout_sync_file_info() {
-    const UNINIT: ::std::mem::MaybeUninit<sync_file_info> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<sync_file_info>(),
-        56usize,
-        concat!("Size of: ", stringify!(sync_file_info))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<sync_file_info>(),
-        8usize,
-        concat!("Alignment of ", stringify!(sync_file_info))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(name)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(status)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).num_fences) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(num_fences)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
-        44usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(pad)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sync_fence_info) as usize - ptr as usize },
-        48usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(sync_file_info),
-            "::",
-            stringify!(sync_fence_info)
-        )
-    );
-}
-extern "C" {
-    pub fn sync_merge(name: *const ::std::os::raw::c_char, fd1: i32, fd2: i32) -> i32;
-}
-extern "C" {
-    pub fn sync_file_info(fd: i32) -> *mut sync_file_info;
-}
-extern "C" {
-    pub fn sync_file_info_free(info: *mut sync_file_info);
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct ASystemFontIterator {
-    _unused: [u8; 0],
-}
-extern "C" {
-    pub fn ASystemFontIterator_open() -> *mut ASystemFontIterator;
-}
-extern "C" {
-    pub fn ASystemFontIterator_close(iterator: *mut ASystemFontIterator);
-}
-extern "C" {
-    pub fn ASystemFontIterator_next(iterator: *mut ASystemFontIterator) -> *mut AFont;
-}
-extern "C" {
-    pub fn ATrace_isEnabled() -> bool;
-}
-extern "C" {
-    pub fn ATrace_beginSection(sectionName: *const ::std::os::raw::c_char);
-}
-extern "C" {
-    pub fn ATrace_endSection();
-}
-extern "C" {
-    pub fn ATrace_beginAsyncSection(sectionName: *const ::std::os::raw::c_char, cookie: i32);
-}
-extern "C" {
-    pub fn ATrace_endAsyncSection(sectionName: *const ::std::os::raw::c_char, cookie: i32);
-}
-extern "C" {
-    pub fn ATrace_setCounter(counterName: *const ::std::os::raw::c_char, counterValue: i64);
-}
-pub const AWINDOW_FLAG_ALLOW_LOCK_WHILE_SCREEN_ON: _bindgen_ty_49 = 1;
-pub const AWINDOW_FLAG_DIM_BEHIND: _bindgen_ty_49 = 2;
-pub const AWINDOW_FLAG_BLUR_BEHIND: _bindgen_ty_49 = 4;
-pub const AWINDOW_FLAG_NOT_FOCUSABLE: _bindgen_ty_49 = 8;
-pub const AWINDOW_FLAG_NOT_TOUCHABLE: _bindgen_ty_49 = 16;
-pub const AWINDOW_FLAG_NOT_TOUCH_MODAL: _bindgen_ty_49 = 32;
-pub const AWINDOW_FLAG_TOUCHABLE_WHEN_WAKING: _bindgen_ty_49 = 64;
-pub const AWINDOW_FLAG_KEEP_SCREEN_ON: _bindgen_ty_49 = 128;
-pub const AWINDOW_FLAG_LAYOUT_IN_SCREEN: _bindgen_ty_49 = 256;
-pub const AWINDOW_FLAG_LAYOUT_NO_LIMITS: _bindgen_ty_49 = 512;
-pub const AWINDOW_FLAG_FULLSCREEN: _bindgen_ty_49 = 1024;
-pub const AWINDOW_FLAG_FORCE_NOT_FULLSCREEN: _bindgen_ty_49 = 2048;
-pub const AWINDOW_FLAG_DITHER: _bindgen_ty_49 = 4096;
-pub const AWINDOW_FLAG_SECURE: _bindgen_ty_49 = 8192;
-pub const AWINDOW_FLAG_SCALED: _bindgen_ty_49 = 16384;
-pub const AWINDOW_FLAG_IGNORE_CHEEK_PRESSES: _bindgen_ty_49 = 32768;
-pub const AWINDOW_FLAG_LAYOUT_INSET_DECOR: _bindgen_ty_49 = 65536;
-pub const AWINDOW_FLAG_ALT_FOCUSABLE_IM: _bindgen_ty_49 = 131072;
-pub const AWINDOW_FLAG_WATCH_OUTSIDE_TOUCH: _bindgen_ty_49 = 262144;
-pub const AWINDOW_FLAG_SHOW_WHEN_LOCKED: _bindgen_ty_49 = 524288;
-pub const AWINDOW_FLAG_SHOW_WALLPAPER: _bindgen_ty_49 = 1048576;
-pub const AWINDOW_FLAG_TURN_SCREEN_ON: _bindgen_ty_49 = 2097152;
-pub const AWINDOW_FLAG_DISMISS_KEYGUARD: _bindgen_ty_49 = 4194304;
-pub type _bindgen_ty_49 = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct timespec {
@@ -16963,31 +13964,31 @@ fn bindgen_test_layout_user() {
         )
     );
 }
-pub const REG_R8: _bindgen_ty_50 = 0;
-pub const REG_R9: _bindgen_ty_50 = 1;
-pub const REG_R10: _bindgen_ty_50 = 2;
-pub const REG_R11: _bindgen_ty_50 = 3;
-pub const REG_R12: _bindgen_ty_50 = 4;
-pub const REG_R13: _bindgen_ty_50 = 5;
-pub const REG_R14: _bindgen_ty_50 = 6;
-pub const REG_R15: _bindgen_ty_50 = 7;
-pub const REG_RDI: _bindgen_ty_50 = 8;
-pub const REG_RSI: _bindgen_ty_50 = 9;
-pub const REG_RBP: _bindgen_ty_50 = 10;
-pub const REG_RBX: _bindgen_ty_50 = 11;
-pub const REG_RDX: _bindgen_ty_50 = 12;
-pub const REG_RAX: _bindgen_ty_50 = 13;
-pub const REG_RCX: _bindgen_ty_50 = 14;
-pub const REG_RSP: _bindgen_ty_50 = 15;
-pub const REG_RIP: _bindgen_ty_50 = 16;
-pub const REG_EFL: _bindgen_ty_50 = 17;
-pub const REG_CSGSFS: _bindgen_ty_50 = 18;
-pub const REG_ERR: _bindgen_ty_50 = 19;
-pub const REG_TRAPNO: _bindgen_ty_50 = 20;
-pub const REG_OLDMASK: _bindgen_ty_50 = 21;
-pub const REG_CR2: _bindgen_ty_50 = 22;
-pub const NGREG: _bindgen_ty_50 = 23;
-pub type _bindgen_ty_50 = ::std::os::raw::c_uint;
+pub const REG_R8: _bindgen_ty_38 = 0;
+pub const REG_R9: _bindgen_ty_38 = 1;
+pub const REG_R10: _bindgen_ty_38 = 2;
+pub const REG_R11: _bindgen_ty_38 = 3;
+pub const REG_R12: _bindgen_ty_38 = 4;
+pub const REG_R13: _bindgen_ty_38 = 5;
+pub const REG_R14: _bindgen_ty_38 = 6;
+pub const REG_R15: _bindgen_ty_38 = 7;
+pub const REG_RDI: _bindgen_ty_38 = 8;
+pub const REG_RSI: _bindgen_ty_38 = 9;
+pub const REG_RBP: _bindgen_ty_38 = 10;
+pub const REG_RBX: _bindgen_ty_38 = 11;
+pub const REG_RDX: _bindgen_ty_38 = 12;
+pub const REG_RAX: _bindgen_ty_38 = 13;
+pub const REG_RCX: _bindgen_ty_38 = 14;
+pub const REG_RSP: _bindgen_ty_38 = 15;
+pub const REG_RIP: _bindgen_ty_38 = 16;
+pub const REG_EFL: _bindgen_ty_38 = 17;
+pub const REG_CSGSFS: _bindgen_ty_38 = 18;
+pub const REG_ERR: _bindgen_ty_38 = 19;
+pub const REG_TRAPNO: _bindgen_ty_38 = 20;
+pub const REG_OLDMASK: _bindgen_ty_38 = 21;
+pub const REG_CR2: _bindgen_ty_38 = 22;
+pub const NGREG: _bindgen_ty_38 = 23;
+pub type _bindgen_ty_38 = ::std::os::raw::c_uint;
 pub type greg_t = ::std::os::raw::c_long;
 pub type gregset_t = [greg_t; 23usize];
 #[repr(C)]
@@ -17672,6 +14673,3809 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
+    pub fn fcntl(
+        __fd: ::std::os::raw::c_int,
+        __cmd: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getentropy(
+        __buffer: *mut ::std::os::raw::c_void,
+        __buffer_size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getopt(
+        __argc: ::std::os::raw::c_int,
+        __argv: *const *mut ::std::os::raw::c_char,
+        __options: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub static mut optarg: *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub static mut optind: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub static mut opterr: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub static mut optopt: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ioctl(
+        __fd: ::std::os::raw::c_int,
+        __request: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lockf(
+        __fd: ::std::os::raw::c_int,
+        __cmd: ::std::os::raw::c_int,
+        __length: off_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lockf64(
+        __fd: ::std::os::raw::c_int,
+        __cmd: ::std::os::raw::c_int,
+        __length: off64_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn sysconf(__name: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub static mut environ: *mut *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _exit(__status: ::std::os::raw::c_int) -> !;
+}
+extern "C" {
+    pub fn fork() -> pid_t;
+}
+extern "C" {
+    pub fn vfork() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getpid() -> pid_t;
+}
+extern "C" {
+    pub fn gettid() -> pid_t;
+}
+extern "C" {
+    pub fn getpgid(__pid: pid_t) -> pid_t;
+}
+extern "C" {
+    pub fn setpgid(__pid: pid_t, __pgid: pid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getppid() -> pid_t;
+}
+extern "C" {
+    pub fn getpgrp() -> pid_t;
+}
+extern "C" {
+    pub fn setpgrp() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getsid(__pid: pid_t) -> pid_t;
+}
+extern "C" {
+    pub fn setsid() -> pid_t;
+}
+extern "C" {
+    pub fn execv(
+        __path: *const ::std::os::raw::c_char,
+        __argv: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execvp(
+        __file: *const ::std::os::raw::c_char,
+        __argv: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execvpe(
+        __file: *const ::std::os::raw::c_char,
+        __argv: *const *mut ::std::os::raw::c_char,
+        __envp: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execve(
+        __file: *const ::std::os::raw::c_char,
+        __argv: *const *mut ::std::os::raw::c_char,
+        __envp: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execl(
+        __path: *const ::std::os::raw::c_char,
+        __arg0: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execlp(
+        __file: *const ::std::os::raw::c_char,
+        __arg0: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execle(
+        __path: *const ::std::os::raw::c_char,
+        __arg0: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fexecve(
+        __fd: ::std::os::raw::c_int,
+        __argv: *const *mut ::std::os::raw::c_char,
+        __envp: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn nice(__incr: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setegid(__gid: gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn seteuid(__uid: uid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setgid(__gid: gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setregid(__rgid: gid_t, __egid: gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setresgid(__rgid: gid_t, __egid: gid_t, __sgid: gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setresuid(__ruid: uid_t, __euid: uid_t, __suid: uid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setreuid(__ruid: uid_t, __euid: uid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setuid(__uid: uid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getuid() -> uid_t;
+}
+extern "C" {
+    pub fn geteuid() -> uid_t;
+}
+extern "C" {
+    pub fn getgid() -> gid_t;
+}
+extern "C" {
+    pub fn getegid() -> gid_t;
+}
+extern "C" {
+    pub fn getgroups(__size: ::std::os::raw::c_int, __list: *mut gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setgroups(__size: usize, __list: *const gid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getresuid(
+        __ruid: *mut uid_t,
+        __euid: *mut uid_t,
+        __suid: *mut uid_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getresgid(
+        __rgid: *mut gid_t,
+        __egid: *mut gid_t,
+        __sgid: *mut gid_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getlogin() -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn getlogin_r(
+        __buffer: *mut ::std::os::raw::c_char,
+        __buffer_size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fpathconf(
+        __fd: ::std::os::raw::c_int,
+        __name: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn pathconf(
+        __path: *const ::std::os::raw::c_char,
+        __name: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn access(
+        __path: *const ::std::os::raw::c_char,
+        __mode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn faccessat(
+        __dirfd: ::std::os::raw::c_int,
+        __path: *const ::std::os::raw::c_char,
+        __mode: ::std::os::raw::c_int,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn link(
+        __old_path: *const ::std::os::raw::c_char,
+        __new_path: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn linkat(
+        __old_dir_fd: ::std::os::raw::c_int,
+        __old_path: *const ::std::os::raw::c_char,
+        __new_dir_fd: ::std::os::raw::c_int,
+        __new_path: *const ::std::os::raw::c_char,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn unlink(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn unlinkat(
+        __dirfd: ::std::os::raw::c_int,
+        __path: *const ::std::os::raw::c_char,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn chdir(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fchdir(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn rmdir(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pipe(__fds: *mut ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn chroot(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn symlink(
+        __old_path: *const ::std::os::raw::c_char,
+        __new_path: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn symlinkat(
+        __old_path: *const ::std::os::raw::c_char,
+        __new_dir_fd: ::std::os::raw::c_int,
+        __new_path: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn readlink(
+        __path: *const ::std::os::raw::c_char,
+        __buf: *mut ::std::os::raw::c_char,
+        __buf_size: usize,
+    ) -> isize;
+}
+extern "C" {
+    pub fn readlinkat(
+        __dir_fd: ::std::os::raw::c_int,
+        __path: *const ::std::os::raw::c_char,
+        __buf: *mut ::std::os::raw::c_char,
+        __buf_size: usize,
+    ) -> isize;
+}
+extern "C" {
+    pub fn chown(
+        __path: *const ::std::os::raw::c_char,
+        __owner: uid_t,
+        __group: gid_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fchown(
+        __fd: ::std::os::raw::c_int,
+        __owner: uid_t,
+        __group: gid_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fchownat(
+        __dir_fd: ::std::os::raw::c_int,
+        __path: *const ::std::os::raw::c_char,
+        __owner: uid_t,
+        __group: gid_t,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lchown(
+        __path: *const ::std::os::raw::c_char,
+        __owner: uid_t,
+        __group: gid_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getcwd(__buf: *mut ::std::os::raw::c_char, __size: usize)
+        -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn sync();
+}
+extern "C" {
+    pub fn close(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn read(
+        __fd: ::std::os::raw::c_int,
+        __buf: *mut ::std::os::raw::c_void,
+        __count: usize,
+    ) -> isize;
+}
+extern "C" {
+    pub fn write(
+        __fd: ::std::os::raw::c_int,
+        __buf: *const ::std::os::raw::c_void,
+        __count: usize,
+    ) -> isize;
+}
+extern "C" {
+    pub fn dup(__old_fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dup2(
+        __old_fd: ::std::os::raw::c_int,
+        __new_fd: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dup3(
+        __old_fd: ::std::os::raw::c_int,
+        __new_fd: ::std::os::raw::c_int,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fsync(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn fdatasync(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn truncate(
+        __path: *const ::std::os::raw::c_char,
+        __length: off_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lseek(
+        __fd: ::std::os::raw::c_int,
+        __offset: off_t,
+        __whence: ::std::os::raw::c_int,
+    ) -> off_t;
+}
+extern "C" {
+    pub fn pread(
+        __fd: ::std::os::raw::c_int,
+        __buf: *mut ::std::os::raw::c_void,
+        __count: usize,
+        __offset: off_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn pwrite(
+        __fd: ::std::os::raw::c_int,
+        __buf: *const ::std::os::raw::c_void,
+        __count: usize,
+        __offset: off_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn ftruncate(__fd: ::std::os::raw::c_int, __length: off_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn truncate64(
+        __path: *const ::std::os::raw::c_char,
+        __length: off64_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lseek64(
+        __fd: ::std::os::raw::c_int,
+        __offset: off64_t,
+        __whence: ::std::os::raw::c_int,
+    ) -> off64_t;
+}
+extern "C" {
+    pub fn pread64(
+        __fd: ::std::os::raw::c_int,
+        __buf: *mut ::std::os::raw::c_void,
+        __count: usize,
+        __offset: off64_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn pwrite64(
+        __fd: ::std::os::raw::c_int,
+        __buf: *const ::std::os::raw::c_void,
+        __count: usize,
+        __offset: off64_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn ftruncate64(__fd: ::std::os::raw::c_int, __length: off64_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pause() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn alarm(__seconds: ::std::os::raw::c_uint) -> ::std::os::raw::c_uint;
+}
+extern "C" {
+    pub fn sleep(__seconds: ::std::os::raw::c_uint) -> ::std::os::raw::c_uint;
+}
+extern "C" {
+    pub fn usleep(__microseconds: useconds_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn gethostname(
+        _buf: *mut ::std::os::raw::c_char,
+        __buf_size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn sethostname(__name: *const ::std::os::raw::c_char, __n: usize) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn brk(__addr: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn sbrk(__increment: isize) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn isatty(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ttyname(__fd: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn ttyname_r(
+        __fd: ::std::os::raw::c_int,
+        __buf: *mut ::std::os::raw::c_char,
+        __buf_size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn acct(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getpagesize() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn syscall(__number: ::std::os::raw::c_long, ...) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn daemon(
+        __no_chdir: ::std::os::raw::c_int,
+        __no_close: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn tcgetpgrp(__fd: ::std::os::raw::c_int) -> pid_t;
+}
+extern "C" {
+    pub fn tcsetpgrp(__fd: ::std::os::raw::c_int, __pid: pid_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getdomainname(
+        __buf: *mut ::std::os::raw::c_char,
+        __buf_size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setdomainname(
+        __name: *const ::std::os::raw::c_char,
+        __n: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn copy_file_range(
+        __fd_in: ::std::os::raw::c_int,
+        __off_in: *mut off64_t,
+        __fd_out: ::std::os::raw::c_int,
+        __off_out: *mut off64_t,
+        __length: usize,
+        __flags: ::std::os::raw::c_uint,
+    ) -> isize;
+}
+extern "C" {
+    pub fn swab(
+        __src: *const ::std::os::raw::c_void,
+        __dst: *mut ::std::os::raw::c_void,
+        __byte_count: isize,
+    );
+}
+extern "C" {
+    pub fn close_range(
+        __min_fd: ::std::os::raw::c_uint,
+        __max_fd: ::std::os::raw::c_uint,
+        __flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct APerformanceHintManager {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct APerformanceHintSession {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn APerformanceHint_getManager() -> *mut APerformanceHintManager;
+}
+extern "C" {
+    pub fn APerformanceHint_createSession(
+        manager: *mut APerformanceHintManager,
+        threadIds: *const i32,
+        size: usize,
+        initialTargetWorkDurationNanos: i64,
+    ) -> *mut APerformanceHintSession;
+}
+extern "C" {
+    pub fn APerformanceHint_getPreferredUpdateRateNanos(
+        manager: *mut APerformanceHintManager,
+    ) -> i64;
+}
+extern "C" {
+    pub fn APerformanceHint_updateTargetWorkDuration(
+        session: *mut APerformanceHintSession,
+        targetDurationNanos: i64,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn APerformanceHint_reportActualWorkDuration(
+        session: *mut APerformanceHintSession,
+        actualDurationNanos: i64,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn APerformanceHint_closeSession(session: *mut APerformanceHintSession);
+}
+extern "C" {
+    pub fn APerformanceHint_setThreads(
+        session: *mut APerformanceHintSession,
+        threadIds: *const pid_t,
+        size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+pub const PERMISSION_MANAGER_PERMISSION_GRANTED: _bindgen_ty_39 = 0;
+pub const PERMISSION_MANAGER_PERMISSION_DENIED: _bindgen_ty_39 = -1;
+pub type _bindgen_ty_39 = ::std::os::raw::c_int;
+pub const PERMISSION_MANAGER_STATUS_OK: _bindgen_ty_40 = 0;
+pub const PERMISSION_MANAGER_STATUS_ERROR_UNKNOWN: _bindgen_ty_40 = -1;
+pub const PERMISSION_MANAGER_STATUS_SERVICE_UNAVAILABLE: _bindgen_ty_40 = -2;
+pub type _bindgen_ty_40 = ::std::os::raw::c_int;
+extern "C" {
+    pub fn APermissionManager_checkPermission(
+        permission: *const ::std::os::raw::c_char,
+        pid: pid_t,
+        uid: uid_t,
+        outResult: *mut i32,
+    ) -> i32;
+}
+pub type __double_t = f64;
+pub type double_t = __double_t;
+pub type __float_t = f32;
+pub type float_t = __float_t;
+extern "C" {
+    pub fn acos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn acosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn acosl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn asin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn asinl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn atan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn atanl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn atan2(__y: f64, __x: f64) -> f64;
+}
+extern "C" {
+    pub fn atan2f(__y: f32, __x: f32) -> f32;
+}
+extern "C" {
+    pub fn atan2l(__y: u128, __x: u128) -> u128;
+}
+extern "C" {
+    pub fn cos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn cosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn cosl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn sin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn sinl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn tan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn tanl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn acosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn acoshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn acoshl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn asinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn asinhl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn atanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn atanhl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn cosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn coshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn coshl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn sinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn sinhl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn tanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn tanhl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn exp(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn expf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn expl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn exp2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn exp2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn exp2l(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn expm1(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn expm1f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn expm1l(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn frexp(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn frexpf(__x: f32, __exponent: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn frexpl(__x: u128, __exponent: *mut ::std::os::raw::c_int) -> u128;
+}
+extern "C" {
+    pub fn ilogb(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ilogbf(__x: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ilogbl(__x: u128) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ldexp(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn ldexpf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn ldexpl(__x: u128, __exponent: ::std::os::raw::c_int) -> u128;
+}
+extern "C" {
+    pub fn log(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn logf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn logl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn log10(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log10f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log10l(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn log1p(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log1pf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log1pl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn log2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log2l(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn logb(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn logbf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn logbl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn modf(__x: f64, __integral_part: *mut f64) -> f64;
+}
+extern "C" {
+    pub fn modff(__x: f32, __integral_part: *mut f32) -> f32;
+}
+extern "C" {
+    pub fn modfl(__x: u128, __integral_part: *mut u128) -> u128;
+}
+extern "C" {
+    pub fn scalbn(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn scalbnf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn scalbnl(__x: u128, __exponent: ::std::os::raw::c_int) -> u128;
+}
+extern "C" {
+    pub fn scalbln(__x: f64, __exponent: ::std::os::raw::c_long) -> f64;
+}
+extern "C" {
+    pub fn scalblnf(__x: f32, __exponent: ::std::os::raw::c_long) -> f32;
+}
+extern "C" {
+    pub fn scalblnl(__x: u128, __exponent: ::std::os::raw::c_long) -> u128;
+}
+extern "C" {
+    pub fn cbrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn cbrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn cbrtl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn fabs(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn fabsf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn fabsl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn hypot(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn hypotf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn hypotl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn pow(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn powf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn powl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn sqrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sqrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn sqrtl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn erf(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn erff(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn erfl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn erfc(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn erfcf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn erfcl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn lgamma(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn lgammaf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn lgammal(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn tgamma(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tgammaf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn tgammal(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn ceil(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn ceilf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn ceill(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn floor(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn floorf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn floorl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn nearbyint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn nearbyintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn nearbyintl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn rint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn rintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn rintl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn lrint(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn lrintf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn lrintl(__x: u128) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llrint(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn llrintf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn llrintl(__x: u128) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn round(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn roundf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn roundl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn lround(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn lroundf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn lroundl(__x: u128) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llround(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn llroundf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn llroundl(__x: u128) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn trunc(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn truncf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn truncl(__x: u128) -> u128;
+}
+extern "C" {
+    pub fn fmod(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmodf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fmodl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn remainder(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn remainderf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn remainderl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn remquo(__x: f64, __y: f64, __quotient_bits: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn remquof(__x: f32, __y: f32, __quotient_bits: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn remquol(__x: u128, __y: u128, __quotient_bits: *mut ::std::os::raw::c_int) -> u128;
+}
+extern "C" {
+    pub fn copysign(__value: f64, __sign: f64) -> f64;
+}
+extern "C" {
+    pub fn copysignf(__value: f32, __sign: f32) -> f32;
+}
+extern "C" {
+    pub fn copysignl(__value: u128, __sign: u128) -> u128;
+}
+extern "C" {
+    pub fn nan(__kind: *const ::std::os::raw::c_char) -> f64;
+}
+extern "C" {
+    pub fn nanf(__kind: *const ::std::os::raw::c_char) -> f32;
+}
+extern "C" {
+    pub fn nanl(__kind: *const ::std::os::raw::c_char) -> u128;
+}
+extern "C" {
+    pub fn nextafter(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn nextafterf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn nextafterl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn nexttoward(__x: f64, __y: u128) -> f64;
+}
+extern "C" {
+    pub fn nexttowardf(__x: f32, __y: u128) -> f32;
+}
+extern "C" {
+    pub fn nexttowardl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn fdim(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fdimf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fdiml(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn fmax(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmaxf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fmaxl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn fmin(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fminf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fminl(__x: u128, __y: u128) -> u128;
+}
+extern "C" {
+    pub fn fma(__x: f64, __y: f64, __z: f64) -> f64;
+}
+extern "C" {
+    pub fn fmaf(__x: f32, __y: f32, __z: f32) -> f32;
+}
+extern "C" {
+    pub fn fmal(__x: u128, __y: u128, __z: u128) -> u128;
+}
+extern "C" {
+    pub fn isinf(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn isnan(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub static mut signgam: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn y0(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn y1(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn yn(__n: ::std::os::raw::c_int, __x: f64) -> f64;
+}
+pub const ASENSOR_TYPE_INVALID: _bindgen_ty_41 = -1;
+pub const ASENSOR_TYPE_ACCELEROMETER: _bindgen_ty_41 = 1;
+pub const ASENSOR_TYPE_MAGNETIC_FIELD: _bindgen_ty_41 = 2;
+pub const ASENSOR_TYPE_GYROSCOPE: _bindgen_ty_41 = 4;
+pub const ASENSOR_TYPE_LIGHT: _bindgen_ty_41 = 5;
+pub const ASENSOR_TYPE_PRESSURE: _bindgen_ty_41 = 6;
+pub const ASENSOR_TYPE_PROXIMITY: _bindgen_ty_41 = 8;
+pub const ASENSOR_TYPE_GRAVITY: _bindgen_ty_41 = 9;
+pub const ASENSOR_TYPE_LINEAR_ACCELERATION: _bindgen_ty_41 = 10;
+pub const ASENSOR_TYPE_ROTATION_VECTOR: _bindgen_ty_41 = 11;
+pub const ASENSOR_TYPE_RELATIVE_HUMIDITY: _bindgen_ty_41 = 12;
+pub const ASENSOR_TYPE_AMBIENT_TEMPERATURE: _bindgen_ty_41 = 13;
+pub const ASENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED: _bindgen_ty_41 = 14;
+pub const ASENSOR_TYPE_GAME_ROTATION_VECTOR: _bindgen_ty_41 = 15;
+pub const ASENSOR_TYPE_GYROSCOPE_UNCALIBRATED: _bindgen_ty_41 = 16;
+pub const ASENSOR_TYPE_SIGNIFICANT_MOTION: _bindgen_ty_41 = 17;
+pub const ASENSOR_TYPE_STEP_DETECTOR: _bindgen_ty_41 = 18;
+pub const ASENSOR_TYPE_STEP_COUNTER: _bindgen_ty_41 = 19;
+pub const ASENSOR_TYPE_GEOMAGNETIC_ROTATION_VECTOR: _bindgen_ty_41 = 20;
+pub const ASENSOR_TYPE_HEART_RATE: _bindgen_ty_41 = 21;
+pub const ASENSOR_TYPE_POSE_6DOF: _bindgen_ty_41 = 28;
+pub const ASENSOR_TYPE_STATIONARY_DETECT: _bindgen_ty_41 = 29;
+pub const ASENSOR_TYPE_MOTION_DETECT: _bindgen_ty_41 = 30;
+pub const ASENSOR_TYPE_HEART_BEAT: _bindgen_ty_41 = 31;
+pub const ASENSOR_TYPE_DYNAMIC_SENSOR_META: _bindgen_ty_41 = 32;
+pub const ASENSOR_TYPE_ADDITIONAL_INFO: _bindgen_ty_41 = 33;
+pub const ASENSOR_TYPE_LOW_LATENCY_OFFBODY_DETECT: _bindgen_ty_41 = 34;
+pub const ASENSOR_TYPE_ACCELEROMETER_UNCALIBRATED: _bindgen_ty_41 = 35;
+pub const ASENSOR_TYPE_HINGE_ANGLE: _bindgen_ty_41 = 36;
+pub const ASENSOR_TYPE_HEAD_TRACKER: _bindgen_ty_41 = 37;
+pub const ASENSOR_TYPE_ACCELEROMETER_LIMITED_AXES: _bindgen_ty_41 = 38;
+pub const ASENSOR_TYPE_GYROSCOPE_LIMITED_AXES: _bindgen_ty_41 = 39;
+pub const ASENSOR_TYPE_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED: _bindgen_ty_41 = 40;
+pub const ASENSOR_TYPE_GYROSCOPE_LIMITED_AXES_UNCALIBRATED: _bindgen_ty_41 = 41;
+pub const ASENSOR_TYPE_HEADING: _bindgen_ty_41 = 42;
+pub type _bindgen_ty_41 = ::std::os::raw::c_int;
+pub const ASENSOR_STATUS_NO_CONTACT: _bindgen_ty_42 = -1;
+pub const ASENSOR_STATUS_UNRELIABLE: _bindgen_ty_42 = 0;
+pub const ASENSOR_STATUS_ACCURACY_LOW: _bindgen_ty_42 = 1;
+pub const ASENSOR_STATUS_ACCURACY_MEDIUM: _bindgen_ty_42 = 2;
+pub const ASENSOR_STATUS_ACCURACY_HIGH: _bindgen_ty_42 = 3;
+pub type _bindgen_ty_42 = ::std::os::raw::c_int;
+pub const AREPORTING_MODE_INVALID: _bindgen_ty_43 = -1;
+pub const AREPORTING_MODE_CONTINUOUS: _bindgen_ty_43 = 0;
+pub const AREPORTING_MODE_ON_CHANGE: _bindgen_ty_43 = 1;
+pub const AREPORTING_MODE_ONE_SHOT: _bindgen_ty_43 = 2;
+pub const AREPORTING_MODE_SPECIAL_TRIGGER: _bindgen_ty_43 = 3;
+pub type _bindgen_ty_43 = ::std::os::raw::c_int;
+pub const ASENSOR_DIRECT_RATE_STOP: _bindgen_ty_44 = 0;
+pub const ASENSOR_DIRECT_RATE_NORMAL: _bindgen_ty_44 = 1;
+pub const ASENSOR_DIRECT_RATE_FAST: _bindgen_ty_44 = 2;
+pub const ASENSOR_DIRECT_RATE_VERY_FAST: _bindgen_ty_44 = 3;
+pub type _bindgen_ty_44 = ::std::os::raw::c_uint;
+pub const ASENSOR_DIRECT_CHANNEL_TYPE_SHARED_MEMORY: _bindgen_ty_45 = 1;
+pub const ASENSOR_DIRECT_CHANNEL_TYPE_HARDWARE_BUFFER: _bindgen_ty_45 = 2;
+pub type _bindgen_ty_45 = ::std::os::raw::c_uint;
+pub const ASENSOR_ADDITIONAL_INFO_BEGIN: _bindgen_ty_46 = 0;
+pub const ASENSOR_ADDITIONAL_INFO_END: _bindgen_ty_46 = 1;
+pub const ASENSOR_ADDITIONAL_INFO_UNTRACKED_DELAY: _bindgen_ty_46 = 65536;
+pub const ASENSOR_ADDITIONAL_INFO_INTERNAL_TEMPERATURE: _bindgen_ty_46 = 65537;
+pub const ASENSOR_ADDITIONAL_INFO_VEC3_CALIBRATION: _bindgen_ty_46 = 65538;
+pub const ASENSOR_ADDITIONAL_INFO_SENSOR_PLACEMENT: _bindgen_ty_46 = 65539;
+pub const ASENSOR_ADDITIONAL_INFO_SAMPLING: _bindgen_ty_46 = 65540;
+pub type _bindgen_ty_46 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ASensorVector {
+    pub __bindgen_anon_1: ASensorVector__bindgen_ty_1,
+    pub status: i8,
+    pub reserved: [u8; 3usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ASensorVector__bindgen_ty_1 {
+    pub v: [f32; 3usize],
+    pub __bindgen_anon_1: ASensorVector__bindgen_ty_1__bindgen_ty_1,
+    pub __bindgen_anon_2: ASensorVector__bindgen_ty_1__bindgen_ty_2,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASensorVector__bindgen_ty_1__bindgen_ty_1 {
+    pub x: f32,
+    pub y: f32,
+    pub z: f32,
+}
+#[test]
+fn bindgen_test_layout_ASensorVector__bindgen_ty_1__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorVector__bindgen_ty_1__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorVector__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(x)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(y)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(z)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASensorVector__bindgen_ty_1__bindgen_ty_2 {
+    pub azimuth: f32,
+    pub pitch: f32,
+    pub roll: f32,
+}
+#[test]
+fn bindgen_test_layout_ASensorVector__bindgen_ty_1__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorVector__bindgen_ty_1__bindgen_ty_2>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorVector__bindgen_ty_1__bindgen_ty_2>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).azimuth) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(azimuth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).pitch) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(pitch)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).roll) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(roll)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ASensorVector__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorVector__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorVector__bindgen_ty_1>(),
+        12usize,
+        concat!("Size of: ", stringify!(ASensorVector__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorVector__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ASensorVector__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).v) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector__bindgen_ty_1),
+            "::",
+            stringify!(v)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ASensorVector() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorVector> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorVector>(),
+        16usize,
+        concat!("Size of: ", stringify!(ASensorVector))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorVector>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ASensorVector))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector),
+            "::",
+            stringify!(status)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reserved) as usize - ptr as usize },
+        13usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorVector),
+            "::",
+            stringify!(reserved)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AMetaDataEvent {
+    pub what: i32,
+    pub sensor: i32,
+}
+#[test]
+fn bindgen_test_layout_AMetaDataEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<AMetaDataEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AMetaDataEvent>(),
+        8usize,
+        concat!("Size of: ", stringify!(AMetaDataEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AMetaDataEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AMetaDataEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).what) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AMetaDataEvent),
+            "::",
+            stringify!(what)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sensor) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AMetaDataEvent),
+            "::",
+            stringify!(sensor)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct AUncalibratedEvent {
+    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_1,
+    pub __bindgen_anon_2: AUncalibratedEvent__bindgen_ty_2,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union AUncalibratedEvent__bindgen_ty_1 {
+    pub uncalib: [f32; 3usize],
+    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1 {
+    pub x_uncalib: f32,
+    pub y_uncalib: f32,
+    pub z_uncalib: f32,
+}
+#[test]
+fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_uncalib) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(x_uncalib)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_uncalib) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(y_uncalib)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_uncalib) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(z_uncalib)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_1>(),
+        12usize,
+        concat!("Size of: ", stringify!(AUncalibratedEvent__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).uncalib) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_1),
+            "::",
+            stringify!(uncalib)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union AUncalibratedEvent__bindgen_ty_2 {
+    pub bias: [f32; 3usize],
+    pub __bindgen_anon_1: AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1 {
+    pub x_bias: f32,
+    pub y_bias: f32,
+    pub z_bias: f32,
+}
+#[test]
+fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_bias) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(x_bias)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_bias) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(y_bias)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_bias) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(z_bias)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_AUncalibratedEvent__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<AUncalibratedEvent__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AUncalibratedEvent__bindgen_ty_2>(),
+        12usize,
+        concat!("Size of: ", stringify!(AUncalibratedEvent__bindgen_ty_2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AUncalibratedEvent__bindgen_ty_2>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).bias) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AUncalibratedEvent__bindgen_ty_2),
+            "::",
+            stringify!(bias)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_AUncalibratedEvent() {
+    assert_eq!(
+        ::std::mem::size_of::<AUncalibratedEvent>(),
+        24usize,
+        concat!("Size of: ", stringify!(AUncalibratedEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AUncalibratedEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AUncalibratedEvent))
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AHeartRateEvent {
+    pub bpm: f32,
+    pub status: i8,
+}
+#[test]
+fn bindgen_test_layout_AHeartRateEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<AHeartRateEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AHeartRateEvent>(),
+        8usize,
+        concat!("Size of: ", stringify!(AHeartRateEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AHeartRateEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AHeartRateEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).bpm) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeartRateEvent),
+            "::",
+            stringify!(bpm)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeartRateEvent),
+            "::",
+            stringify!(status)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ADynamicSensorEvent {
+    pub connected: i32,
+    pub handle: i32,
+}
+#[test]
+fn bindgen_test_layout_ADynamicSensorEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<ADynamicSensorEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ADynamicSensorEvent>(),
+        8usize,
+        concat!("Size of: ", stringify!(ADynamicSensorEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ADynamicSensorEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ADynamicSensorEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).connected) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ADynamicSensorEvent),
+            "::",
+            stringify!(connected)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).handle) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ADynamicSensorEvent),
+            "::",
+            stringify!(handle)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct AAdditionalInfoEvent {
+    pub type_: i32,
+    pub serial: i32,
+    pub __bindgen_anon_1: AAdditionalInfoEvent__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union AAdditionalInfoEvent__bindgen_ty_1 {
+    pub data_int32: [i32; 14usize],
+    pub data_float: [f32; 14usize],
+}
+#[test]
+fn bindgen_test_layout_AAdditionalInfoEvent__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<AAdditionalInfoEvent__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AAdditionalInfoEvent__bindgen_ty_1>(),
+        56usize,
+        concat!("Size of: ", stringify!(AAdditionalInfoEvent__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AAdditionalInfoEvent__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(AAdditionalInfoEvent__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).data_int32) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AAdditionalInfoEvent__bindgen_ty_1),
+            "::",
+            stringify!(data_int32)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).data_float) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AAdditionalInfoEvent__bindgen_ty_1),
+            "::",
+            stringify!(data_float)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_AAdditionalInfoEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<AAdditionalInfoEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AAdditionalInfoEvent>(),
+        64usize,
+        concat!("Size of: ", stringify!(AAdditionalInfoEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AAdditionalInfoEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AAdditionalInfoEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AAdditionalInfoEvent),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).serial) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AAdditionalInfoEvent),
+            "::",
+            stringify!(serial)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AHeadTrackerEvent {
+    pub rx: f32,
+    pub ry: f32,
+    pub rz: f32,
+    pub vx: f32,
+    pub vy: f32,
+    pub vz: f32,
+    pub discontinuity_count: i32,
+}
+#[test]
+fn bindgen_test_layout_AHeadTrackerEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<AHeadTrackerEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AHeadTrackerEvent>(),
+        28usize,
+        concat!("Size of: ", stringify!(AHeadTrackerEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AHeadTrackerEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AHeadTrackerEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).rx) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(rx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).ry) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(ry)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).rz) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(rz)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).vx) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(vx)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).vy) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(vy)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).vz) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(vz)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).discontinuity_count) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadTrackerEvent),
+            "::",
+            stringify!(discontinuity_count)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ALimitedAxesImuEvent {
+    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_1,
+    pub __bindgen_anon_2: ALimitedAxesImuEvent__bindgen_ty_2,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ALimitedAxesImuEvent__bindgen_ty_1 {
+    pub calib: [f32; 3usize],
+    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1 {
+    pub x: f32,
+    pub y: f32,
+    pub z: f32,
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(x)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(y)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(z)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_1>(),
+        12usize,
+        concat!("Size of: ", stringify!(ALimitedAxesImuEvent__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).calib) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_1),
+            "::",
+            stringify!(calib)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ALimitedAxesImuEvent__bindgen_ty_2 {
+    pub supported: [f32; 3usize],
+    pub __bindgen_anon_1: ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1 {
+    pub x_supported: f32,
+    pub y_supported: f32,
+    pub z_supported: f32,
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_supported) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(x_supported)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_supported) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(y_supported)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_supported) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(z_supported)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuEvent__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuEvent__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuEvent__bindgen_ty_2>(),
+        12usize,
+        concat!("Size of: ", stringify!(ALimitedAxesImuEvent__bindgen_ty_2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuEvent__bindgen_ty_2>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).supported) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuEvent__bindgen_ty_2),
+            "::",
+            stringify!(supported)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuEvent() {
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuEvent>(),
+        24usize,
+        concat!("Size of: ", stringify!(ALimitedAxesImuEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ALimitedAxesImuEvent))
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ALimitedAxesImuUncalibratedEvent {
+    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_1,
+    pub __bindgen_anon_2: ALimitedAxesImuUncalibratedEvent__bindgen_ty_2,
+    pub __bindgen_anon_3: ALimitedAxesImuUncalibratedEvent__bindgen_ty_3,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_1 {
+    pub uncalib: [f32; 3usize],
+    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1 {
+    pub x_uncalib: f32,
+    pub y_uncalib: f32,
+    pub z_uncalib: f32,
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<
+        ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1,
+    > = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_uncalib) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(x_uncalib)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_uncalib) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(y_uncalib)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_uncalib) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(z_uncalib)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).uncalib) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_1),
+            "::",
+            stringify!(uncalib)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_2 {
+    pub bias: [f32; 3usize],
+    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1 {
+    pub x_bias: f32,
+    pub y_bias: f32,
+    pub z_bias: f32,
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<
+        ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1,
+    > = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_bias) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(x_bias)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_bias) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(y_bias)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_bias) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2__bindgen_ty_1),
+            "::",
+            stringify!(z_bias)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_2>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).bias) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_2),
+            "::",
+            stringify!(bias)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ALimitedAxesImuUncalibratedEvent__bindgen_ty_3 {
+    pub supported: [f32; 3usize],
+    pub __bindgen_anon_1: ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1 {
+    pub x_supported: f32,
+    pub y_supported: f32,
+    pub z_supported: f32,
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<
+        ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1,
+    > = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).x_supported) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
+            "::",
+            stringify!(x_supported)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).y_supported) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
+            "::",
+            stringify!(y_supported)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).z_supported) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3__bindgen_ty_1),
+            "::",
+            stringify!(z_supported)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent__bindgen_ty_3() {
+    const UNINIT: ::std::mem::MaybeUninit<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3>(),
+        12usize,
+        concat!(
+            "Size of: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent__bindgen_ty_3>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).supported) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ALimitedAxesImuUncalibratedEvent__bindgen_ty_3),
+            "::",
+            stringify!(supported)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ALimitedAxesImuUncalibratedEvent() {
+    assert_eq!(
+        ::std::mem::size_of::<ALimitedAxesImuUncalibratedEvent>(),
+        36usize,
+        concat!("Size of: ", stringify!(ALimitedAxesImuUncalibratedEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ALimitedAxesImuUncalibratedEvent>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ALimitedAxesImuUncalibratedEvent)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AHeadingEvent {
+    pub heading: f32,
+    pub accuracy: f32,
+}
+#[test]
+fn bindgen_test_layout_AHeadingEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<AHeadingEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<AHeadingEvent>(),
+        8usize,
+        concat!("Size of: ", stringify!(AHeadingEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<AHeadingEvent>(),
+        4usize,
+        concat!("Alignment of ", stringify!(AHeadingEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).heading) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadingEvent),
+            "::",
+            stringify!(heading)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).accuracy) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AHeadingEvent),
+            "::",
+            stringify!(accuracy)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ASensorEvent {
+    pub version: i32,
+    pub sensor: i32,
+    pub type_: i32,
+    pub reserved0: i32,
+    pub timestamp: i64,
+    pub __bindgen_anon_1: ASensorEvent__bindgen_ty_1,
+    pub flags: u32,
+    pub reserved1: [i32; 3usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ASensorEvent__bindgen_ty_1 {
+    pub __bindgen_anon_1: ASensorEvent__bindgen_ty_1__bindgen_ty_1,
+    pub u64_: ASensorEvent__bindgen_ty_1__bindgen_ty_2,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ASensorEvent__bindgen_ty_1__bindgen_ty_1 {
+    pub data: [f32; 16usize],
+    pub vector: ASensorVector,
+    pub acceleration: ASensorVector,
+    pub gyro: ASensorVector,
+    pub magnetic: ASensorVector,
+    pub temperature: f32,
+    pub distance: f32,
+    pub light: f32,
+    pub pressure: f32,
+    pub relative_humidity: f32,
+    pub uncalibrated_acceleration: AUncalibratedEvent,
+    pub uncalibrated_gyro: AUncalibratedEvent,
+    pub uncalibrated_magnetic: AUncalibratedEvent,
+    pub meta_data: AMetaDataEvent,
+    pub heart_rate: AHeartRateEvent,
+    pub dynamic_sensor_meta: ADynamicSensorEvent,
+    pub additional_info: AAdditionalInfoEvent,
+    pub head_tracker: AHeadTrackerEvent,
+    pub limited_axes_imu: ALimitedAxesImuEvent,
+    pub limited_axes_imu_uncalibrated: ALimitedAxesImuUncalibratedEvent,
+    pub heading: AHeadingEvent,
+}
+#[test]
+fn bindgen_test_layout_ASensorEvent__bindgen_ty_1__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_1>(),
+        64usize,
+        concat!(
+            "Size of: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).vector) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(vector)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).acceleration) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(acceleration)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).gyro) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(gyro)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).magnetic) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(magnetic)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).temperature) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(temperature)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).distance) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(distance)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).light) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(light)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).pressure) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(pressure)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).relative_humidity) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(relative_humidity)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_acceleration) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(uncalibrated_acceleration)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_gyro) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(uncalibrated_gyro)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).uncalibrated_magnetic) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(uncalibrated_magnetic)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).meta_data) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(meta_data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).heart_rate) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(heart_rate)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).dynamic_sensor_meta) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(dynamic_sensor_meta)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).additional_info) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(additional_info)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).head_tracker) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(head_tracker)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).limited_axes_imu) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(limited_axes_imu)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            ::std::ptr::addr_of!((*ptr).limited_axes_imu_uncalibrated) as usize - ptr as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(limited_axes_imu_uncalibrated)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).heading) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(heading)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union ASensorEvent__bindgen_ty_1__bindgen_ty_2 {
+    pub data: [u64; 8usize],
+    pub step_counter: u64,
+}
+#[test]
+fn bindgen_test_layout_ASensorEvent__bindgen_ty_1__bindgen_ty_2() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1__bindgen_ty_2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_2>(),
+        64usize,
+        concat!(
+            "Size of: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1__bindgen_ty_2>(),
+        8usize,
+        concat!(
+            "Alignment of ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).step_counter) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(step_counter)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ASensorEvent__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorEvent__bindgen_ty_1>(),
+        64usize,
+        concat!("Size of: ", stringify!(ASensorEvent__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorEvent__bindgen_ty_1>(),
+        8usize,
+        concat!("Alignment of ", stringify!(ASensorEvent__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).u64_) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent__bindgen_ty_1),
+            "::",
+            stringify!(u64_)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_ASensorEvent() {
+    const UNINIT: ::std::mem::MaybeUninit<ASensorEvent> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ASensorEvent>(),
+        104usize,
+        concat!("Size of: ", stringify!(ASensorEvent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ASensorEvent>(),
+        8usize,
+        concat!("Alignment of ", stringify!(ASensorEvent))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).version) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(version)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sensor) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(sensor)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reserved0) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(reserved0)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).timestamp) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(timestamp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reserved1) as usize - ptr as usize },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ASensorEvent),
+            "::",
+            stringify!(reserved1)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASensorManager {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASensorEventQueue {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASensor {
+    _unused: [u8; 0],
+}
+pub type ASensorRef = *const ASensor;
+pub type ASensorList = *const ASensorRef;
+extern "C" {
+    pub fn ASensorManager_getInstance() -> *mut ASensorManager;
+}
+extern "C" {
+    pub fn ASensorManager_getInstanceForPackage(
+        packageName: *const ::std::os::raw::c_char,
+    ) -> *mut ASensorManager;
+}
+extern "C" {
+    pub fn ASensorManager_getSensorList(
+        manager: *mut ASensorManager,
+        list: *mut ASensorList,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorManager_getDynamicSensorList(
+        manager: *mut ASensorManager,
+        list: *mut ASensorList,
+    ) -> isize;
+}
+extern "C" {
+    pub fn ASensorManager_getDefaultSensor(
+        manager: *mut ASensorManager,
+        type_: ::std::os::raw::c_int,
+    ) -> *const ASensor;
+}
+extern "C" {
+    pub fn ASensorManager_getDefaultSensorEx(
+        manager: *mut ASensorManager,
+        type_: ::std::os::raw::c_int,
+        wakeUp: bool,
+    ) -> *const ASensor;
+}
+extern "C" {
+    pub fn ASensorManager_createEventQueue(
+        manager: *mut ASensorManager,
+        looper: *mut ALooper,
+        ident: ::std::os::raw::c_int,
+        callback: ALooper_callbackFunc,
+        data: *mut ::std::os::raw::c_void,
+    ) -> *mut ASensorEventQueue;
+}
+extern "C" {
+    pub fn ASensorManager_destroyEventQueue(
+        manager: *mut ASensorManager,
+        queue: *mut ASensorEventQueue,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorManager_createSharedMemoryDirectChannel(
+        manager: *mut ASensorManager,
+        fd: ::std::os::raw::c_int,
+        size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorManager_createHardwareBufferDirectChannel(
+        manager: *mut ASensorManager,
+        buffer: *const AHardwareBuffer,
+        size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorManager_destroyDirectChannel(
+        manager: *mut ASensorManager,
+        channelId: ::std::os::raw::c_int,
+    );
+}
+extern "C" {
+    pub fn ASensorManager_configureDirectReport(
+        manager: *mut ASensorManager,
+        sensor: *const ASensor,
+        channelId: ::std::os::raw::c_int,
+        rate: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_registerSensor(
+        queue: *mut ASensorEventQueue,
+        sensor: *const ASensor,
+        samplingPeriodUs: i32,
+        maxBatchReportLatencyUs: i64,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_enableSensor(
+        queue: *mut ASensorEventQueue,
+        sensor: *const ASensor,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_disableSensor(
+        queue: *mut ASensorEventQueue,
+        sensor: *const ASensor,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_setEventRate(
+        queue: *mut ASensorEventQueue,
+        sensor: *const ASensor,
+        usec: i32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_hasEvents(queue: *mut ASensorEventQueue) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensorEventQueue_getEvents(
+        queue: *mut ASensorEventQueue,
+        events: *mut ASensorEvent,
+        count: usize,
+    ) -> isize;
+}
+extern "C" {
+    pub fn ASensorEventQueue_requestAdditionalInfoEvents(
+        queue: *mut ASensorEventQueue,
+        enable: bool,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getName(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn ASensor_getVendor(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn ASensor_getType(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getResolution(sensor: *const ASensor) -> f32;
+}
+extern "C" {
+    pub fn ASensor_getMinDelay(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getFifoMaxEventCount(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getFifoReservedEventCount(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getStringType(sensor: *const ASensor) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn ASensor_getReportingMode(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_isWakeUpSensor(sensor: *const ASensor) -> bool;
+}
+extern "C" {
+    pub fn ASensor_isDirectChannelTypeSupported(
+        sensor: *const ASensor,
+        channelType: ::std::os::raw::c_int,
+    ) -> bool;
+}
+extern "C" {
+    pub fn ASensor_getHighestDirectReportRateLevel(sensor: *const ASensor)
+        -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASensor_getHandle(sensor: *const ASensor) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn android_set_abort_message(__msg: *const ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn ASharedMemory_create(
+        name: *const ::std::os::raw::c_char,
+        size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASharedMemory_getSize(fd: ::std::os::raw::c_int) -> usize;
+}
+extern "C" {
+    pub fn ASharedMemory_setProt(
+        fd: ::std::os::raw::c_int,
+        prot: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASharedMemory_dupFromJava(
+        env: *mut JNIEnv,
+        sharedMemory: jobject,
+    ) -> ::std::os::raw::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AStorageManager {
+    _unused: [u8; 0],
+}
+pub const AOBB_STATE_MOUNTED: _bindgen_ty_47 = 1;
+pub const AOBB_STATE_UNMOUNTED: _bindgen_ty_47 = 2;
+pub const AOBB_STATE_ERROR_INTERNAL: _bindgen_ty_47 = 20;
+pub const AOBB_STATE_ERROR_COULD_NOT_MOUNT: _bindgen_ty_47 = 21;
+pub const AOBB_STATE_ERROR_COULD_NOT_UNMOUNT: _bindgen_ty_47 = 22;
+pub const AOBB_STATE_ERROR_NOT_MOUNTED: _bindgen_ty_47 = 23;
+pub const AOBB_STATE_ERROR_ALREADY_MOUNTED: _bindgen_ty_47 = 24;
+pub const AOBB_STATE_ERROR_PERMISSION_DENIED: _bindgen_ty_47 = 25;
+pub type _bindgen_ty_47 = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn AStorageManager_new() -> *mut AStorageManager;
+}
+extern "C" {
+    pub fn AStorageManager_delete(mgr: *mut AStorageManager);
+}
+pub type AStorageManager_obbCallbackFunc = ::std::option::Option<
+    unsafe extern "C" fn(
+        filename: *const ::std::os::raw::c_char,
+        state: i32,
+        data: *mut ::std::os::raw::c_void,
+    ),
+>;
+extern "C" {
+    pub fn AStorageManager_mountObb(
+        mgr: *mut AStorageManager,
+        filename: *const ::std::os::raw::c_char,
+        key: *const ::std::os::raw::c_char,
+        cb: AStorageManager_obbCallbackFunc,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn AStorageManager_unmountObb(
+        mgr: *mut AStorageManager,
+        filename: *const ::std::os::raw::c_char,
+        force: ::std::os::raw::c_int,
+        cb: AStorageManager_obbCallbackFunc,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn AStorageManager_isObbMounted(
+        mgr: *mut AStorageManager,
+        filename: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn AStorageManager_getMountedObbPath(
+        mgr: *mut AStorageManager,
+        filename: *const ::std::os::raw::c_char,
+    ) -> *const ::std::os::raw::c_char;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceControl {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASurfaceControl_createFromWindow(
+        parent: *mut ANativeWindow,
+        debug_name: *const ::std::os::raw::c_char,
+    ) -> *mut ASurfaceControl;
+}
+extern "C" {
+    pub fn ASurfaceControl_create(
+        parent: *mut ASurfaceControl,
+        debug_name: *const ::std::os::raw::c_char,
+    ) -> *mut ASurfaceControl;
+}
+extern "C" {
+    pub fn ASurfaceControl_acquire(surface_control: *mut ASurfaceControl);
+}
+extern "C" {
+    pub fn ASurfaceControl_release(surface_control: *mut ASurfaceControl);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceTransaction {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASurfaceTransaction_create() -> *mut ASurfaceTransaction;
+}
+extern "C" {
+    pub fn ASurfaceTransaction_delete(transaction: *mut ASurfaceTransaction);
+}
+extern "C" {
+    pub fn ASurfaceTransaction_apply(transaction: *mut ASurfaceTransaction);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceTransactionStats {
+    _unused: [u8; 0],
+}
+pub type ASurfaceTransaction_OnComplete = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ::std::os::raw::c_void,
+        stats: *mut ASurfaceTransactionStats,
+    ),
+>;
+pub type ASurfaceTransaction_OnCommit = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ::std::os::raw::c_void,
+        stats: *mut ASurfaceTransactionStats,
+    ),
+>;
+extern "C" {
+    pub fn ASurfaceTransactionStats_getLatchTime(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+    ) -> i64;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getPresentFenceFd(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getASurfaceControls(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        outASurfaceControls: *mut *mut *mut ASurfaceControl,
+        outASurfaceControlsSize: *mut usize,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_releaseASurfaceControls(
+        surface_controls: *mut *mut ASurfaceControl,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getAcquireTime(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        surface_control: *mut ASurfaceControl,
+    ) -> i64;
+}
+extern "C" {
+    pub fn ASurfaceTransactionStats_getPreviousReleaseFenceFd(
+        surface_transaction_stats: *mut ASurfaceTransactionStats,
+        surface_control: *mut ASurfaceControl,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setOnComplete(
+        transaction: *mut ASurfaceTransaction,
+        context: *mut ::std::os::raw::c_void,
+        func: ASurfaceTransaction_OnComplete,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setOnCommit(
+        transaction: *mut ASurfaceTransaction,
+        context: *mut ::std::os::raw::c_void,
+        func: ASurfaceTransaction_OnCommit,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_reparent(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        new_parent: *mut ASurfaceControl,
+    );
+}
+pub const ASURFACE_TRANSACTION_VISIBILITY_HIDE: _bindgen_ty_48 = 0;
+pub const ASURFACE_TRANSACTION_VISIBILITY_SHOW: _bindgen_ty_48 = 1;
+pub type _bindgen_ty_48 = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn ASurfaceTransaction_setVisibility(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        visibility: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setZOrder(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        z_order: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBuffer(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        buffer: *mut AHardwareBuffer,
+        acquire_fence_fd: ::std::os::raw::c_int,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setColor(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        r: f32,
+        g: f32,
+        b: f32,
+        alpha: f32,
+        dataspace: ADataSpace,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setGeometry(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        source: *const ARect,
+        destination: *const ARect,
+        transform: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setCrop(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        crop: *const ARect,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setPosition(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        x: i32,
+        y: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferTransform(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        transform: i32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setScale(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        xScale: f32,
+        yScale: f32,
+    );
+}
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSPARENT: _bindgen_ty_49 = 0;
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_TRANSLUCENT: _bindgen_ty_49 = 1;
+pub const ASURFACE_TRANSACTION_TRANSPARENCY_OPAQUE: _bindgen_ty_49 = 2;
+pub type _bindgen_ty_49 = ::std::os::raw::c_uint;
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferTransparency(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        transparency: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setDamageRegion(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        rects: *const ARect,
+        count: u32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setDesiredPresentTime(
+        transaction: *mut ASurfaceTransaction,
+        desiredPresentTime: i64,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferAlpha(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        alpha: f32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setBufferDataSpace(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        data_space: ADataSpace,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setHdrMetadata_smpte2086(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        metadata: *mut AHdrMetadata_smpte2086,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setHdrMetadata_cta861_3(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        metadata: *mut AHdrMetadata_cta861_3,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setExtendedRangeBrightness(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        currentBufferRatio: f32,
+        desiredRatio: f32,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameRate(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        frameRate: f32,
+        compatibility: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameRateWithChangeStrategy(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        frameRate: f32,
+        compatibility: i8,
+        changeFrameRateStrategy: i8,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_clearFrameRate(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setEnableBackPressure(
+        transaction: *mut ASurfaceTransaction,
+        surface_control: *mut ASurfaceControl,
+        enableBackPressure: bool,
+    );
+}
+extern "C" {
+    pub fn ASurfaceTransaction_setFrameTimeline(
+        transaction: *mut ASurfaceTransaction,
+        vsyncId: AVsyncId,
+    );
+}
+extern "C" {
+    pub fn ASurfaceControl_fromJava(
+        env: *mut JNIEnv,
+        surfaceControlObj: jobject,
+    ) -> *mut ASurfaceControl;
+}
+extern "C" {
+    pub fn ASurfaceTransaction_fromJava(
+        env: *mut JNIEnv,
+        transactionObj: jobject,
+    ) -> *mut ASurfaceTransaction;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASurfaceTexture {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASurfaceTexture_release(st: *mut ASurfaceTexture);
+}
+extern "C" {
+    pub fn ASurfaceTexture_acquireANativeWindow(st: *mut ASurfaceTexture) -> *mut ANativeWindow;
+}
+extern "C" {
+    pub fn ASurfaceTexture_attachToGLContext(
+        st: *mut ASurfaceTexture,
+        texName: u32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTexture_detachFromGLContext(st: *mut ASurfaceTexture) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTexture_updateTexImage(st: *mut ASurfaceTexture) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn ASurfaceTexture_getTransformMatrix(st: *mut ASurfaceTexture, mtx: *mut f32);
+}
+extern "C" {
+    pub fn ASurfaceTexture_getTimestamp(st: *mut ASurfaceTexture) -> i64;
+}
+extern "C" {
+    pub fn ASurfaceTexture_fromSurfaceTexture(
+        env: *mut JNIEnv,
+        surfacetexture: jobject,
+    ) -> *mut ASurfaceTexture;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sync_merge_data {
+    pub name: [::std::os::raw::c_char; 32usize],
+    pub fd2: __s32,
+    pub fence: __s32,
+    pub flags: __u32,
+    pub pad: __u32,
+}
+#[test]
+fn bindgen_test_layout_sync_merge_data() {
+    const UNINIT: ::std::mem::MaybeUninit<sync_merge_data> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<sync_merge_data>(),
+        48usize,
+        concat!("Size of: ", stringify!(sync_merge_data))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sync_merge_data>(),
+        4usize,
+        concat!("Alignment of ", stringify!(sync_merge_data))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_merge_data),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).fd2) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_merge_data),
+            "::",
+            stringify!(fd2)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).fence) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_merge_data),
+            "::",
+            stringify!(fence)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_merge_data),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_merge_data),
+            "::",
+            stringify!(pad)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sync_fence_info {
+    pub obj_name: [::std::os::raw::c_char; 32usize],
+    pub driver_name: [::std::os::raw::c_char; 32usize],
+    pub status: __s32,
+    pub flags: __u32,
+    pub timestamp_ns: __u64,
+}
+#[test]
+fn bindgen_test_layout_sync_fence_info() {
+    const UNINIT: ::std::mem::MaybeUninit<sync_fence_info> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<sync_fence_info>(),
+        80usize,
+        concat!("Size of: ", stringify!(sync_fence_info))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sync_fence_info>(),
+        8usize,
+        concat!("Alignment of ", stringify!(sync_fence_info))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).obj_name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_fence_info),
+            "::",
+            stringify!(obj_name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).driver_name) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_fence_info),
+            "::",
+            stringify!(driver_name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_fence_info),
+            "::",
+            stringify!(status)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_fence_info),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).timestamp_ns) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_fence_info),
+            "::",
+            stringify!(timestamp_ns)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct sync_file_info {
+    pub name: [::std::os::raw::c_char; 32usize],
+    pub status: __s32,
+    pub flags: __u32,
+    pub num_fences: __u32,
+    pub pad: __u32,
+    pub sync_fence_info: __u64,
+}
+#[test]
+fn bindgen_test_layout_sync_file_info() {
+    const UNINIT: ::std::mem::MaybeUninit<sync_file_info> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<sync_file_info>(),
+        56usize,
+        concat!("Size of: ", stringify!(sync_file_info))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sync_file_info>(),
+        8usize,
+        concat!("Alignment of ", stringify!(sync_file_info))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(status)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).num_fences) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(num_fences)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(pad)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sync_fence_info) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sync_file_info),
+            "::",
+            stringify!(sync_fence_info)
+        )
+    );
+}
+extern "C" {
+    pub fn sync_merge(name: *const ::std::os::raw::c_char, fd1: i32, fd2: i32) -> i32;
+}
+extern "C" {
+    pub fn sync_file_info(fd: i32) -> *mut sync_file_info;
+}
+extern "C" {
+    pub fn sync_file_info_free(info: *mut sync_file_info);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ASystemFontIterator {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn ASystemFontIterator_open() -> *mut ASystemFontIterator;
+}
+extern "C" {
+    pub fn ASystemFontIterator_close(iterator: *mut ASystemFontIterator);
+}
+extern "C" {
+    pub fn ASystemFontIterator_next(iterator: *mut ASystemFontIterator) -> *mut AFont;
+}
+extern "C" {
+    pub fn ATrace_isEnabled() -> bool;
+}
+extern "C" {
+    pub fn ATrace_beginSection(sectionName: *const ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn ATrace_endSection();
+}
+extern "C" {
+    pub fn ATrace_beginAsyncSection(sectionName: *const ::std::os::raw::c_char, cookie: i32);
+}
+extern "C" {
+    pub fn ATrace_endAsyncSection(sectionName: *const ::std::os::raw::c_char, cookie: i32);
+}
+extern "C" {
+    pub fn ATrace_setCounter(counterName: *const ::std::os::raw::c_char, counterValue: i64);
+}
+pub const AWINDOW_FLAG_ALLOW_LOCK_WHILE_SCREEN_ON: _bindgen_ty_50 = 1;
+pub const AWINDOW_FLAG_DIM_BEHIND: _bindgen_ty_50 = 2;
+pub const AWINDOW_FLAG_BLUR_BEHIND: _bindgen_ty_50 = 4;
+pub const AWINDOW_FLAG_NOT_FOCUSABLE: _bindgen_ty_50 = 8;
+pub const AWINDOW_FLAG_NOT_TOUCHABLE: _bindgen_ty_50 = 16;
+pub const AWINDOW_FLAG_NOT_TOUCH_MODAL: _bindgen_ty_50 = 32;
+pub const AWINDOW_FLAG_TOUCHABLE_WHEN_WAKING: _bindgen_ty_50 = 64;
+pub const AWINDOW_FLAG_KEEP_SCREEN_ON: _bindgen_ty_50 = 128;
+pub const AWINDOW_FLAG_LAYOUT_IN_SCREEN: _bindgen_ty_50 = 256;
+pub const AWINDOW_FLAG_LAYOUT_NO_LIMITS: _bindgen_ty_50 = 512;
+pub const AWINDOW_FLAG_FULLSCREEN: _bindgen_ty_50 = 1024;
+pub const AWINDOW_FLAG_FORCE_NOT_FULLSCREEN: _bindgen_ty_50 = 2048;
+pub const AWINDOW_FLAG_DITHER: _bindgen_ty_50 = 4096;
+pub const AWINDOW_FLAG_SECURE: _bindgen_ty_50 = 8192;
+pub const AWINDOW_FLAG_SCALED: _bindgen_ty_50 = 16384;
+pub const AWINDOW_FLAG_IGNORE_CHEEK_PRESSES: _bindgen_ty_50 = 32768;
+pub const AWINDOW_FLAG_LAYOUT_INSET_DECOR: _bindgen_ty_50 = 65536;
+pub const AWINDOW_FLAG_ALT_FOCUSABLE_IM: _bindgen_ty_50 = 131072;
+pub const AWINDOW_FLAG_WATCH_OUTSIDE_TOUCH: _bindgen_ty_50 = 262144;
+pub const AWINDOW_FLAG_SHOW_WHEN_LOCKED: _bindgen_ty_50 = 524288;
+pub const AWINDOW_FLAG_SHOW_WALLPAPER: _bindgen_ty_50 = 1048576;
+pub const AWINDOW_FLAG_TURN_SCREEN_ON: _bindgen_ty_50 = 2097152;
+pub const AWINDOW_FLAG_DISMISS_KEYGUARD: _bindgen_ty_50 = 4194304;
+pub type _bindgen_ty_50 = ::std::os::raw::c_uint;
+extern "C" {
     pub fn gettimeofday(__tv: *mut timeval, __tz: *mut timezone) -> ::std::os::raw::c_int;
 }
 extern "C" {
@@ -17696,6 +18500,12 @@ extern "C" {
         __times: *const timeval,
     ) -> ::std::os::raw::c_int;
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __timezone_t {
+    _unused: [u8; 0],
+}
+pub type timezone_t = *mut __timezone_t;
 extern "C" {
     pub static mut tzname: [*mut ::std::os::raw::c_char; 0usize];
 }
@@ -17850,7 +18660,7 @@ extern "C" {
 }
 extern "C" {
     pub fn nanosleep(
-        __request: *const timespec,
+        __duration: *const timespec,
         __remainder: *mut timespec,
     ) -> ::std::os::raw::c_int;
 }
@@ -17870,10 +18680,16 @@ extern "C" {
     pub fn mktime(__tm: *mut tm) -> time_t;
 }
 extern "C" {
+    pub fn mktime_z(__tz: timezone_t, __tm: *mut tm) -> time_t;
+}
+extern "C" {
     pub fn localtime(__t: *const time_t) -> *mut tm;
 }
 extern "C" {
     pub fn localtime_r(__t: *const time_t, __tm: *mut tm) -> *mut tm;
+}
+extern "C" {
+    pub fn localtime_rz(__tz: timezone_t, __t: *const time_t, __tm: *mut tm) -> *mut tm;
 }
 extern "C" {
     pub fn timelocal(__tm: *mut tm) -> time_t;
@@ -17932,6 +18748,12 @@ extern "C" {
     pub fn tzset();
 }
 extern "C" {
+    pub fn tzalloc(__id: *const ::std::os::raw::c_char) -> timezone_t;
+}
+extern "C" {
+    pub fn tzfree(__tz: timezone_t);
+}
+extern "C" {
     pub fn clock() -> clock_t;
 }
 extern "C" {
@@ -17947,7 +18769,7 @@ extern "C" {
     pub fn clock_nanosleep(
         __clock: clockid_t,
         __flags: ::std::os::raw::c_int,
-        __request: *const timespec,
+        __duration: *const timespec,
         __remainder: *mut timespec,
     ) -> ::std::os::raw::c_int;
 }
@@ -18000,6 +18822,7 @@ pub const AAUDIO_FORMAT_PCM_I16: _bindgen_ty_52 = 1;
 pub const AAUDIO_FORMAT_PCM_FLOAT: _bindgen_ty_52 = 2;
 pub const AAUDIO_FORMAT_PCM_I24_PACKED: _bindgen_ty_52 = 3;
 pub const AAUDIO_FORMAT_PCM_I32: _bindgen_ty_52 = 4;
+pub const AAUDIO_FORMAT_IEC61937: _bindgen_ty_52 = 5;
 pub type _bindgen_ty_52 = ::std::os::raw::c_int;
 pub type aaudio_format_t = i32;
 pub const AAUDIO_OK: _bindgen_ty_53 = 0;
@@ -18399,7 +19222,13 @@ extern "C" {
     pub fn AAudioStream_getSampleRate(stream: *mut AAudioStream) -> i32;
 }
 extern "C" {
+    pub fn AAudioStream_getHardwareSampleRate(stream: *mut AAudioStream) -> i32;
+}
+extern "C" {
     pub fn AAudioStream_getChannelCount(stream: *mut AAudioStream) -> i32;
+}
+extern "C" {
+    pub fn AAudioStream_getHardwareChannelCount(stream: *mut AAudioStream) -> i32;
 }
 extern "C" {
     pub fn AAudioStream_getSamplesPerFrame(stream: *mut AAudioStream) -> i32;
@@ -18409,6 +19238,9 @@ extern "C" {
 }
 extern "C" {
     pub fn AAudioStream_getFormat(stream: *mut AAudioStream) -> aaudio_format_t;
+}
+extern "C" {
+    pub fn AAudioStream_getHardwareFormat(stream: *mut AAudioStream) -> aaudio_format_t;
 }
 extern "C" {
     pub fn AAudioStream_getSharingMode(stream: *mut AAudioStream) -> aaudio_sharing_mode_t;
@@ -18830,7 +19662,13 @@ impl acamera_metadata_section {
     pub const ACAMERA_AUTOMOTIVE_LENS: acamera_metadata_section = acamera_metadata_section(31);
 }
 impl acamera_metadata_section {
-    pub const ACAMERA_SECTION_COUNT: acamera_metadata_section = acamera_metadata_section(32);
+    pub const ACAMERA_EXTENSION: acamera_metadata_section = acamera_metadata_section(32);
+}
+impl acamera_metadata_section {
+    pub const ACAMERA_JPEGR: acamera_metadata_section = acamera_metadata_section(33);
+}
+impl acamera_metadata_section {
+    pub const ACAMERA_SECTION_COUNT: acamera_metadata_section = acamera_metadata_section(34);
 }
 impl acamera_metadata_section {
     pub const ACAMERA_VENDOR: acamera_metadata_section = acamera_metadata_section(32768);
@@ -18966,6 +19804,14 @@ impl acamera_metadata_section_start {
 impl acamera_metadata_section_start {
     pub const ACAMERA_AUTOMOTIVE_LENS_START: acamera_metadata_section_start =
         acamera_metadata_section_start(2031616);
+}
+impl acamera_metadata_section_start {
+    pub const ACAMERA_EXTENSION_START: acamera_metadata_section_start =
+        acamera_metadata_section_start(2097152);
+}
+impl acamera_metadata_section_start {
+    pub const ACAMERA_JPEGR_START: acamera_metadata_section_start =
+        acamera_metadata_section_start(2162688);
 }
 impl acamera_metadata_section_start {
     pub const ACAMERA_VENDOR_START: acamera_metadata_section_start =
@@ -19148,7 +19994,24 @@ impl acamera_metadata_tag {
     pub const ACAMERA_CONTROL_ZOOM_RATIO: acamera_metadata_tag = acamera_metadata_tag(65583);
 }
 impl acamera_metadata_tag {
-    pub const ACAMERA_CONTROL_END: acamera_metadata_tag = acamera_metadata_tag(65584);
+    pub const ACAMERA_CONTROL_SETTINGS_OVERRIDE: acamera_metadata_tag = acamera_metadata_tag(65585);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_CONTROL_AVAILABLE_SETTINGS_OVERRIDES: acamera_metadata_tag =
+        acamera_metadata_tag(65586);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_CONTROL_AUTOFRAMING: acamera_metadata_tag = acamera_metadata_tag(65588);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_AVAILABLE: acamera_metadata_tag =
+        acamera_metadata_tag(65589);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_STATE: acamera_metadata_tag = acamera_metadata_tag(65590);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_CONTROL_END: acamera_metadata_tag = acamera_metadata_tag(65591);
 }
 impl acamera_metadata_tag {
     pub const ACAMERA_EDGE_MODE: acamera_metadata_tag = acamera_metadata_tag(196608);
@@ -19366,7 +20229,11 @@ impl acamera_metadata_tag {
         acamera_metadata_tag(786451);
 }
 impl acamera_metadata_tag {
-    pub const ACAMERA_REQUEST_END: acamera_metadata_tag = acamera_metadata_tag(786452);
+    pub const ACAMERA_REQUEST_AVAILABLE_COLOR_SPACE_PROFILES_MAP: acamera_metadata_tag =
+        acamera_metadata_tag(786453);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_REQUEST_END: acamera_metadata_tag = acamera_metadata_tag(786454);
 }
 impl acamera_metadata_tag {
     pub const ACAMERA_SCALER_CROP_REGION: acamera_metadata_tag = acamera_metadata_tag(851968);
@@ -19434,7 +20301,10 @@ impl acamera_metadata_tag {
         acamera_metadata_tag(851993);
 }
 impl acamera_metadata_tag {
-    pub const ACAMERA_SCALER_END: acamera_metadata_tag = acamera_metadata_tag(851994);
+    pub const ACAMERA_SCALER_RAW_CROP_REGION: acamera_metadata_tag = acamera_metadata_tag(851994);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_SCALER_END: acamera_metadata_tag = acamera_metadata_tag(851995);
 }
 impl acamera_metadata_tag {
     pub const ACAMERA_SENSOR_EXPOSURE_TIME: acamera_metadata_tag = acamera_metadata_tag(917504);
@@ -19865,6 +20735,33 @@ impl acamera_metadata_tag {
 }
 impl acamera_metadata_tag {
     pub const ACAMERA_AUTOMOTIVE_LENS_END: acamera_metadata_tag = acamera_metadata_tag(2031617);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS: acamera_metadata_tag =
+        acamera_metadata_tag(2162688);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_MIN_FRAME_DURATIONS: acamera_metadata_tag =
+        acamera_metadata_tag(2162689);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STALL_DURATIONS: acamera_metadata_tag =
+        acamera_metadata_tag(2162690);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS_MAXIMUM_RESOLUTION:
+        acamera_metadata_tag = acamera_metadata_tag(2162691);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_MIN_FRAME_DURATIONS_MAXIMUM_RESOLUTION:
+        acamera_metadata_tag = acamera_metadata_tag(2162692);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STALL_DURATIONS_MAXIMUM_RESOLUTION:
+        acamera_metadata_tag = acamera_metadata_tag(2162693);
+}
+impl acamera_metadata_tag {
+    pub const ACAMERA_JPEGR_END: acamera_metadata_tag = acamera_metadata_tag(2162694);
 }
 #[repr(transparent)]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -20474,6 +21371,65 @@ impl acamera_metadata_enum_acamera_control_extended_scene_mode {
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub struct acamera_metadata_enum_acamera_control_extended_scene_mode(pub ::std::os::raw::c_uint);
 pub use self::acamera_metadata_enum_acamera_control_extended_scene_mode as acamera_metadata_enum_android_control_extended_scene_mode_t;
+impl acamera_metadata_enum_acamera_control_settings_override {
+    pub const ACAMERA_CONTROL_SETTINGS_OVERRIDE_OFF:
+        acamera_metadata_enum_acamera_control_settings_override =
+        acamera_metadata_enum_acamera_control_settings_override(0);
+}
+impl acamera_metadata_enum_acamera_control_settings_override {
+    pub const ACAMERA_CONTROL_SETTINGS_OVERRIDE_ZOOM:
+        acamera_metadata_enum_acamera_control_settings_override =
+        acamera_metadata_enum_acamera_control_settings_override(1);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_control_settings_override(pub ::std::os::raw::c_uint);
+pub use self::acamera_metadata_enum_acamera_control_settings_override as acamera_metadata_enum_android_control_settings_override_t;
+impl acamera_metadata_enum_acamera_control_autoframing {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_OFF: acamera_metadata_enum_acamera_control_autoframing =
+        acamera_metadata_enum_acamera_control_autoframing(0);
+}
+impl acamera_metadata_enum_acamera_control_autoframing {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_ON: acamera_metadata_enum_acamera_control_autoframing =
+        acamera_metadata_enum_acamera_control_autoframing(1);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_control_autoframing(pub ::std::os::raw::c_uint);
+pub use self::acamera_metadata_enum_acamera_control_autoframing as acamera_metadata_enum_android_control_autoframing_t;
+impl acamera_metadata_enum_acamera_control_autoframing_available {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_AVAILABLE_FALSE:
+        acamera_metadata_enum_acamera_control_autoframing_available =
+        acamera_metadata_enum_acamera_control_autoframing_available(0);
+}
+impl acamera_metadata_enum_acamera_control_autoframing_available {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_AVAILABLE_TRUE:
+        acamera_metadata_enum_acamera_control_autoframing_available =
+        acamera_metadata_enum_acamera_control_autoframing_available(1);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_control_autoframing_available(pub ::std::os::raw::c_uint);
+pub use self::acamera_metadata_enum_acamera_control_autoframing_available as acamera_metadata_enum_android_control_autoframing_available_t;
+impl acamera_metadata_enum_acamera_control_autoframing_state {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_STATE_INACTIVE:
+        acamera_metadata_enum_acamera_control_autoframing_state =
+        acamera_metadata_enum_acamera_control_autoframing_state(0);
+}
+impl acamera_metadata_enum_acamera_control_autoframing_state {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_STATE_FRAMING:
+        acamera_metadata_enum_acamera_control_autoframing_state =
+        acamera_metadata_enum_acamera_control_autoframing_state(1);
+}
+impl acamera_metadata_enum_acamera_control_autoframing_state {
+    pub const ACAMERA_CONTROL_AUTOFRAMING_STATE_CONVERGED:
+        acamera_metadata_enum_acamera_control_autoframing_state =
+        acamera_metadata_enum_acamera_control_autoframing_state(2);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_control_autoframing_state(pub ::std::os::raw::c_uint);
+pub use self::acamera_metadata_enum_acamera_control_autoframing_state as acamera_metadata_enum_android_control_autoframing_state_t;
 impl acamera_metadata_enum_acamera_edge_mode {
     pub const ACAMERA_EDGE_MODE_OFF: acamera_metadata_enum_acamera_edge_mode =
         acamera_metadata_enum_acamera_edge_mode(0);
@@ -20826,6 +21782,32 @@ pub struct acamera_metadata_enum_acamera_request_available_dynamic_range_profile
     pub ::std::os::raw::c_uint,
 );
 pub use self::acamera_metadata_enum_acamera_request_available_dynamic_range_profiles_map as acamera_metadata_enum_android_request_available_dynamic_range_profiles_map_t;
+impl acamera_metadata_enum_acamera_request_available_color_space_profiles_map {
+    pub const ACAMERA_REQUEST_AVAILABLE_COLOR_SPACE_PROFILES_MAP_UNSPECIFIED:
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map =
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map(-1);
+}
+impl acamera_metadata_enum_acamera_request_available_color_space_profiles_map {
+    pub const ACAMERA_REQUEST_AVAILABLE_COLOR_SPACE_PROFILES_MAP_SRGB:
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map =
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map(0);
+}
+impl acamera_metadata_enum_acamera_request_available_color_space_profiles_map {
+    pub const ACAMERA_REQUEST_AVAILABLE_COLOR_SPACE_PROFILES_MAP_DISPLAY_P3:
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map =
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map(7);
+}
+impl acamera_metadata_enum_acamera_request_available_color_space_profiles_map {
+    pub const ACAMERA_REQUEST_AVAILABLE_COLOR_SPACE_PROFILES_MAP_BT2020_HLG:
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map =
+        acamera_metadata_enum_acamera_request_available_color_space_profiles_map(16);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_request_available_color_space_profiles_map(
+    pub ::std::os::raw::c_int,
+);
+pub use self::acamera_metadata_enum_acamera_request_available_color_space_profiles_map as acamera_metadata_enum_android_request_available_color_space_profiles_map_t;
 impl acamera_metadata_enum_acamera_scaler_available_stream_configurations {
     pub const ACAMERA_SCALER_AVAILABLE_STREAM_CONFIGURATIONS_OUTPUT:
         acamera_metadata_enum_acamera_scaler_available_stream_configurations =
@@ -21027,6 +22009,11 @@ impl acamera_metadata_enum_acamera_scaler_available_stream_use_cases {
     pub const ACAMERA_SCALER_AVAILABLE_STREAM_USE_CASES_VIDEO_CALL:
         acamera_metadata_enum_acamera_scaler_available_stream_use_cases =
         acamera_metadata_enum_acamera_scaler_available_stream_use_cases(5);
+}
+impl acamera_metadata_enum_acamera_scaler_available_stream_use_cases {
+    pub const ACAMERA_SCALER_AVAILABLE_STREAM_USE_CASES_CROPPED_RAW:
+        acamera_metadata_enum_acamera_scaler_available_stream_use_cases =
+        acamera_metadata_enum_acamera_scaler_available_stream_use_cases(6);
 }
 #[repr(transparent)]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
@@ -21751,6 +22738,34 @@ impl acamera_metadata_enum_acamera_automotive_lens_facing {
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub struct acamera_metadata_enum_acamera_automotive_lens_facing(pub ::std::os::raw::c_uint);
 pub use self::acamera_metadata_enum_acamera_automotive_lens_facing as acamera_metadata_enum_android_automotive_lens_facing_t;
+impl acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS_OUTPUT:
+        acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations =
+        acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations(0);
+}
+impl acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS_INPUT:
+        acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations =
+        acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations(1);
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations(
+    pub ::std::os::raw::c_uint,
+);
+pub use self::acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations as acamera_metadata_enum_android_jpegr_available_jpeg_r_stream_configurations_t;
+impl acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS_MAXIMUM_RESOLUTION_OUTPUT : acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution = acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution (0) ;
+}
+impl acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution {
+    pub const ACAMERA_JPEGR_AVAILABLE_JPEG_R_STREAM_CONFIGURATIONS_MAXIMUM_RESOLUTION_INPUT : acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution = acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution (1) ;
+}
+#[repr(transparent)]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub struct acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution(
+    pub ::std::os::raw::c_uint,
+);
+pub use self::acamera_metadata_enum_acamera_jpegr_available_jpeg_r_stream_configurations_maximum_resolution as acamera_metadata_enum_android_jpegr_available_jpeg_r_stream_configurations_maximum_resolution_t;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ACameraMetadata {
@@ -22405,6 +23420,13 @@ fn bindgen_test_layout_ACameraCaptureSession_stateCallbacks() {
         )
     );
 }
+pub type ACameraCaptureSession_prepareCallback = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ::std::os::raw::c_void,
+        window: *mut ACameraWindowType,
+        session: *mut ACameraCaptureSession,
+    ),
+>;
 pub const CAPTURE_FAILURE_REASON_FLUSHED: _bindgen_ty_68 = 0;
 pub const CAPTURE_FAILURE_REASON_ERROR: _bindgen_ty_68 = 1;
 pub type _bindgen_ty_68 = ::std::os::raw::c_uint;
@@ -23163,6 +24185,19 @@ extern "C" {
         captureSequenceId: *mut ::std::os::raw::c_int,
     ) -> camera_status_t;
 }
+extern "C" {
+    pub fn ACameraCaptureSession_setWindowPreparedCallback(
+        session: *mut ACameraCaptureSession,
+        context: *mut ::std::os::raw::c_void,
+        callback: ACameraCaptureSession_prepareCallback,
+    ) -> camera_status_t;
+}
+extern "C" {
+    pub fn ACameraCaptureSession_prepareWindow(
+        session: *mut ACameraCaptureSession,
+        window: *mut ACameraWindowType,
+    ) -> camera_status_t;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ACameraIdList {
@@ -23790,6 +24825,9 @@ extern "C" {
         buffer: *mut *mut AHardwareBuffer,
     ) -> media_status_t;
 }
+extern "C" {
+    pub fn AImage_getDataSpace(image: *const AImage, dataSpace: *mut i32) -> media_status_t;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AImageReader {
@@ -23898,6 +24936,17 @@ extern "C" {
         format: i32,
         usage: u64,
         maxImages: i32,
+        reader: *mut *mut AImageReader,
+    ) -> media_status_t;
+}
+extern "C" {
+    pub fn AImageReader_newWithDataSpace(
+        width: i32,
+        height: i32,
+        usage: u64,
+        maxImages: i32,
+        hardwareBufferFormat: u32,
+        dataSpace: i32,
         reader: *mut *mut AImageReader,
     ) -> media_status_t;
 }
@@ -24114,6 +25163,9 @@ extern "C" {
     pub static mut AMEDIAFORMAT_KEY_AAC_SBR_MODE: *const ::std::os::raw::c_char;
 }
 extern "C" {
+    pub static mut AMEDIAFORMAT_KEY_ALLOW_FRAME_DROP: *const ::std::os::raw::c_char;
+}
+extern "C" {
     pub static mut AMEDIAFORMAT_KEY_AUDIO_SESSION_ID: *const ::std::os::raw::c_char;
 }
 extern "C" {
@@ -24214,6 +25266,9 @@ extern "C" {
 }
 extern "C" {
     pub static mut AMEDIAFORMAT_KEY_LEVEL: *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub static mut AMEDIAFORMAT_KEY_MAX_B_FRAMES: *const ::std::os::raw::c_char;
 }
 extern "C" {
     pub static mut AMEDIAFORMAT_KEY_MAX_HEIGHT: *const ::std::os::raw::c_char;
@@ -24652,14 +25707,18 @@ fn bindgen_test_layout_AMediaCodecBufferInfo() {
 pub struct AMediaCodecCryptoInfo {
     _unused: [u8; 0],
 }
+pub const AMEDIACODEC_BUFFER_FLAG_KEY_FRAME: _bindgen_ty_71 = 1;
 pub const AMEDIACODEC_BUFFER_FLAG_CODEC_CONFIG: _bindgen_ty_71 = 2;
 pub const AMEDIACODEC_BUFFER_FLAG_END_OF_STREAM: _bindgen_ty_71 = 4;
 pub const AMEDIACODEC_BUFFER_FLAG_PARTIAL_FRAME: _bindgen_ty_71 = 8;
-pub const AMEDIACODEC_CONFIGURE_FLAG_ENCODE: _bindgen_ty_71 = 1;
-pub const AMEDIACODEC_INFO_OUTPUT_BUFFERS_CHANGED: _bindgen_ty_71 = -3;
-pub const AMEDIACODEC_INFO_OUTPUT_FORMAT_CHANGED: _bindgen_ty_71 = -2;
-pub const AMEDIACODEC_INFO_TRY_AGAIN_LATER: _bindgen_ty_71 = -1;
-pub type _bindgen_ty_71 = ::std::os::raw::c_int;
+pub const AMEDIACODEC_BUFFER_FLAG_MUXER_DATA: _bindgen_ty_71 = 16;
+pub const AMEDIACODEC_BUFFER_FLAG_DECODE_ONLY: _bindgen_ty_71 = 32;
+pub type _bindgen_ty_71 = ::std::os::raw::c_uint;
+pub const AMEDIACODEC_CONFIGURE_FLAG_ENCODE: _bindgen_ty_72 = 1;
+pub const AMEDIACODEC_INFO_OUTPUT_BUFFERS_CHANGED: _bindgen_ty_72 = -3;
+pub const AMEDIACODEC_INFO_OUTPUT_FORMAT_CHANGED: _bindgen_ty_72 = -2;
+pub const AMEDIACODEC_INFO_TRY_AGAIN_LATER: _bindgen_ty_72 = -1;
+pub type _bindgen_ty_72 = ::std::os::raw::c_int;
 pub type AMediaCodecOnAsyncInputAvailable = ::std::option::Option<
     unsafe extern "C" fn(
         codec: *mut AMediaCodec,
@@ -25750,9 +26809,9 @@ extern "C" {
         arg1: *mut AMediaExtractor,
     ) -> *mut AMediaCodecCryptoInfo;
 }
-pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_SYNC: _bindgen_ty_72 = 1;
-pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_ENCRYPTED: _bindgen_ty_72 = 2;
-pub type _bindgen_ty_72 = ::std::os::raw::c_uint;
+pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_SYNC: _bindgen_ty_73 = 1;
+pub const AMEDIAEXTRACTOR_SAMPLE_FLAG_ENCRYPTED: _bindgen_ty_73 = 2;
+pub type _bindgen_ty_73 = ::std::os::raw::c_uint;
 extern "C" {
     pub fn AMediaExtractor_getFileFormat(arg1: *mut AMediaExtractor) -> *mut AMediaFormat;
 }
@@ -25781,6 +26840,12 @@ impl OutputFormat {
 }
 impl OutputFormat {
     pub const AMEDIAMUXER_OUTPUT_FORMAT_THREE_GPP: OutputFormat = OutputFormat(2);
+}
+impl OutputFormat {
+    pub const AMEDIAMUXER_OUTPUT_FORMAT_HEIF: OutputFormat = OutputFormat(3);
+}
+impl OutputFormat {
+    pub const AMEDIAMUXER_OUTPUT_FORMAT_OGG: OutputFormat = OutputFormat(4);
 }
 #[repr(transparent)]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
