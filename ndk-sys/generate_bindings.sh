@@ -10,7 +10,8 @@ else
     host_tag="linux-x86_64"
 fi
 
-sysroot="${ANDROID_NDK_ROOT}"/toolchains/llvm/prebuilt/${host_tag}/sysroot/
+# sysroot="${ANDROID_NDK_ROOT}"/toolchains/llvm/prebuilt/${host_tag}/sysroot/
+sysroot=$HOME/Downloads/ndk-11253189/sysroot
 [ ! -d "$sysroot" ] && echo "Android sysroot $sysroot does not exist!" && exit 1
 
 while read ARCH && read TARGET ; do

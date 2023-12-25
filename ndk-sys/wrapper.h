@@ -20,11 +20,7 @@
 #include <android/dlext.h>
 #include <android/fdsan.h>
 #include <android/file_descriptor_jni.h>
-// <android/font.h> is broken without the following typedef in C
-typedef struct AFont AFont;
 #include <android/font.h>
-// <android/font_matcher.h> is broken without the following typedef in C
-typedef struct AFontMatcher AFontMatcher;
 #include <android/font_matcher.h>
 #include <android/hardware_buffer.h>
 #include <android/hardware_buffer_jni.h>
@@ -38,7 +34,7 @@ typedef struct AFontMatcher AFontMatcher;
 #include <android/native_activity.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
-#include <android/ndk-version.h>
+// #include <android/ndk-version.h>
 #include <android/NeuralNetworks.h>
 #include <android/NeuralNetworksTypes.h>
 #include <android/obb.h>
@@ -53,8 +49,6 @@ typedef struct AFontMatcher AFontMatcher;
 #include <android/surface_texture.h>
 #include <android/surface_texture_jni.h>
 #include <android/sync.h>
-// <android/system_fonts.h> is broken without the following typedef in C
-typedef struct ASystemFontIterator ASystemFontIterator;
 #include <android/system_fonts.h>
 // #include <android/thermal.h>
 #include <android/trace.h>
